@@ -14,12 +14,12 @@ test('switches from kilometer to hundred-meter grid at the close-zoom threshold'
   assert.equal(gridStepMeters(2.2), 100);
 });
 
-test('keeps every supported map marker inside the corrected playable grid', async () => {
+test('keeps every supported map marker inside the source playable grid', async () => {
   const markerData = JSON.parse(await readFile(new URL('../public/data/markers.json', import.meta.url)));
   const names = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
   const points = markerData.maps.filter(map => names.has(map.name)).flatMap(map => map.groups.flatMap(group => group.points));
 
-  assert.equal(markerNorthingCorrection, 4.16);
+  assert.equal(markerNorthingCorrection, 0);
   assert.equal(points.length, 5116);
   for (const point of points) {
     const normalized = markerPoint(point);
