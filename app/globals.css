@@ -13,8 +13,8 @@
 @media (max-width:560px) { .topbar { height:58px; padding:0 13px; gap:12px; }.brand { font-size:15px; }.title { padding-left:12px; gap:6px; }.title strong { font-size:14px; }.hint { display:none; }.panel { top:58px; width:min(316px,92vw); }.stage { height:calc(100dvh - 58px); }.canvas { width:92vw; height:92vw; }.hud { bottom:10px; left:10px; }.hud span { padding:5px 6px; font-size:10px; }.zoom { right:10px; bottom:10px; }.zoom button { width:32px; height:32px; } }
 
 /* Map-scale rules: controls follow the map without becoming oversized. */
-.km-grid { background-image:linear-gradient(to right,#ecf2db38 1px,transparent 1px),linear-gradient(to bottom,#ecf2db38 1px,transparent 1px); }
-.fine-grid { background-image:linear-gradient(to right,#f1ecd428 1px,transparent 1px),linear-gradient(to bottom,#f1ecd428 1px,transparent 1px); }
+.km-grid { background-image:linear-gradient(to right,#ecf2db26 .6px,transparent .6px),linear-gradient(to bottom,#ecf2db26 .6px,transparent .6px); }
+.fine-grid { background-image:linear-gradient(to right,#f1ecd416 .45px,transparent .45px),linear-gradient(to bottom,#f1ecd416 .45px,transparent .45px); }
 .pin { width:calc(21px * var(--pin-factor)); height:calc(28px * var(--pin-factor)); }
 .measure-line line { stroke-width:.28; stroke-dasharray:.85 .55; }
 .measure-line circle { stroke-width:.22; }
