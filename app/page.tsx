@@ -1,0 +1,89 @@
+'use client';
+
+import { useEffect, useMemo, useRef, useState, type PointerEvent, type WheelEvent } from 'react';
+import { distanceMeters, gridStepMeters } from '../lib/map-geometry.mjs';
+
+type MapInfo = { id: string; name: string; sizeKm: number };
+type MarkerType = { key: string; ru: string; color: string; svg: string };
+type MarkerGroup = { typeKey: string; tag: string | null; points: [number, number][] };
+type MarkerMap = { name: string; groups: MarkerGroup[] };
+type MarkerData = { types: MarkerType[]; maps: MarkerMap[] };
+type Point = { x: number; y: number };
+
+const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
+const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
+
+function tileLevel(zoom: number) { return clamp(Math.floor(Math.log2(zoom * 1.65)), 0, 4); }
+function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
+
+export default function Home() {
+  const [maps, setMaps] = useState<MapInfo[]>([]);
+  const [data, setData] = useState<MarkerData | null>(null);
+  const [active, setActive] = useState('erangel');
+  const [zoom, setZoom] = useState(1);
+  const [pan, setPan] = useState({ x: 0, y: 0 });
+  const [grid, setGrid] = useState(true);
+  const [measure, setMeasure] = useState(false);
+  const [points, setPoints] = useState<Point[]>([]);
+  const [enabled, setEnabled] = useState<Set<string>>(new Set());
+  const [sidebar, setSidebar] = useState(true);
+  const stage = useRef<HTMLDivElement>(null);
+  const drag = useRef<{ x: number; y: number; panX: number; panY: number; moved: boolean } | null>(null);
+
+  useEffect(() => { void fetch('./data/maps.json').then(r => r.json()).then((v: MapInfo[]) => setMaps(v)); }, []);
+  useEffect(() => { void fetch('./data/markers.json').then(r => r.json()).then((v: MarkerData) => setData(v)); }, []);
+
+  const selected = maps.find(map => map.id === active) ?? maps[0];
+  const sourceMap = data?.maps.find(map => map.name === mapName[active]);
+  const groups = sourceMap?.groups ?? [];
+  const types = useMemo(() => new Map(data?.types.map(type => [type.key, type]) ?? []), [data]);
+  const categories = useMemo(() => groups.filter((group, index, all) => all.findIndex(item => item.typeKey === group.typeKey) === index), [groups]);
+  const level = tileLevel(zoom);
+  const count = 2 ** level;
+  const isFineGrid = gridStepMeters(zoom) === 100;
+  const activePoints = points.length === 2 ? points : [];
+  const selectedDistance = activePoints.length === 2 ? distanceMeters(activePoints[0], activePoints[1]) : 0;
+
+  useEffect(() => { setEnabled(new Set()); setPoints([]); setZoom(1); setPan({ x: 0, y: 0 }); }, [active]);
+
+  const mapPoint = (event: { clientX: number; clientY: number }): Point | null => {
+    const el = stage.current; if (!el) return null;
+    const r = el.getBoundingClientRect(); const side = Math.min(r.width, r.height) * .9;
+    const x = (event.clientX - r.left - r.width / 2 - pan.x) / (side * zoom) + .5;
+    const y = (event.clientY - r.top - r.height / 2 - pan.y) / (side * zoom) + .5;
+    return x >= 0 && x <= 1 && y >= 0 && y <= 1 ? { x, y } : null;
+  };
+  const onDown = (event: PointerEvent<HTMLDivElement>) => { if (event.button === 0) drag.current = { x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y, moved: false }; };
+  const onMove = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; if (!d) return; const dx = event.clientX - d.x; const dy = event.clientY - d.y; if (Math.hypot(dx, dy) > 4) d.moved = true; setPan({ x: d.panX + dx, y: d.panY + dy }); };
+  const onUp = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; drag.current = null; if (!d?.moved && measure) { const point = mapPoint(event); if (point) setPoints(current => current.length === 1 ? [...current, point] : [point]); } };
+  const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), .7, 12)); };
+  const chooseMap = (id: string) => { setActive(id); setSidebar(false); };
+  const toggle = (key: string) => setEnabled(current => { const next = new Set(current); next.has(key) ? next.delete(key) : next.add(key); return next; });
+
+  return <main className="shell">
+    <header className="topbar">
+      <button className="brand" onClick={() => setSidebar(value => !value)} aria-label="Открыть карты и метки"><span>КАРТЫ</span><b>PUBG</b><i>RU</i></button>
+      <div className="title"><strong>{selected?.name ?? 'Загрузка…'}</strong><span>8 × 8 км</span></div>
+      <div className="hint">Колесо — масштаб · перетаскивание — перемещение</div>
+    </header>
+    <aside className={`panel ${sidebar ? 'open' : ''}`}>
+      <section><div className="section-title">Карты <small>6 локаций</small></div><div className="maps">{maps.map(map => <button className={map.id === active ? 'chosen' : ''} key={map.id} onClick={() => chooseMap(map.id)}><img src={`./maps/thumb/${map.id}.webp`} alt=""/><span>{map.name}</span><small>8 км</small></button>)}</div></section>
+      <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><span/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setPoints([]); }}/><span/>Измерить расстояние</label>{measure && <p className="measure-help">Нажмите две точки на карте</p>}{points.length > 0 && <button className="reset" onClick={() => setPoints([])}>Сбросить измерение</button>}</section>
+      <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(group => group.typeKey)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(group => { const type = types.get(group.typeKey); return <label className="marker-toggle" key={group.typeKey}><input type="checkbox" checked={enabled.has(group.typeKey)} onChange={() => toggle(group.typeKey)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{type?.ru ?? group.typeKey}</span><small>{group.points.length}</small></label>; })}</section>
+      <footer>Неофициальный инструмент сообщества. PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</footer>
+    </aside>
+    <section ref={stage} className={`stage ${measure ? 'measuring' : ''}`} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={() => { drag.current = null; }} onWheel={onWheel}>
+      <div className="canvas" style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}>
+        <div className="map" style={{ backgroundImage: `url(./maps/full/${active}.webp)` }}>
+          <div className="tiles">{Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
+          {grid && <><div className="grid km-grid"/>{isFineGrid && <div className="grid fine-grid"/>}{!isFineGrid && <div className="grid-labels">{'ABCDEFGH'.split('').map((letter, i) => <span className="col" style={{ left: `${(i + .5) * 12.5}%` }} key={letter}>{letter}</span>)}{Array.from({ length: 8 }, (_, i) => <span className="row" style={{ top: `${(i + .5) * 12.5}%` }} key={i}>{i + 1}</span>)}</div>}</>}
+          <div className="markers">{groups.filter(group => enabled.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const x = clamp(raw[1] / 256 * 100, 0, 100); const y = clamp(-raw[0] / 256 * 100, 0, 100); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="pin" style={{ left: `${x}%`, top: `${y}%` }} title={`${type?.ru ?? group.typeKey}${group.tag ? ` · ${group.tag}` : ''}`} dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/>; }))}</div>
+          {activePoints.length > 0 && <svg className="measure-line" viewBox="0 0 100 100">{activePoints.length === 2 && <line x1={activePoints[0].x * 100} y1={activePoints[0].y * 100} x2={activePoints[1].x * 100} y2={activePoints[1].y * 100}/>} {activePoints.map((point, i) => <circle key={i} cx={point.x * 100} cy={point.y * 100} r=".75"/>)}</svg>}
+          {activePoints.length === 2 && <span className="distance" style={{ left: `${(activePoints[0].x + activePoints[1].x) / 2 * 100}%`, top: `${(activePoints[0].y + activePoints[1].y) / 2 * 100}%` }}>{formatDistance(selectedDistance)}</span>}
+        </div>
+      </div>
+      <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? 'Выберите вторую точку' : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}</div>
+      <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, .7, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, .7, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
+    </section>
+  </main>;
+}

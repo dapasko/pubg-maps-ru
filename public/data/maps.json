@@ -1,0 +1,8 @@
+[
+  { "id": "erangel", "name": "Эрангель", "sizeKm": 8 },
+  { "id": "miramar", "name": "Мирамар", "sizeKm": 8 },
+  { "id": "vikendi", "name": "Викенди", "sizeKm": 8 },
+  { "id": "taego", "name": "Тэго", "sizeKm": 8 },
+  { "id": "deston", "name": "Дестон", "sizeKm": 8 },
+  { "id": "rondo", "name": "Рондо", "sizeKm": 8 }
+]
