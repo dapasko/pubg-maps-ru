@@ -9,9 +9,29 @@ type MarkerGroup = { typeKey: string; tag: string | null; points: [number, numbe
 type MarkerMap = { name: string; groups: MarkerGroup[] };
 type MarkerData = { types: MarkerType[]; maps: MarkerMap[] };
 type Point = { x: number; y: number };
+type DisplayCategory = { id: string; label: string; typeKeys: string[]; pointCount: number; iconKey: string };
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
+const markerLabels: Record<string, string> = {
+  _secretRooms: 'Тайные комнаты', blueChipTwoer: 'Вышки синего чипа', bearCaves: 'Медвежьи пещеры', crowbarRooms: 'Комнаты с ломом', goldVault: 'Золотое хранилище', brokenPotSpawner: 'Разрушаемые горшки', cVendingMachine: 'Торговые автоматы', gasPump: 'Заправки', vehiclesGroupA: 'Случайный транспорт', vehiclesGroupB: 'Особый транспорт', vehiclesGroupC: 'Гаражи с транспортом', 'vehiclesGroupC-Deston': 'Машины охраны', vehiclesGroupE: 'Случайная точка спавна лодок', 'vehiclesGroupE-Rondo': 'Случайная точка спавна лодок', vehiclesGroupI: 'Фудтраки', vehiclesGroupJ: 'Транспорт у особняков', vehiclesGroupO: 'Дельтаплан', vehiclesGroupL: 'Лодки', 'vehiclesGroupM-Taego': 'Лодки', vehiclesGroupR: 'Лодки',
+};
+const gasKeys = new Set(['gasCylinderLong', 'gasCylinderShort']);
+
+function markerLabel(group: MarkerGroup, fallback: string) {
+  if (gasKeys.has(group.typeKey)) return 'Газовые баллоны';
+  const tag = group.tag ?? '';
+  if (tag.includes('Uaz')) return 'Гарантированный УАЗ';
+  if (tag.includes('Dacia') && tag.includes('Blanc')) return 'Гарантированные Бланк или Дача';
+  if (tag.includes('Dacia')) return 'Гарантированная Дача';
+  if (tag.includes('Mirado')) return 'Гарантированный Мирадо';
+  if (tag.includes('Pickup')) return 'Гарантированный пикап';
+  if (tag.includes('AirBoat')) return 'Гарантированный аэроглиссер';
+  if (tag.includes('PonyCoupe')) return 'Гарантированный Pony Coupe';
+  if (tag.includes('Bike') || tag.includes('ATV')) return 'Гарантированные мотоциклы и квадроциклы';
+  if (tag === '!100%' && ['vehiclesGroupL', 'vehiclesGroupM-Taego', 'vehiclesGroupR'].includes(group.typeKey)) return 'Гарантированные лодки';
+  return markerLabels[group.typeKey] ?? fallback;
+}
 
 function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
 
@@ -39,7 +59,18 @@ export default function Home() {
   const sourceMap = data?.maps.find(map => map.name === mapName[active]);
   const groups = sourceMap?.groups ?? [];
   const types = useMemo(() => new Map(data?.types.map(type => [type.key, type]) ?? []), [data]);
-  const categories = useMemo(() => groups.filter((group, index, all) => all.findIndex(item => item.typeKey === group.typeKey) === index), [groups]);
+  const categories = useMemo<DisplayCategory[]>(() => {
+    const display = new Map<string, DisplayCategory>();
+    for (const group of groups) {
+      const id = gasKeys.has(group.typeKey) ? 'gas-cylinders' : group.typeKey;
+      const type = types.get(group.typeKey);
+      const current = display.get(id);
+      if (current) { current.typeKeys.push(group.typeKey); current.pointCount += group.points.length; continue; }
+      display.set(id, { id, label: markerLabel(group, type?.ru ?? group.typeKey), typeKeys: [group.typeKey], pointCount: group.points.length, iconKey: group.typeKey });
+    }
+    return [...display.values()];
+  }, [groups, types]);
+  const activeTypeKeys = useMemo(() => new Set(categories.filter(category => enabled.has(category.id)).flatMap(category => category.typeKeys)), [categories, enabled]);
   const level = tileLevelForZoom(zoom);
   const count = level === null ? 0 : 2 ** level;
   const isFineGrid = gridStepMeters(zoom) === 100;
@@ -56,9 +87,8 @@ export default function Home() {
 
   useEffect(() => {
     setPoints([]); setZoom(1); setPan({ x: 0, y: 0 });
-    const map = data?.maps.find(item => item.name === mapName[active]);
-    setEnabled(new Set(map?.groups.slice(0, 1).map(group => group.typeKey) ?? []));
-  }, [active, data]);
+    setEnabled(new Set(categories.slice(0, 1).map(category => category.id)));
+  }, [active, data, categories]);
 
   const mapPoint = (event: { clientX: number; clientY: number }): Point | null => {
     const r = mapElement.current?.getBoundingClientRect(); if (!r) return null;
@@ -82,7 +112,7 @@ export default function Home() {
     <aside className={`panel ${sidebar ? 'open' : ''}`}>
       <section><div className="section-title">Карты <small>6 локаций</small></div><div className="maps">{maps.map(map => <button className={map.id === active ? 'chosen' : ''} key={map.id} onClick={() => chooseMap(map.id)}><img src={`./maps/thumb/${map.id}.webp`} alt=""/><span>{map.name}</span><small>8 км</small></button>)}</div></section>
       <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><span/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setPoints([]); setCursor(null); }}/><span/>Измерить расстояние</label>{measure && <p className="measure-help">Первая точка — затем наведите курсор и выберите вторую</p>}{points.length > 0 && <button className="reset" onClick={() => { setPoints([]); setCursor(null); }}>Сбросить измерение</button>}</section>
-      <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(group => group.typeKey)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(group => { const type = types.get(group.typeKey); return <label className="marker-toggle" key={group.typeKey}><input type="checkbox" checked={enabled.has(group.typeKey)} onChange={() => toggle(group.typeKey)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{type?.ru ?? group.typeKey}</span><small>{group.points.length}</small></label>; })}</section>
+      <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(category => category.id)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(category => { const type = types.get(category.iconKey); return <label className="marker-toggle" key={category.id}><input type="checkbox" checked={enabled.has(category.id)} onChange={() => toggle(category.id)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{category.label}</span><small>{category.pointCount}</small></label>; })}</section>
       <section className="support"><div className="support-copy"><b>Поддержать автора</b><span>B_I_G_J_I_N</span><small>Наведите камеру на QR-код</small></div><img src="./assets/support-qr.png" alt="QR-код для поддержки автора B_I_G_J_I_N" /></section>
       <footer><b>Автор: B_I_G_J_I_N</b><span>Неофициальный инструмент сообщества. PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</span></footer>
     </aside>
@@ -91,7 +121,7 @@ export default function Home() {
         <div ref={mapElement} className="map" style={{ left: `calc(50% + ${pan.x}px)`, top: `calc(50% + ${pan.y}px)`, width: `${zoom * 100}%`, height: `${zoom * 100}%`, backgroundImage: `url(./maps/full/${active}.webp)`, '--pin-factor': clamp(zoom, .72, 2.4), '--measure-factor': clamp(zoom, .82, 1.45), '--measure-stroke': .16 / zoom } as CSSProperties}>
           <div className="tiles">{level !== null && Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
           {grid && <>{isFineGrid ? <div className="grid fine-grid"/> : <><div className="grid km-grid"/><div className="grid-labels">{'ABCDEFGH'.split('').map((letter, i) => <span className="col" style={{ left: `${(i + .5) * 12.5}%` }} key={letter}>{letter}</span>)}{Array.from({ length: 8 }, (_, i) => <span className="row" style={{ top: `${(i + .5) * 12.5}%` }} key={i}>{i + 1}</span>)}</div></>}</>}
-          <div className="markers">{groups.filter(group => enabled.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const point = markerPoint(raw, active); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} title={`${type?.ru ?? group.typeKey}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
+          <div className="markers">{groups.filter(group => activeTypeKeys.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const point = markerPoint(raw, active); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} title={`${markerLabel(group, type?.ru ?? group.typeKey)}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
           {measureStart && <svg className="measure-line" viewBox="0 0 100 100">{measureEnd && <line x1={measureStart.x * 100} y1={measureStart.y * 100} x2={measureEnd.x * 100} y2={measureEnd.y * 100}/>}<circle cx={measureStart.x * 100} cy={measureStart.y * 100} r={measureRadius}/>{measureEnd && <circle cx={measureEnd.x * 100} cy={measureEnd.y * 100} r={measureRadius}/>}</svg>}
           {labelPoint && <span className="distance" style={{ left: `${labelPoint.x * 100}%`, top: `${labelPoint.y * 100}%` }}><b>Расстояние</b>{formatDistance(selectedDistance)}</span>}
         </div>
