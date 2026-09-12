@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
-import { distanceMeters, gridStepMeters, markerPoint } from '../lib/map-geometry.mjs';
+import { distanceMeters, gridStepMeters, markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
 type MarkerType = { key: string; ru: string; color: string; svg: string };
@@ -13,10 +13,6 @@ type Point = { x: number; y: number };
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
 
-function tileLevel(zoom: number) {
-  if (zoom < 2) return null;
-  return zoom < 4 ? 3 : 4;
-}
 function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
 
 export default function Home() {
@@ -43,7 +39,7 @@ export default function Home() {
   const groups = sourceMap?.groups ?? [];
   const types = useMemo(() => new Map(data?.types.map(type => [type.key, type]) ?? []), [data]);
   const categories = useMemo(() => groups.filter((group, index, all) => all.findIndex(item => item.typeKey === group.typeKey) === index), [groups]);
-  const level = tileLevel(zoom);
+  const level = tileLevelForZoom(zoom);
   const count = level === null ? 0 : 2 ** level;
   const isFineGrid = gridStepMeters(zoom) === 100;
   const activePoints = points.length === 2 ? points : [];
