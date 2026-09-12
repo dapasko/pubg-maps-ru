@@ -44,7 +44,11 @@ export default function Home() {
   const activePoints = points.length === 2 ? points : [];
   const selectedDistance = activePoints.length === 2 ? distanceMeters(activePoints[0], activePoints[1]) : 0;
 
-  useEffect(() => { setEnabled(new Set()); setPoints([]); setZoom(1); setPan({ x: 0, y: 0 }); }, [active]);
+  useEffect(() => {
+    setPoints([]); setZoom(1); setPan({ x: 0, y: 0 });
+    const map = data?.maps.find(item => item.name === mapName[active]);
+    setEnabled(new Set(map?.groups.slice(0, 3).map(group => group.typeKey) ?? []));
+  }, [active, data]);
 
   const mapPoint = (event: { clientX: number; clientY: number }): Point | null => {
     const el = stage.current; if (!el) return null;
@@ -64,13 +68,13 @@ export default function Home() {
     <header className="topbar">
       <button className="brand" onClick={() => setSidebar(value => !value)} aria-label="Открыть карты и метки"><span>КАРТЫ</span><b>PUBG</b><i>RU</i></button>
       <div className="title"><strong>{selected?.name ?? 'Загрузка…'}</strong><span>8 × 8 км</span></div>
-      <div className="hint">Колесо — масштаб · перетаскивание — перемещение</div>
+      <div className="hint"><kbd>Колесо</kbd> масштаб <i/> <kbd>ЛКМ</kbd> перемещение</div>
     </header>
     <aside className={`panel ${sidebar ? 'open' : ''}`}>
       <section><div className="section-title">Карты <small>6 локаций</small></div><div className="maps">{maps.map(map => <button className={map.id === active ? 'chosen' : ''} key={map.id} onClick={() => chooseMap(map.id)}><img src={`./maps/thumb/${map.id}.webp`} alt=""/><span>{map.name}</span><small>8 км</small></button>)}</div></section>
       <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><span/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setPoints([]); }}/><span/>Измерить расстояние</label>{measure && <p className="measure-help">Нажмите две точки на карте</p>}{points.length > 0 && <button className="reset" onClick={() => setPoints([])}>Сбросить измерение</button>}</section>
       <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(group => group.typeKey)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(group => { const type = types.get(group.typeKey); return <label className="marker-toggle" key={group.typeKey}><input type="checkbox" checked={enabled.has(group.typeKey)} onChange={() => toggle(group.typeKey)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{type?.ru ?? group.typeKey}</span><small>{group.points.length}</small></label>; })}</section>
-      <footer>Неофициальный инструмент сообщества. PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</footer>
+      <footer><b>Неофициальный инструмент сообщества</b><span>PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</span></footer>
     </aside>
     <section ref={stage} className={`stage ${measure ? 'measuring' : ''}`} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={() => { drag.current = null; }} onWheel={onWheel}>
       <div className="canvas" style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}>
