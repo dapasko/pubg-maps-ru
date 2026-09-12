@@ -50,7 +50,8 @@ export default function Home() {
   const measureStart = points[0] ?? null;
   const measureEnd = activePoints[1] ?? (measure && points.length === 1 ? cursor : null);
   const selectedDistance = measureStart && measureEnd ? distanceMeters(measureStart, measureEnd) : 0;
-  const measureRadius = clamp(.95 * clamp(zoom, .8, 1.35) / zoom, .07, 1.2);
+  // Keep endpoints as precise, unobtrusive reference dots at every zoom level.
+  const measureRadius = clamp(.34 * clamp(zoom, .8, 1.1) / zoom, .03, .38);
   const labelPoint = measureStart && measureEnd ? {
     x: measureStart.x + (measureEnd.x - measureStart.x) * .25,
     y: measureStart.y + (measureEnd.y - measureStart.y) * .25,
