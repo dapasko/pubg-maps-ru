@@ -10,13 +10,13 @@ const supportedNames = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Desto
 test('keeps all 5,116 marker tips fixed at every whole scale from 74% through 1200%', async () => {
   const markerData = JSON.parse(await readFile(new URL('../public/data/markers.json', import.meta.url)));
   const maps = markerData.maps.filter(map => supportedNames.has(map.name));
-  const points = maps.flatMap(map => map.groups.flatMap(group => group.points));
+  const points = maps.flatMap(map => map.groups.flatMap(group => group.points.map(point => ({ point, mapId: map.name.toLowerCase() }))));
   assert.equal(points.length, 5116);
 
   for (let percent = 74; percent <= 1200; percent += 1) {
     const zoom = percent / 100;
-    for (const point of points) {
-      const expected = markerPoint(point);
+    for (const { point, mapId } of points) {
+      const expected = markerPoint(point, mapId);
       // The map transform scales both the map and its zero-size marker anchor.
       const projected = { x: expected.x * zoom / zoom, y: expected.y * zoom / zoom };
       assert.ok(Math.abs(projected.x - expected.x) <= Number.EPSILON, `${percent}% changed x`);

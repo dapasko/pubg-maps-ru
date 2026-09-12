@@ -17,13 +17,14 @@ test('switches from kilometer to hundred-meter grid at the close-zoom threshold'
 test('keeps every supported map marker inside the source playable grid', async () => {
   const markerData = JSON.parse(await readFile(new URL('../public/data/markers.json', import.meta.url)));
   const names = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
-  const points = markerData.maps.filter(map => names.has(map.name)).flatMap(map => map.groups.flatMap(group => group.points));
+  const maps = markerData.maps.filter(map => names.has(map.name));
+  const points = maps.flatMap(map => map.groups.flatMap(group => group.points));
 
   assert.equal(markerNorthingCorrection, .544);
   assert.equal(markerEastingCorrection, -.416);
   assert.equal(points.length, 5116);
-  for (const point of points) {
-    const normalized = markerPoint(point);
+  for (const map of maps) for (const group of map.groups) for (const point of group.points) {
+    const normalized = markerPoint(point, map.name.toLowerCase());
     assert.ok(normalized.x >= 0 && normalized.x <= 1);
     assert.ok(normalized.y >= 0 && normalized.y <= 1);
   }
