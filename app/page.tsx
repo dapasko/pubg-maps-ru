@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
-import { distanceMeters, gridStepMeters } from '../lib/map-geometry.mjs';
+import { distanceMeters, gridStepMeters, markerPoint } from '../lib/map-geometry.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
 type MarkerType = { key: string; ru: string; color: string; svg: string };
@@ -12,9 +12,6 @@ type Point = { x: number; y: number };
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
-// Marker data is referenced to the playable grid, while the rendered source
-// images include a 160 m southern frame. Correct northing for all 8 km maps.
-const markerNorthingCorrection = 5.12;
 
 function tileLevel(zoom: number) {
   if (zoom < 2) return null;
@@ -96,7 +93,7 @@ export default function Home() {
         <div className="map" style={{ backgroundImage: `url(./maps/full/${active}.webp)`, '--pin-factor': clamp(zoom, .72, 2.4) / zoom, '--measure-factor': clamp(zoom, .82, 1.45) / zoom, '--measure-stroke': .16 / zoom } as CSSProperties}>
           <div className="tiles">{level !== null && Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
           {grid && <>{isFineGrid ? <div className="grid fine-grid"/> : <><div className="grid km-grid"/><div className="grid-labels">{'ABCDEFGH'.split('').map((letter, i) => <span className="col" style={{ left: `${(i + .5) * 12.5}%` }} key={letter}>{letter}</span>)}{Array.from({ length: 8 }, (_, i) => <span className="row" style={{ top: `${(i + .5) * 12.5}%` }} key={i}>{i + 1}</span>)}</div></>}</>}
-          <div className="markers">{groups.filter(group => enabled.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const x = clamp(raw[1] / 256 * 100, 0, 100); const y = clamp((-raw[0] - markerNorthingCorrection) / 256 * 100, 0, 100); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${x}%`, top: `${y}%` }} title={`${type?.ru ?? group.typeKey}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
+          <div className="markers">{groups.filter(group => enabled.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const point = markerPoint(raw); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} title={`${type?.ru ?? group.typeKey}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
           {measureStart && <svg className="measure-line" viewBox="0 0 100 100">{measureEnd && <line x1={measureStart.x * 100} y1={measureStart.y * 100} x2={measureEnd.x * 100} y2={measureEnd.y * 100}/>}<circle cx={measureStart.x * 100} cy={measureStart.y * 100} r={measureRadius}/>{measureEnd && <circle cx={measureEnd.x * 100} cy={measureEnd.y * 100} r={measureRadius}/>}</svg>}
           {labelPoint && <span className="distance" style={{ left: `${labelPoint.x * 100}%`, top: `${labelPoint.y * 100}%` }}><b>Расстояние</b>{formatDistance(selectedDistance)}</span>}
         </div>

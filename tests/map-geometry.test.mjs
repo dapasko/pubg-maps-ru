@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { distanceMeters, gridStepMeters } from '../lib/map-geometry.mjs';
+import { distanceMeters, gridStepMeters, markerNorthingCorrection, markerPoint } from '../lib/map-geometry.mjs';
+import { readFile } from 'node:fs/promises';
 
 test('measures horizontal, vertical and diagonal 8 km map distances', () => {
   assert.equal(distanceMeters({ x: 0, y: 0 }, { x: 1, y: 0 }), 8000);
@@ -11,4 +12,18 @@ test('measures horizontal, vertical and diagonal 8 km map distances', () => {
 test('switches from kilometer to hundred-meter grid at the close-zoom threshold', () => {
   assert.equal(gridStepMeters(2.19), 1000);
   assert.equal(gridStepMeters(2.2), 100);
+});
+
+test('keeps every supported map marker inside the corrected playable grid', async () => {
+  const markerData = JSON.parse(await readFile(new URL('../public/data/markers.json', import.meta.url)));
+  const names = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
+  const points = markerData.maps.filter(map => names.has(map.name)).flatMap(map => map.groups.flatMap(group => group.points));
+
+  assert.equal(markerNorthingCorrection, 5.12);
+  assert.equal(points.length, 5116);
+  for (const point of points) {
+    const normalized = markerPoint(point);
+    assert.ok(normalized.x >= 0 && normalized.x <= 1);
+    assert.ok(normalized.y >= 0 && normalized.y <= 1);
+  }
 });
