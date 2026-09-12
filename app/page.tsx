@@ -31,6 +31,7 @@ export default function Home() {
   const [enabled, setEnabled] = useState<Set<string>>(new Set());
   const [sidebar, setSidebar] = useState(true);
   const stage = useRef<HTMLDivElement>(null);
+  const canvas = useRef<HTMLDivElement>(null);
   const drag = useRef<{ x: number; y: number; panX: number; panY: number; moved: boolean } | null>(null);
 
   useEffect(() => { void fetch('./data/maps.json').then(r => r.json()).then((v: MapInfo[]) => setMaps(v)); }, []);
@@ -59,10 +60,9 @@ export default function Home() {
   }, [active, data]);
 
   const mapPoint = (event: { clientX: number; clientY: number }): Point | null => {
-    const el = stage.current; if (!el) return null;
-    const r = el.getBoundingClientRect(); const side = Math.min(r.width, r.height) * .9;
-    const x = (event.clientX - r.left - r.width / 2 - pan.x) / (side * zoom) + .5;
-    const y = (event.clientY - r.top - r.height / 2 - pan.y) / (side * zoom) + .5;
+    const r = canvas.current?.getBoundingClientRect(); if (!r) return null;
+    const x = (event.clientX - r.left) / r.width;
+    const y = (event.clientY - r.top) / r.height;
     return x >= 0 && x <= 1 && y >= 0 && y <= 1 ? { x, y } : null;
   };
   const onDown = (event: PointerEvent<HTMLDivElement>) => { if (event.button === 0) drag.current = { x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y, moved: false }; };
@@ -85,7 +85,7 @@ export default function Home() {
       <footer><b>Неофициальный инструмент сообщества</b><span>PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</span></footer>
     </aside>
     <section ref={stage} className={`stage ${measure ? 'measuring' : ''}`} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={() => { drag.current = null; }} onWheel={onWheel}>
-      <div className="canvas" style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}>
+      <div ref={canvas} className="canvas" style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}>
         <div className="map" style={{ backgroundImage: `url(./maps/full/${active}.webp)`, '--pin-factor': clamp(zoom, .72, 2.4) / zoom, '--measure-factor': clamp(zoom, .82, 1.45) / zoom } as CSSProperties}>
           <div className="tiles">{level !== null && Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
           {grid && <><div className="grid km-grid"/>{isFineGrid && <div className="grid fine-grid"/>}{!isFineGrid && <div className="grid-labels">{'ABCDEFGH'.split('').map((letter, i) => <span className="col" style={{ left: `${(i + .5) * 12.5}%` }} key={letter}>{letter}</span>)}{Array.from({ length: 8 }, (_, i) => <span className="row" style={{ top: `${(i + .5) * 12.5}%` }} key={i}>{i + 1}</span>)}</div>}</>}
