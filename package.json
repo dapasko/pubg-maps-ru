@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "maps:quality": "node tools/build-quality-maps.mjs",
     "test": "node --test tests/map-geometry.test.mjs",
     "lint": "oxlint",
     "format": "oxfmt"

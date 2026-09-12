@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState, type PointerEvent, type WheelEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
 import { distanceMeters, gridStepMeters } from '../lib/map-geometry.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
@@ -12,8 +12,12 @@ type Point = { x: number; y: number };
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
+const MAP_ALIGNMENT: Record<string, { x: number; y: number }> = { erangel: { x: -0.45, y: 3.14 } };
 
-function tileLevel(zoom: number) { return clamp(Math.floor(Math.log2(zoom * 1.65)), 0, 4); }
+function tileLevel(zoom: number) {
+  if (zoom < 2) return null;
+  return zoom < 4 ? 3 : 4;
+}
 function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
 
 export default function Home() {
@@ -39,10 +43,15 @@ export default function Home() {
   const types = useMemo(() => new Map(data?.types.map(type => [type.key, type]) ?? []), [data]);
   const categories = useMemo(() => groups.filter((group, index, all) => all.findIndex(item => item.typeKey === group.typeKey) === index), [groups]);
   const level = tileLevel(zoom);
-  const count = 2 ** level;
+  const count = level === null ? 0 : 2 ** level;
   const isFineGrid = gridStepMeters(zoom) === 100;
   const activePoints = points.length === 2 ? points : [];
   const selectedDistance = activePoints.length === 2 ? distanceMeters(activePoints[0], activePoints[1]) : 0;
+  const measureRadius = clamp(.95 * clamp(zoom, .8, 1.35) / zoom, .07, 1.2);
+  const labelPoint = activePoints.length === 2 ? {
+    x: activePoints[0].x + (activePoints[1].x - activePoints[0].x) * .25,
+    y: activePoints[0].y + (activePoints[1].y - activePoints[0].y) * .25,
+  } : null;
 
   useEffect(() => {
     setPoints([]); setZoom(1); setPan({ x: 0, y: 0 });
@@ -78,12 +87,12 @@ export default function Home() {
     </aside>
     <section ref={stage} className={`stage ${measure ? 'measuring' : ''}`} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={() => { drag.current = null; }} onWheel={onWheel}>
       <div className="canvas" style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})` }}>
-        <div className="map" style={{ backgroundImage: `url(./maps/full/${active}.webp)` }}>
-          <div className="tiles">{Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
+        <div className="map" style={{ backgroundImage: `url(./maps/full/${active}.webp)`, '--pin-factor': clamp(zoom, .72, 2.4) / zoom, '--measure-factor': clamp(zoom, .82, 1.45) / zoom } as CSSProperties}>
+          <div className="tiles">{level !== null && Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
           {grid && <><div className="grid km-grid"/>{isFineGrid && <div className="grid fine-grid"/>}{!isFineGrid && <div className="grid-labels">{'ABCDEFGH'.split('').map((letter, i) => <span className="col" style={{ left: `${(i + .5) * 12.5}%` }} key={letter}>{letter}</span>)}{Array.from({ length: 8 }, (_, i) => <span className="row" style={{ top: `${(i + .5) * 12.5}%` }} key={i}>{i + 1}</span>)}</div>}</>}
-          <div className="markers">{groups.filter(group => enabled.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const x = clamp(raw[1] / 256 * 100, 0, 100); const y = clamp(-raw[0] / 256 * 100, 0, 100); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="pin" style={{ left: `${x}%`, top: `${y}%` }} title={`${type?.ru ?? group.typeKey}${group.tag ? ` · ${group.tag}` : ''}`} dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/>; }))}</div>
-          {activePoints.length > 0 && <svg className="measure-line" viewBox="0 0 100 100">{activePoints.length === 2 && <line x1={activePoints[0].x * 100} y1={activePoints[0].y * 100} x2={activePoints[1].x * 100} y2={activePoints[1].y * 100}/>} {activePoints.map((point, i) => <circle key={i} cx={point.x * 100} cy={point.y * 100} r=".75"/>)}</svg>}
-          {activePoints.length === 2 && <span className="distance" style={{ left: `${(activePoints[0].x + activePoints[1].x) / 2 * 100}%`, top: `${(activePoints[0].y + activePoints[1].y) / 2 * 100}%` }}>{formatDistance(selectedDistance)}</span>}
+          <div className="markers">{groups.filter(group => enabled.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const offset = MAP_ALIGNMENT[active] ?? { x: 0, y: 0 }; const x = clamp((raw[1] + offset.x) / 256 * 100, 0, 100); const y = clamp(-(raw[0] + offset.y) / 256 * 100, 0, 100); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${x}%`, top: `${y}%` }} title={`${type?.ru ?? group.typeKey}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
+          {activePoints.length > 0 && <svg className="measure-line" viewBox="0 0 100 100">{activePoints.length === 2 && <line x1={activePoints[0].x * 100} y1={activePoints[0].y * 100} x2={activePoints[1].x * 100} y2={activePoints[1].y * 100}/>} {activePoints.map((point, i) => <circle key={i} cx={point.x * 100} cy={point.y * 100} r={measureRadius}/>)}</svg>}
+          {labelPoint && <span className="distance" style={{ left: `${labelPoint.x * 100}%`, top: `${labelPoint.y * 100}%` }}><b>Расстояние</b>{formatDistance(selectedDistance)}</span>}
         </div>
       </div>
       <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? 'Выберите вторую точку' : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}</div>
