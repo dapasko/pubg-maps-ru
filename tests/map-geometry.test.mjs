@@ -15,7 +15,7 @@ test('switches from kilometer to hundred-meter grid at the close-zoom threshold'
 });
 
 test('keeps every supported map marker inside the source playable grid', async () => {
-  const markerData = JSON.parse(await readFile(new URL('../public/data/markers.json', import.meta.url)));
+  const markerData = JSON.parse(await readFile(new URL('../data/markers.json', import.meta.url)));
   const names = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
   const maps = markerData.maps.filter(map => names.has(map.name));
   const points = maps.flatMap(map => map.groups.flatMap(group => group.points));

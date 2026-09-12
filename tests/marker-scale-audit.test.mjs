@@ -8,7 +8,7 @@ import { markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
 const supportedNames = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
 
 test('keeps all 5,116 marker tips fixed at every whole scale from 74% through 1200%', async () => {
-  const markerData = JSON.parse(await readFile(new URL('../public/data/markers.json', import.meta.url)));
+  const markerData = JSON.parse(await readFile(new URL('../data/markers.json', import.meta.url)));
   const maps = markerData.maps.filter(map => supportedNames.has(map.name));
   const points = maps.flatMap(map => map.groups.flatMap(group => group.points.map(point => ({ point, mapId: map.name.toLowerCase() }))));
   assert.equal(points.length, 5116);
@@ -35,9 +35,9 @@ test('switches map layers only at the documented thresholds throughout the audit
 
 test('keeps overview and detailed tile geometry aligned on every supported map', async () => {
   for (const map of ['erangel', 'miramar', 'vikendi', 'taego', 'deston', 'rondo']) {
-    const full = await sharp(fileURLToPath(new URL(`../public/maps/full/${map}.webp`, import.meta.url))).raw().toBuffer();
+    const full = await sharp(fileURLToPath(new URL(`../maps/full/${map}.webp`, import.meta.url))).raw().toBuffer();
     for (const [level, tileX, tileY, scale] of [[3, 2, 2, 1], [4, 4, 4, .5]]) {
-      const tile = await sharp(fileURLToPath(new URL(`../public/maps/tiles/${map}/${level}/${tileX}/${tileY}.webp`, import.meta.url)))
+      const tile = await sharp(fileURLToPath(new URL(`../maps/tiles/${map}/${level}/${tileX}/${tileY}.webp`, import.meta.url)))
         .resize(512 * scale, 512 * scale).raw().toBuffer();
       const tileSize = 512 * scale;
       const origin = tileX * tileSize;
