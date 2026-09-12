@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { distanceMeters, gridStepMeters, markerNorthingCorrection, markerPoint } from '../lib/map-geometry.mjs';
+import { distanceMeters, gridStepMeters, markerEastingCorrection, markerNorthingCorrection, markerPoint } from '../lib/map-geometry.mjs';
 import { readFile } from 'node:fs/promises';
 
 test('measures horizontal, vertical and diagonal 8 km map distances', () => {
@@ -19,7 +19,8 @@ test('keeps every supported map marker inside the source playable grid', async (
   const names = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
   const points = markerData.maps.filter(map => names.has(map.name)).flatMap(map => map.groups.flatMap(group => group.points));
 
-  assert.equal(markerNorthingCorrection, 0);
+  assert.equal(markerNorthingCorrection, 2.368);
+  assert.equal(markerEastingCorrection, -0.32);
   assert.equal(points.length, 5116);
   for (const point of points) {
     const normalized = markerPoint(point);
