@@ -68,7 +68,7 @@ export default function Home() {
   const onDown = (event: PointerEvent<HTMLDivElement>) => { if (event.button === 0) drag.current = { x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y, moved: false }; };
   const onMove = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; if (d) { const dx = event.clientX - d.x; const dy = event.clientY - d.y; if (Math.hypot(dx, dy) > 4) d.moved = true; setPan({ x: d.panX + dx, y: d.panY + dy }); return; } if (measure) setCursor(mapPoint(event)); };
   const onUp = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; drag.current = null; if (!d?.moved && measure) { const point = mapPoint(event); if (point) { setCursor(point); setPoints(current => current.length === 1 ? [...current, point] : [point]); } } };
-  const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), .7, 12)); };
+  const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), .74, 12)); };
   const chooseMap = (id: string) => { setActive(id); setSidebar(false); };
   const toggle = (key: string) => setEnabled(current => { const next = new Set(current); next.has(key) ? next.delete(key) : next.add(key); return next; });
 
@@ -95,7 +95,7 @@ export default function Home() {
         </div>
       </div>
       <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? (measureEnd ? formatDistance(selectedDistance) : 'Наведите курсор на вторую точку') : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}</div>
-      <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, .7, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, .7, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
+      <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, .74, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, .74, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
     </section>
   </main>;
 }
