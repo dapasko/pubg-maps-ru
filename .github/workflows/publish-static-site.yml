@@ -1,0 +1,53 @@
+name: Build published site
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      # These files are the build output. A commit made by this workflow must
+      # not start another build.
+      - '_next/**'
+      - '.vite/**'
+      - 'index.html'
+      - 'index.rsc'
+      - 'vinext-client-entry-manifest.json'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-package-lock
+
+      - name: Build the static site
+        run: npm run build
+
+      - name: Replace the published files with the build output
+        run: |
+          rm -rf _next .vite index.html index.rsc vinext-client-entry-manifest.json
+          cp -R dist/client/. .
+
+      - name: Commit generated site files
+        run: |
+          git add -A _next .vite index.html index.rsc vinext-client-entry-manifest.json
+          if git diff --cached --quiet; then
+            echo "The published site is already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Build published site"
+          git push
