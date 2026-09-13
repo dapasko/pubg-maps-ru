@@ -1,25 +1,23 @@
-name: Build published site
+name: Deploy site to GitHub Pages
 
 on:
   push:
     branches:
       - main
-    paths-ignore:
-      # These files are the build output. A commit made by this workflow must
-      # not start another build.
-      - '_next/**'
-      - '.vite/**'
-      - 'index.html'
-      - 'index.rsc'
-      - 'vinext-client-entry-manifest.json'
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
 
 jobs:
-  build-and-publish:
+  build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
@@ -35,19 +33,23 @@ jobs:
       - name: Build the static site
         run: npm run build
 
-      - name: Replace the published files with the build output
+      - name: Add files served alongside the build
         run: |
-          rm -rf _next .vite index.html index.rsc vinext-client-entry-manifest.json
-          cp -R dist/client/. .
+          cp -R assets data maps dist/client/
+          cp CNAME .nojekyll favicon.svg dist/client/
 
-      - name: Commit generated site files
-        run: |
-          git add -A _next .vite index.html index.rsc vinext-client-entry-manifest.json
-          if git diff --cached --quiet; then
-            echo "The published site is already up to date."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Build published site"
-          git push
+      - name: Upload the Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
