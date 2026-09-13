@@ -14,23 +14,24 @@ type DisplayCategory = { id: string; label: string; typeKeys: string[]; pointCou
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
 const markerLabels: Record<string, string> = {
-  _secretRooms: 'Тайные комнаты', blueChipTwoer: 'Вышки синего чипа', bearCaves: 'Медвежьи пещеры', crowbarRooms: 'Комнаты с ломом', goldVault: 'Золотое хранилище', brokenPotSpawner: 'Разрушаемые горшки', cVendingMachine: 'Торговые автоматы', gasPump: 'Заправки', vehiclesGroupA: 'Случайный транспорт', vehiclesGroupB: 'Особый транспорт', vehiclesGroupC: 'Гаражи с транспортом', 'vehiclesGroupC-Deston': 'Машины охраны', vehiclesGroupE: 'Случайная точка спавна лодок', 'vehiclesGroupE-Rondo': 'Случайная точка спавна лодок', vehiclesGroupI: 'Фудтраки', vehiclesGroupJ: 'Транспорт у особняков', vehiclesGroupO: 'Дельтаплан', vehiclesGroupL: 'Лодки', 'vehiclesGroupM-Taego': 'Лодки', vehiclesGroupR: 'Лодки',
+  _secretRooms: 'Тайные комнаты', blueChipTwoer: 'Вышки синего чипа', bearCaves: 'Медвежьи пещеры', crowbarRooms: 'Комнаты с ломом', goldVault: 'Золотое хранилище', brokenPotSpawner: 'Разрушаемые горшки', cVendingMachine: 'Торговые автоматы', gasPump: 'Заправки', vehiclesGroupA: 'Случайный транспорт', vehiclesGroupB: 'Особый транспорт', vehiclesGroupC: 'Гаражи с транспортом', 'vehiclesGroupC-Deston': 'Машины охраны', vehiclesGroupE: 'Случайная точка спавна лодок', 'vehiclesGroupE-Rondo': 'Электробусы', vehiclesGroupI: 'Фудтраки', vehiclesGroupJ: 'Транспорт у особняков', vehiclesGroupO: 'Дельтаплан', vehiclesGroupL: 'Лодки', 'vehiclesGroupM-Taego': 'Лодки', vehiclesGroupR: 'Лодки',
 };
 const gasKeys = new Set(['gasCylinderLong', 'gasCylinderShort']);
 
 function markerLabel(group: MarkerGroup, fallback: string) {
   if (gasKeys.has(group.typeKey)) return 'Газовые баллоны';
   const tag = group.tag ?? '';
+  const guaranteed = tag.startsWith('!100%');
+  if (!guaranteed) return markerLabels[group.typeKey] ?? fallback;
   if (tag.includes('Uaz')) return 'Гарантированный УАЗ';
   if (tag.includes('Dacia') && tag.includes('Blanc')) return 'Гарантированные Бланк или Дача';
   if (tag.includes('Dacia')) return 'Гарантированная Дача';
   if (tag.includes('Mirado')) return 'Гарантированный Мирадо';
   if (tag.includes('Pickup')) return 'Гарантированный пикап';
-  if (tag.includes('AirBoat')) return 'Гарантированный аэроглиссер';
   if (tag.includes('PonyCoupe')) return 'Гарантированный Pony Coupe';
   if (tag.includes('Bike') || tag.includes('ATV')) return 'Гарантированные мотоциклы и квадроциклы';
   if (tag === '!100%' && ['vehiclesGroupL', 'vehiclesGroupM-Taego', 'vehiclesGroupR'].includes(group.typeKey)) return 'Гарантированные лодки';
-  return markerLabels[group.typeKey] ?? fallback;
+  return 'Гарантированный транспорт';
 }
 
 function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
@@ -62,11 +63,12 @@ export default function Home() {
   const categories = useMemo<DisplayCategory[]>(() => {
     const display = new Map<string, DisplayCategory>();
     for (const group of groups) {
-      const id = gasKeys.has(group.typeKey) ? 'gas-cylinders' : group.typeKey;
+      const isDestonAirboat = sourceMap?.name === 'Deston' && group.tag === 'AirBoat';
+      const id = gasKeys.has(group.typeKey) ? 'gas-cylinders' : isDestonAirboat ? 'deston-airboats' : group.typeKey;
       const type = types.get(group.typeKey);
       const current = display.get(id);
       if (current) { current.typeKeys.push(group.typeKey); current.pointCount += group.points.length; continue; }
-      display.set(id, { id, label: markerLabel(group, type?.ru ?? group.typeKey), typeKeys: [group.typeKey], pointCount: group.points.length, iconKey: group.typeKey });
+      display.set(id, { id, label: isDestonAirboat ? 'Случайные точки аэроглиссера' : markerLabel(group, type?.ru ?? group.typeKey), typeKeys: [group.typeKey], pointCount: group.points.length, iconKey: group.typeKey });
     }
     return [...display.values()];
   }, [groups, types]);
@@ -99,7 +101,7 @@ export default function Home() {
   const onDown = (event: PointerEvent<HTMLDivElement>) => { if (event.button === 0) drag.current = { x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y, moved: false }; };
   const onMove = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; if (d) { const dx = event.clientX - d.x; const dy = event.clientY - d.y; if (Math.hypot(dx, dy) > 4) d.moved = true; setPan({ x: d.panX + dx, y: d.panY + dy }); return; } if (measure) setCursor(mapPoint(event)); };
   const onUp = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; drag.current = null; if (!d?.moved && measure) { const point = mapPoint(event); if (point) { setCursor(point); setPoints(current => current.length === 1 ? [...current, point] : [point]); } } };
-  const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), .74, 12)); };
+  const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), 1, 12)); };
   const chooseMap = (id: string) => { setActive(id); setSidebar(false); };
   const toggle = (key: string) => setEnabled(current => { const next = new Set(current); next.has(key) ? next.delete(key) : next.add(key); return next; });
 
@@ -127,7 +129,7 @@ export default function Home() {
         </div>
       </div>
       <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? (measureEnd ? formatDistance(selectedDistance) : 'Наведите курсор на вторую точку') : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}</div>
-      <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, .74, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, .74, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
+      <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, 1, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, 1, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
     </section>
   </main>;
 }
