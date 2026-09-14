@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
 import { distanceMeters, gridStepMeters, markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
+import { displayCategoryId, isMotorGliderType } from '../lib/marker-display.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
 type MarkerType = { key: string; ru: string; color: string; svg: string };
@@ -20,6 +21,7 @@ const gasKeys = new Set(['gasCylinderLong', 'gasCylinderShort']);
 
 function markerLabel(group: MarkerGroup, fallback: string) {
   if (gasKeys.has(group.typeKey)) return 'Газовые баллоны';
+  if (isMotorGliderType(group.typeKey)) return 'Моторные планеры';
   const tag = group.tag ?? '';
   const guaranteed = tag.startsWith('!100%');
   if (!guaranteed) return markerLabels[group.typeKey] ?? fallback;
@@ -71,11 +73,12 @@ export default function Home() {
     const display = new Map<string, DisplayCategory>();
     for (const group of groups) {
       const isDestonAirboat = sourceMap?.name === 'Deston' && group.tag === 'AirBoat';
-      const id = gasKeys.has(group.typeKey) ? 'gas-cylinders' : isDestonAirboat ? 'deston-airboats' : group.typeKey;
+      const id = gasKeys.has(group.typeKey) ? 'gas-cylinders' : isDestonAirboat ? 'deston-airboats' : displayCategoryId(sourceMap?.name, group.typeKey);
       const type = types.get(group.typeKey);
       const current = display.get(id);
       if (current) { current.typeKeys.push(group.typeKey); current.pointCount += group.points.length; continue; }
-      display.set(id, { id, label: isDestonAirboat ? 'Случайные точки аэроглиссера' : markerLabel(group, type?.ru ?? group.typeKey), typeKeys: [group.typeKey], pointCount: group.points.length, iconKey: group.typeKey });
+      const label = id === 'miramar-random-boats' ? 'Случайные точки спавна лодок' : isDestonAirboat ? 'Случайные точки аэроглиссера' : markerLabel(group, type?.ru ?? group.typeKey);
+      display.set(id, { id, label, typeKeys: [group.typeKey], pointCount: group.points.length, iconKey: group.typeKey });
     }
     return [...display.values()];
   }, [groups, types]);
