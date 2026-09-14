@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
 import { distanceMeters, gridStepMeters, markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
 import { displayCategoryId, isMotorGliderType } from '../lib/marker-display.mjs';
+import { calculateFlightPlan, flightProfiles } from '../lib/flight-plan.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
 type MarkerType = { key: string; ru: string; color: string; svg: string };
@@ -47,6 +48,8 @@ export default function Home() {
   const [grid, setGrid] = useState(true);
   const [measure, setMeasure] = useState(false);
   const [points, setPoints] = useState<Point[]>([]);
+  const [flightMode, setFlightMode] = useState(false);
+  const [flightPoints, setFlightPoints] = useState<Point[]>([]);
   const [cursor, setCursor] = useState<Point | null>(null);
   const [enabled, setEnabled] = useState<Set<string>>(new Set());
   const [sidebar, setSidebar] = useState(false);
@@ -90,6 +93,9 @@ export default function Home() {
   const measureStart = points[0] ?? null;
   const measureEnd = activePoints[1] ?? (measure && points.length === 1 ? cursor : null);
   const selectedDistance = measureStart && measureEnd ? distanceMeters(measureStart, measureEnd) : 0;
+  const flightProfile = flightProfiles[active as keyof typeof flightProfiles] ?? flightProfiles.erangel;
+  const flightPlan = flightPoints.length === 3 ? calculateFlightPlan(flightPoints[0], flightPoints[1], flightPoints[2], selected?.sizeKm ?? 8, flightProfile) : null;
+  const reachLabel = flightPlan?.reach === 'fast' ? 'Быстрый прыжок' : flightPlan?.reach === 'glide' ? 'Нужно планировать' : flightPlan?.reach === 'long' ? 'Дальний полёт' : 'За практической дальностью';
   // Keep endpoints as precise, unobtrusive reference dots at every zoom level.
   const measureRadius = clamp(.34 * clamp(zoom, .8, 1.1) / zoom, .03, .38);
   const labelPoint = measureStart && measureEnd ? {
@@ -98,7 +104,7 @@ export default function Home() {
   } : null;
 
   useEffect(() => {
-    setPoints([]); setZoom(1); setPan({ x: 0, y: 0 });
+    setPoints([]); setFlightPoints([]); setZoom(1); setPan({ x: 0, y: 0 });
     setEnabled(new Set(categories.slice(0, 1).map(category => category.id)));
   }, [active, data, categories]);
 
@@ -153,9 +159,10 @@ export default function Home() {
     } else if (d?.id === event.pointerId) {
       drag.current = null;
     }
-    if (!d?.moved && d?.id === event.pointerId && measure) {
+    if (!d?.moved && d?.id === event.pointerId && (measure || flightMode)) {
       const point = mapPoint(event);
-      if (point) { setCursor(point); setPoints(current => current.length === 1 ? [...current, point] : [point]); }
+      if (point && flightMode) setFlightPoints(current => current.length < 3 ? [...current, point] : [point]);
+      else if (point) { setCursor(point); setPoints(current => current.length === 1 ? [...current, point] : [point]); }
     }
   };
   const cancelPointers = () => { drag.current = null; pinch.current = null; pointers.current.clear(); setCursor(null); };
@@ -177,7 +184,7 @@ export default function Home() {
     <button className={`backdrop ${sidebar ? 'open' : ''}`} aria-label="Закрыть меню" onClick={() => setSidebar(false)}/>
     <aside id="map-panel" className={`panel ${sidebar ? 'open' : ''}`}>
       <section><div className="section-title">Карты <small>6 локаций</small></div><div className="maps">{maps.map(map => <button className={map.id === active ? 'chosen' : ''} key={map.id} onClick={() => chooseMap(map.id)}><img src={`./maps/thumb/${map.id}.webp`} alt=""/><span>{map.name}</span><small>8 км</small></button>)}</div></section>
-      <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><span/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setPoints([]); setCursor(null); }}/><span/>Измерить расстояние</label>{measure && <p className="measure-help">Первая точка — затем наведите курсор и выберите вторую</p>}{points.length > 0 && <button className="reset" onClick={() => { setPoints([]); setCursor(null); }}>Сбросить измерение</button>}</section>
+      <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><span/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setFlightMode(false); setFlightPoints([]); setPoints([]); setCursor(null); }}/><span/>Измерить расстояние</label>{measure && <p className="measure-help">Первая точка — затем наведите курсор и выберите вторую</p>}{points.length > 0 && <button className="reset" onClick={() => { setPoints([]); setCursor(null); }}>Сбросить измерение</button>}<label className="toggle flight-toggle"><input type="checkbox" checked={flightMode} onChange={event => { setFlightMode(event.target.checked); setMeasure(false); setPoints([]); setFlightPoints([]); setCursor(null); }}/><span/>Маршрут самолёта</label>{flightMode && <div className="flight-help"><p>{flightPoints.length === 0 ? '1. Укажите начало маршрута' : flightPoints.length === 1 ? '2. Укажите направление полёта' : flightPoints.length === 2 ? '3. Укажите место посадки' : `До маршрута: ${formatDistance(flightPlan?.distanceFromRouteMeters ?? 0)}`}</p>{flightPlan && <><b className={`reach ${flightPlan.reach}`}>{reachLabel}</b><small>Прыжок: {formatDistance(flightPlan.jumpDistanceMeters)} · ориентир {formatDistance(flightProfile.optimalJumpMeters)}</small></>}{flightProfile.terrainWarning && <small>{flightProfile.terrainWarning}</small>}<small>Оценка зависит от высоты рельефа и техники планирования.</small><button className="reset" onClick={() => setFlightPoints([])}>Задать заново</button></div>}</section>
       <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(category => category.id)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(category => { const type = types.get(category.iconKey); return <label className="marker-toggle" key={category.id}><input type="checkbox" checked={enabled.has(category.id)} onChange={() => toggle(category.id)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{category.label}</span><small>{category.pointCount}</small></label>; })}</section>
       <section className="support"><div className="support-copy"><b>Поддержать автора</b><span>B_I_G_J_I_N</span><small>Наведите камеру на QR-код</small></div><img src="./assets/support-qr.png" alt="QR-код для поддержки автора B_I_G_J_I_N" /></section>
       <footer><b>Автор: B_I_G_J_I_N</b><span>Неофициальный инструмент сообщества. PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</span></footer>
@@ -190,9 +197,12 @@ export default function Home() {
           <div className="markers">{groups.filter(group => activeTypeKeys.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const point = markerPoint(raw, active); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} title={`${markerLabel(group, type?.ru ?? group.typeKey)}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
           {measureStart && <svg className="measure-line" viewBox="0 0 100 100">{measureEnd && <line x1={measureStart.x * 100} y1={measureStart.y * 100} x2={measureEnd.x * 100} y2={measureEnd.y * 100}/>}<circle cx={measureStart.x * 100} cy={measureStart.y * 100} r={measureRadius}/>{measureEnd && <circle cx={measureEnd.x * 100} cy={measureEnd.y * 100} r={measureRadius}/>}</svg>}
           {labelPoint && <span className="distance" style={{ left: `${labelPoint.x * 100}%`, top: `${labelPoint.y * 100}%` }}><b>Расстояние</b>{formatDistance(selectedDistance)}</span>}
+          {flightPoints.length > 0 && <svg className="flight-overlay" viewBox="0 0 100 100" aria-hidden="true"><defs><marker id="plane-arrow" markerWidth="4" markerHeight="4" refX="3" refY="2" orient="auto"><path d="M0 0 L4 2 L0 4 Z"/></marker></defs>{flightPoints.length >= 2 && <line className="plane-path" x1={flightPoints[0].x * 100} y1={flightPoints[0].y * 100} x2={flightPoints[1].x * 100} y2={flightPoints[1].y * 100}/>} {flightPlan && <><line className="jump-path" x1={flightPlan.jumpPoint.x * 100} y1={flightPlan.jumpPoint.y * 100} x2={flightPoints[2].x * 100} y2={flightPoints[2].y * 100}/><circle className="jump-point" cx={flightPlan.jumpPoint.x * 100} cy={flightPlan.jumpPoint.y * 100} r={measureRadius * 1.3}/></>} {flightPoints.map((point, index) => <circle className={index === 2 ? 'landing-point' : 'route-point'} cx={point.x * 100} cy={point.y * 100} r={measureRadius} key={index}/>)}</svg>}
+          {flightPoints.map((point, index) => <span className={`flight-badge ${index === 2 ? 'target' : ''}`} style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} key={`badge-${index}`}>{index === 0 ? 'A' : index === 1 ? 'B' : 'Цель'}</span>)}
+          {flightPlan && <span className="flight-badge jump" style={{ left: `${flightPlan.jumpPoint.x * 100}%`, top: `${flightPlan.jumpPoint.y * 100}%` }}>Прыжок</span>}
         </div>
       </div>
-      <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? (measureEnd ? formatDistance(selectedDistance) : 'Наведите курсор на вторую точку') : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}</div>
+      <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? (measureEnd ? formatDistance(selectedDistance) : 'Наведите курсор на вторую точку') : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}{flightMode && <span>{flightPlan ? `${reachLabel}: ${formatDistance(flightPlan.distanceFromRouteMeters)}` : flightPoints.length < 2 ? 'Задайте направление самолёта' : 'Выберите место посадки'}</span>}</div>
       <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, 1, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, 1, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
     </section>
   </main>;
