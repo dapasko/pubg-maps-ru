@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
-import { displayCategoryId, isMotorGliderType } from '../lib/marker-display.mjs';
+import { displayCategoryId, isMotorGliderType, specificVehicleLabel } from '../lib/marker-display.mjs';
 
 const markerData = JSON.parse(await readFile(new URL('../data/markers.json', import.meta.url), 'utf8'));
 
@@ -15,6 +15,13 @@ test('recognizes Taego and Rondo motor-glider groups regardless of guarantee tag
   assert.equal(isMotorGliderType('vehiclesGroupO'), true);
   assert.equal(isMotorGliderType('vehiclesGroupG'), true);
   assert.equal(isMotorGliderType('vehiclesGroupL'), false);
+});
+
+test('describes map-specific vehicle groups without losing their source tags', () => {
+  assert.equal(specificVehicleLabel('Vikendi', 'vehiclesGroupB'), 'Снегоходы');
+  assert.equal(specificVehicleLabel('Deston', 'vehiclesGroupK'), 'Случайный транспорт: пикап / Dacia / мотоцикл');
+  assert.equal(specificVehicleLabel('Deston', 'vehiclesGroupN'), 'Транспорт: мотоцикл / машина охраны / Dacia / Coupe RB');
+  assert.equal(specificVehicleLabel('Rondo', 'vehiclesGroupD'), 'Случайный транспорт (высокий шанс): Blanc / Dacia');
 });
 
 test('applies the display rules to the current marker dataset', () => {

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
 import { distanceMeters, gridStepMeters, markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
-import { displayCategoryId, isMotorGliderType } from '../lib/marker-display.mjs';
+import { displayCategoryId, isMotorGliderType, specificVehicleLabel } from '../lib/marker-display.mjs';
 import { calculateFlightPlan, extendFlightLine, flightProfiles } from '../lib/flight-plan.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
@@ -20,12 +20,17 @@ const markerLabels: Record<string, string> = {
 };
 const gasKeys = new Set(['gasCylinderLong', 'gasCylinderShort']);
 
-function markerLabel(group: MarkerGroup, fallback: string) {
+function markerLabel(map: string | undefined, group: MarkerGroup, fallback: string) {
   if (gasKeys.has(group.typeKey)) return 'Газовые баллоны';
   if (isMotorGliderType(group.typeKey)) return 'Моторные планеры';
+  if (group.typeKey === 'cVendingMachine' && group.tag) return `${fallback} (${group.tag})`;
+  const specific = map ? specificVehicleLabel(map, group.typeKey) : null;
+  if (specific) return specific;
   const tag = group.tag ?? '';
   const guaranteed = tag.startsWith('!100%');
   if (!guaranteed) return markerLabels[group.typeKey] ?? fallback;
+  if (tag.includes('GoldMirado')) return 'Гарантированный золотой Мирадо в гараже';
+  if (tag.includes('Zima') && tag.includes('Dacia')) return 'Гарантированные Zima или Dacia';
   if (tag.includes('Uaz')) return 'Гарантированный УАЗ';
   if (tag.includes('Dacia') && tag.includes('Blanc')) return 'Гарантированные Бланк или Дача';
   if (tag.includes('Dacia')) return 'Гарантированная Дача';
@@ -34,10 +39,28 @@ function markerLabel(group: MarkerGroup, fallback: string) {
   if (tag.includes('PonyCoupe')) return 'Гарантированный Pony Coupe';
   if (tag.includes('Bike') || tag.includes('ATV')) return 'Гарантированные мотоциклы и квадроциклы';
   if (tag === '!100%' && ['vehiclesGroupL', 'vehiclesGroupM-Taego', 'vehiclesGroupR'].includes(group.typeKey)) return 'Гарантированные лодки';
+  if (tag === '!100%' && group.typeKey === 'vehiclesGroupC') return 'Гарантированный транспорт в гараже';
   return 'Гарантированный транспорт';
 }
 
 function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
+
+function FlightControlOverlay({ points, preview }: { points: Point[]; preview: Point | null }) {
+  const origin = points[0];
+  if (!origin) return null;
+  const usablePreview = preview && Math.hypot(preview.x - origin.x, preview.y - origin.y) > .012 ? preview : null;
+  const direction = points[1] ?? usablePreview;
+  const angle = direction ? Math.atan2(direction.y - origin.y, direction.x - origin.x) * 180 / Math.PI : 0;
+  const renderControl = (point: Point, kind: 'origin' | 'direction', ghost = false) => {
+    const isOrigin = kind === 'origin';
+    const captionBelow = point.y < .12;
+    return <span className={`flight-control ${kind}${ghost ? ' preview-control' : ''}`} style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} key={`${kind}-${ghost ? 'preview' : 'fixed'}`}>
+      <span className="control-marker">{isOrigin ? <b>A</b> : <i style={{ transform: `rotate(${angle}deg)` }}/>}</span>
+      {!ghost && <span className={`control-caption ${captionBelow ? 'below' : ''}`}>{isOrigin ? 'ТОЧКА A' : 'НАПРАВЛЕНИЕ'}</span>}
+    </span>;
+  };
+  return <><svg className="flight-control-overlay" viewBox="0 0 100 100" aria-hidden="true">{points.length === 1 && usablePreview && <line className="flight-preview" x1={origin.x * 100} y1={origin.y * 100} x2={usablePreview.x * 100} y2={usablePreview.y * 100}/>}</svg><div className="flight-control-layer" aria-hidden="true">{renderControl(origin, 'origin')}{points[1] && renderControl(points[1], 'direction')}{points.length === 1 && usablePreview && renderControl(usablePreview, 'direction', true)}</div></>;
+}
 
 export default function Home() {
   const [maps, setMaps] = useState<MapInfo[]>([]);
@@ -65,6 +88,14 @@ export default function Home() {
   useEffect(() => { panValue.current = pan; }, [pan]);
   useEffect(() => { zoomValue.current = zoom; }, [zoom]);
 
+  useEffect(() => {
+    const desktop = window.matchMedia('(min-width: 1180px)');
+    const syncSidebar = (event: MediaQueryList | MediaQueryListEvent) => setSidebar(event.matches);
+    syncSidebar(desktop);
+    desktop.addEventListener('change', syncSidebar);
+    return () => desktop.removeEventListener('change', syncSidebar);
+  }, []);
+
   useEffect(() => { void fetch('./data/maps.json').then(r => r.json()).then((v: MapInfo[]) => setMaps(v)); }, []);
   useEffect(() => { void fetch('./data/markers.json').then(r => r.json()).then((v: MarkerData) => setData(v)); }, []);
 
@@ -80,7 +111,7 @@ export default function Home() {
       const type = types.get(group.typeKey);
       const current = display.get(id);
       if (current) { current.typeKeys.push(group.typeKey); current.pointCount += group.points.length; continue; }
-      const label = id === 'miramar-random-boats' ? 'Случайные точки спавна лодок' : isDestonAirboat ? 'Случайные точки аэроглиссера' : markerLabel(group, type?.ru ?? group.typeKey);
+      const label = id === 'miramar-random-boats' ? 'Случайные точки спавна лодок' : isDestonAirboat ? 'Случайные точки аэроглиссера' : markerLabel(sourceMap?.name, group, type?.ru ?? group.typeKey);
       display.set(id, { id, label, typeKeys: [group.typeKey], pointCount: group.points.length, iconKey: group.typeKey });
     }
     return [...display.values()];
@@ -165,7 +196,7 @@ export default function Home() {
       setPan(nextPan);
       return;
     }
-    if (measure) setCursor(mapPoint(event));
+    if (measure || flightMode) setCursor(mapPoint(event));
   };
   const onUp = (event: PointerEvent<HTMLDivElement>) => {
     const d = drag.current;
@@ -193,9 +224,10 @@ export default function Home() {
     return next;
   });
 
-  return <main className="shell">
+  return <main className={`shell ${sidebar ? 'panel-open' : ''}`}>
     <header className="topbar">
-      <button className="brand" onClick={() => setSidebar(value => !value)} aria-label="Открыть карты и метки" aria-expanded={sidebar} aria-controls="map-panel"><span>КАРТЫ</span><b>PUBG</b><i>RU</i></button>
+      <button className="brand" onClick={() => setSidebar(value => !value)} aria-label={sidebar ? 'Скрыть карты и метки' : 'Открыть карты и метки'} aria-expanded={sidebar} aria-controls="map-panel"><span>КАРТЫ</span><b>PUBG</b><i>RU</i></button>
+      <button className="panel-toggle" onClick={() => setSidebar(value => !value)} aria-label={sidebar ? 'Скрыть панель' : 'Показать панель'} aria-expanded={sidebar} aria-controls="map-panel"><span aria-hidden="true">{sidebar ? '×' : '☰'}</span>Панель</button>
       <div className="title"><strong>{selected?.name ?? 'Загрузка…'}</strong><span>8 × 8 км</span></div>
       <div className="hint"><kbd>Колесо</kbd> масштаб <i/> <kbd>ЛКМ</kbd> перемещение</div>
     </header>
@@ -212,11 +244,11 @@ export default function Home() {
         <div ref={mapElement} className="map" style={{ left: `calc(50% + ${pan.x}px)`, top: `calc(50% + ${pan.y}px)`, width: `${zoom * 100}%`, height: `${zoom * 100}%`, backgroundImage: `url(./maps/full/${active}.webp)`, '--pin-factor': clamp(zoom, .72, 2.4), '--measure-factor': clamp(zoom, .82, 1.45), '--measure-stroke': .16 / zoom, '--flight-stroke': .55 / zoom, '--flight-dash': 2.1 / zoom } as CSSProperties}>
           <div className="tiles">{level !== null && Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
           {grid && <>{isFineGrid ? <div className="grid fine-grid"/> : <><div className="grid km-grid"/><div className="grid-labels">{'ABCDEFGH'.split('').map((letter, i) => <span className="col" style={{ left: `${(i + .5) * 12.5}%` }} key={letter}>{letter}</span>)}{Array.from({ length: 8 }, (_, i) => <span className="row" style={{ top: `${(i + .5) * 12.5}%` }} key={i}>{i + 1}</span>)}</div></>}</>}
-          <div className="markers">{groups.filter(group => activeTypeKeys.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const point = markerPoint(raw, active); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} title={`${markerLabel(group, type?.ru ?? group.typeKey)}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
+          <div className="markers">{groups.filter(group => activeTypeKeys.has(group.typeKey)).flatMap(group => group.points.map((raw, i) => { const point = markerPoint(raw, active); const type = types.get(group.typeKey); return <span key={`${group.typeKey}-${i}`} className="marker-anchor" style={{ left: `${point.x * 100}%`, top: `${point.y * 100}%` }} title={`${markerLabel(sourceMap?.name, group, type?.ru ?? group.typeKey)}${group.tag ? ` · ${group.tag}` : ''}`}><span className="pin" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/></span>; }))}</div>
           {measureStart && <svg className="measure-line" viewBox="0 0 100 100">{measureEnd && <line x1={measureStart.x * 100} y1={measureStart.y * 100} x2={measureEnd.x * 100} y2={measureEnd.y * 100}/>}<circle cx={measureStart.x * 100} cy={measureStart.y * 100} r={measureRadius}/>{measureEnd && <circle cx={measureEnd.x * 100} cy={measureEnd.y * 100} r={measureRadius}/>}</svg>}
           {labelPoint && <span className="distance" style={{ left: `${labelPoint.x * 100}%`, top: `${labelPoint.y * 100}%` }}><b>Расстояние</b>{formatDistance(selectedDistance)}</span>}
           {flightPoints.length > 0 && <svg className="flight-overlay" viewBox="0 0 100 100" aria-hidden="true"><defs><marker id="plane-arrow" markerUnits="userSpaceOnUse" markerWidth={2.4 / zoom} markerHeight={2.4 / zoom} refX={2.1 / zoom} refY={1.2 / zoom} orient="auto" viewBox="0 0 2.4 2.4"><path d="M0 0 L2.4 1.2 L0 2.4 Z"/></marker></defs>{flightLine && flightBounds && <><line className="corridor corridor-long" x1={flightBounds.startX} y1={flightBounds.startY} x2={flightBounds.endX} y2={flightBounds.endY} strokeWidth={longCorridorWidth}/><line className="corridor corridor-certain" x1={flightBounds.startX} y1={flightBounds.startY} x2={flightBounds.endX} y2={flightBounds.endY} strokeWidth={certainCorridorWidth}/>{[-1, 1].map(side => <line className="corridor-boundary outer" x1={flightBounds.extendedStartX} y1={flightBounds.extendedStartY} x2={flightBounds.extendedEndX} y2={flightBounds.extendedEndY} transform={`translate(${flightBounds.perpendicularX * longCorridorWidth / 2 * side} ${flightBounds.perpendicularY * longCorridorWidth / 2 * side})`} key={`outer-${side}`}/>)}{[-1, 1].map(side => <line className="corridor-boundary inner" x1={flightBounds.extendedStartX} y1={flightBounds.extendedStartY} x2={flightBounds.extendedEndX} y2={flightBounds.extendedEndY} transform={`translate(${flightBounds.perpendicularX * certainCorridorWidth / 2 * side} ${flightBounds.perpendicularY * certainCorridorWidth / 2 * side})`} key={`inner-${side}`}/>) }<line className="plane-path-base" x1={flightBounds.startX} y1={flightBounds.startY} x2={flightBounds.endX} y2={flightBounds.endY}/><line className="plane-path-red" x1={flightBounds.startX} y1={flightBounds.startY} x2={flightBounds.endX} y2={flightBounds.endY}/><circle className="route-point" cx={flightBounds.startX} cy={flightBounds.startY} r={measureRadius}/></>} {flightPlan && <><line className="jump-path" x1={flightPlan.jumpPoint.x * 100} y1={flightPlan.jumpPoint.y * 100} x2={flightPoints[2].x * 100} y2={flightPoints[2].y * 100}/><circle className="jump-point" cx={flightPlan.jumpPoint.x * 100} cy={flightPlan.jumpPoint.y * 100} r={measureRadius * 1.3}/></>} {!flightLine && <circle className="route-point" cx={flightPoints[0].x * 100} cy={flightPoints[0].y * 100} r={measureRadius}/>} {flightPoints[2] && <circle className="landing-point" cx={flightPoints[2].x * 100} cy={flightPoints[2].y * 100} r={measureRadius}/>}</svg>}
-          {!flightLine && flightPoints[0] && <span className="flight-badge" style={{ left: `${flightPoints[0].x * 100}%`, top: `${flightPoints[0].y * 100}%` }}>1</span>}
+          <FlightControlOverlay points={flightPoints} preview={flightMode && flightPoints.length === 1 ? cursor : null}/>
           {flightPoints[2] && <span className="flight-badge target" style={{ left: `${flightPoints[2].x * 100}%`, top: `${flightPoints[2].y * 100}%` }}>Цель</span>}
           {flightPlan && <span className="flight-badge jump" style={{ left: `${flightPlan.jumpPoint.x * 100}%`, top: `${flightPlan.jumpPoint.y * 100}%` }}>Прыжок</span>}
         </div>

@@ -7,11 +7,11 @@ import { markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
 
 const supportedNames = new Set(['Erangel', 'Miramar', 'Vikendi', 'Taego', 'Deston', 'Rondo']);
 
-test('keeps all 5,116 marker tips fixed at every whole scale from 100% through 1200%', async () => {
+test('keeps all 6,550 marker tips fixed at every whole scale from 100% through 1200%', async () => {
   const markerData = JSON.parse(await readFile(new URL('../data/markers.json', import.meta.url)));
   const maps = markerData.maps.filter(map => supportedNames.has(map.name));
   const points = maps.flatMap(map => map.groups.flatMap(group => group.points.map(point => ({ point, mapId: map.name.toLowerCase() }))));
-  assert.equal(points.length, 5116);
+  assert.equal(points.length, 6550);
 
   for (let percent = 100; percent <= 1200; percent += 1) {
     const zoom = percent / 100;
