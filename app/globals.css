@@ -24,3 +24,66 @@
 /* The coordinate is carried by a zero-size anchor; icon scale cannot move its tip. */
 .marker-anchor { position:absolute; width:0; height:0; pointer-events:none; }
 .marker-anchor .pin { position:absolute; left:0; bottom:0; width:calc(21px * var(--pin-factor)); height:calc(28px * var(--pin-factor)); transform:translateX(-50%); filter:drop-shadow(0 2px 2px #000c); }
+
+/* Responsive interaction layer. */
+:root { --header-height:64px; }
+html,body { width:100%; min-width:0; height:100%; overscroll-behavior:none; }
+button { touch-action:manipulation; }
+.topbar { height:calc(var(--header-height) + env(safe-area-inset-top)); padding-top:env(safe-area-inset-top); }
+.backdrop { position:fixed; z-index:6; inset:calc(var(--header-height) + env(safe-area-inset-top)) 0 0; width:100%; padding:0; border:0; background:#03050499; opacity:0; pointer-events:none; transition:opacity .2s ease; }
+.backdrop.open { opacity:1; pointer-events:auto; }
+.panel { z-index:7; top:calc(var(--header-height) + env(safe-area-inset-top)); width:min(360px,100vw); padding-bottom:calc(12px + env(safe-area-inset-bottom)); overflow-x:hidden; overflow-y:auto; overscroll-behavior:contain; box-shadow:13px 0 40px #0008; }
+.panel section { flex:none; }
+.toggle,.marker-toggle { min-height:40px; }
+.toggle input,.marker-toggle input { width:17px; height:17px; }
+.marker-section { max-height:32dvh; overscroll-behavior:contain; }
+.stage { height:calc(100dvh - var(--header-height) - env(safe-area-inset-top)); }
+.hud,.zoom { bottom:calc(17px + env(safe-area-inset-bottom)); }
+.hud { left:max(18px,env(safe-area-inset-left)); max-width:calc(100% - 80px); flex-wrap:wrap; }
+.zoom { right:max(18px,env(safe-area-inset-right)); }
+
+@media (min-width:850px) and (max-width:1179px) {
+  .panel { transform:translateX(-104%); }
+  .panel.open { transform:translateX(0); }
+  .stage { margin-left:0; }
+  .canvas { width:min(89vw,calc(100dvh - 112px)); height:min(89vw,calc(100dvh - 112px)); }
+}
+@media (min-width:1180px) {
+  .backdrop { display:none; }
+}
+@media (max-width:760px) {
+  :root { --header-height:58px; }
+  .topbar { height:calc(var(--header-height) + env(safe-area-inset-top)); gap:12px; padding-right:max(13px,env(safe-area-inset-right)); padding-left:max(13px,env(safe-area-inset-left)); }
+  .brand { min-height:44px; padding-right:8px; font-size:15px; }
+  .title { min-width:0; padding-left:12px; gap:6px; }
+  .title strong { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:14px; }
+  .title span { flex:none; }
+  .hint { display:none; }
+  .panel { top:calc(var(--header-height) + env(safe-area-inset-top)); width:min(360px,100vw); }
+  .stage { height:calc(100dvh - var(--header-height) - env(safe-area-inset-top)); }
+  .canvas { width:min(94vw,calc(100dvh - var(--header-height) - env(safe-area-inset-top) - 24px)); height:min(94vw,calc(100dvh - var(--header-height) - env(safe-area-inset-top) - 24px)); }
+  .hud { bottom:calc(10px + env(safe-area-inset-bottom)); left:max(10px,env(safe-area-inset-left)); }
+  .hud span { padding:5px 6px; font-size:10px; }
+  .zoom { right:max(10px,env(safe-area-inset-right)); bottom:calc(10px + env(safe-area-inset-bottom)); }
+  .zoom button { width:40px; height:40px; }
+  .support { min-height:132px; }
+  .support img { width:116px; height:116px; }
+}
+@media (max-width:390px) {
+  .title span { display:none; }
+  .maps { gap:6px; }
+  .maps button,.maps img { height:68px; min-height:68px; }
+}
+@media (max-height:520px) and (orientation:landscape) {
+  .panel { padding-top:12px; }
+  .panel section { margin-bottom:12px; padding-bottom:11px; }
+  .maps { grid-template-columns:repeat(3,1fr); }
+  .maps button,.maps img { height:62px; min-height:62px; }
+  .marker-section { max-height:none; }
+  .support { margin-top:0!important; }
+}
+@media (pointer:coarse) {
+  .section-title button,.reset { min-height:36px; padding:0 4px; }
+  .maps button:hover { transform:none; }
+  .zoom button:hover { color:#eff4ef; background:#101815ed; border-color:#48564e; }
+}

@@ -47,11 +47,18 @@ export default function Home() {
   const [points, setPoints] = useState<Point[]>([]);
   const [cursor, setCursor] = useState<Point | null>(null);
   const [enabled, setEnabled] = useState<Set<string>>(new Set());
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLDivElement>(null);
   const mapElement = useRef<HTMLDivElement>(null);
-  const drag = useRef<{ x: number; y: number; panX: number; panY: number; moved: boolean } | null>(null);
+  const drag = useRef<{ id: number; x: number; y: number; panX: number; panY: number; moved: boolean } | null>(null);
+  const pointers = useRef(new Map<number, Point>());
+  const pinch = useRef<{ distance: number; zoom: number } | null>(null);
+  const panValue = useRef(pan);
+  const zoomValue = useRef(zoom);
+
+  useEffect(() => { panValue.current = pan; }, [pan]);
+  useEffect(() => { zoomValue.current = zoom; }, [zoom]);
 
   useEffect(() => { void fetch('./data/maps.json').then(r => r.json()).then((v: MapInfo[]) => setMaps(v)); }, []);
   useEffect(() => { void fetch('./data/markers.json').then(r => r.json()).then((v: MarkerData) => setData(v)); }, []);
@@ -98,27 +105,81 @@ export default function Home() {
     const y = (event.clientY - r.top) / r.height;
     return x >= 0 && x <= 1 && y >= 0 && y <= 1 ? { x, y } : null;
   };
-  const onDown = (event: PointerEvent<HTMLDivElement>) => { if (event.button === 0) drag.current = { x: event.clientX, y: event.clientY, panX: pan.x, panY: pan.y, moved: false }; };
-  const onMove = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; if (d) { const dx = event.clientX - d.x; const dy = event.clientY - d.y; if (Math.hypot(dx, dy) > 4) d.moved = true; setPan({ x: d.panX + dx, y: d.panY + dy }); return; } if (measure) setCursor(mapPoint(event)); };
-  const onUp = (event: PointerEvent<HTMLDivElement>) => { const d = drag.current; drag.current = null; if (!d?.moved && measure) { const point = mapPoint(event); if (point) { setCursor(point); setPoints(current => current.length === 1 ? [...current, point] : [point]); } } };
+  const pointerDistance = () => {
+    const [a, b] = [...pointers.current.values()];
+    return a && b ? Math.hypot(a.x - b.x, a.y - b.y) : 0;
+  };
+  const onDown = (event: PointerEvent<HTMLDivElement>) => {
+    if (event.button !== 0) return;
+    event.currentTarget.setPointerCapture(event.pointerId);
+    pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (pointers.current.size === 1) {
+      drag.current = { id: event.pointerId, x: event.clientX, y: event.clientY, panX: panValue.current.x, panY: panValue.current.y, moved: false };
+    } else if (pointers.current.size === 2) {
+      if (drag.current) drag.current.moved = true;
+      pinch.current = { distance: pointerDistance(), zoom: zoomValue.current };
+    }
+  };
+  const onMove = (event: PointerEvent<HTMLDivElement>) => {
+    if (pointers.current.has(event.pointerId)) pointers.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (pointers.current.size >= 2 && pinch.current) {
+      const nextZoom = clamp(pinch.current.zoom * pointerDistance() / Math.max(pinch.current.distance, 1), 1, 12);
+      zoomValue.current = nextZoom;
+      setZoom(nextZoom);
+      return;
+    }
+    const d = drag.current;
+    if (d?.id === event.pointerId) {
+      const dx = event.clientX - d.x;
+      const dy = event.clientY - d.y;
+      if (Math.hypot(dx, dy) > 4) d.moved = true;
+      const nextPan = { x: d.panX + dx, y: d.panY + dy };
+      panValue.current = nextPan;
+      setPan(nextPan);
+      return;
+    }
+    if (measure) setCursor(mapPoint(event));
+  };
+  const onUp = (event: PointerEvent<HTMLDivElement>) => {
+    const d = drag.current;
+    pointers.current.delete(event.pointerId);
+    if (pointers.current.size < 2) pinch.current = null;
+    if (pointers.current.size === 1) {
+      const [id, point] = [...pointers.current.entries()][0];
+      drag.current = { id, x: point.x, y: point.y, panX: panValue.current.x, panY: panValue.current.y, moved: true };
+    } else if (d?.id === event.pointerId) {
+      drag.current = null;
+    }
+    if (!d?.moved && d?.id === event.pointerId && measure) {
+      const point = mapPoint(event);
+      if (point) { setCursor(point); setPoints(current => current.length === 1 ? [...current, point] : [point]); }
+    }
+  };
+  const cancelPointers = () => { drag.current = null; pinch.current = null; pointers.current.clear(); setCursor(null); };
   const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), 1, 12)); };
   const chooseMap = (id: string) => { setActive(id); setSidebar(false); };
-  const toggle = (key: string) => setEnabled(current => { const next = new Set(current); next.has(key) ? next.delete(key) : next.add(key); return next; });
+  const toggle = (key: string) => setEnabled(current => {
+    const next = new Set(current);
+    if (next.has(key)) next.delete(key);
+    else next.add(key);
+    return next;
+  });
 
   return <main className="shell">
     <header className="topbar">
-      <button className="brand" onClick={() => setSidebar(value => !value)} aria-label="Открыть карты и метки"><span>КАРТЫ</span><b>PUBG</b><i>RU</i></button>
+      <button className="brand" onClick={() => setSidebar(value => !value)} aria-label="Открыть карты и метки" aria-expanded={sidebar} aria-controls="map-panel"><span>КАРТЫ</span><b>PUBG</b><i>RU</i></button>
       <div className="title"><strong>{selected?.name ?? 'Загрузка…'}</strong><span>8 × 8 км</span></div>
       <div className="hint"><kbd>Колесо</kbd> масштаб <i/> <kbd>ЛКМ</kbd> перемещение</div>
     </header>
-    <aside className={`panel ${sidebar ? 'open' : ''}`}>
+    <button className={`backdrop ${sidebar ? 'open' : ''}`} aria-label="Закрыть меню" onClick={() => setSidebar(false)}/>
+    <aside id="map-panel" className={`panel ${sidebar ? 'open' : ''}`}>
       <section><div className="section-title">Карты <small>6 локаций</small></div><div className="maps">{maps.map(map => <button className={map.id === active ? 'chosen' : ''} key={map.id} onClick={() => chooseMap(map.id)}><img src={`./maps/thumb/${map.id}.webp`} alt=""/><span>{map.name}</span><small>8 км</small></button>)}</div></section>
       <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><span/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setPoints([]); setCursor(null); }}/><span/>Измерить расстояние</label>{measure && <p className="measure-help">Первая точка — затем наведите курсор и выберите вторую</p>}{points.length > 0 && <button className="reset" onClick={() => { setPoints([]); setCursor(null); }}>Сбросить измерение</button>}</section>
       <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(category => category.id)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(category => { const type = types.get(category.iconKey); return <label className="marker-toggle" key={category.id}><input type="checkbox" checked={enabled.has(category.id)} onChange={() => toggle(category.id)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{category.label}</span><small>{category.pointCount}</small></label>; })}</section>
       <section className="support"><div className="support-copy"><b>Поддержать автора</b><span>B_I_G_J_I_N</span><small>Наведите камеру на QR-код</small></div><img src="./assets/support-qr.png" alt="QR-код для поддержки автора B_I_G_J_I_N" /></section>
       <footer><b>Автор: B_I_G_J_I_N</b><span>Неофициальный инструмент сообщества. PUBG: BATTLEGROUNDS и материалы игры принадлежат KRAFTON.</span></footer>
     </aside>
-    <section ref={stage} className={`stage ${measure ? 'measuring' : ''}`} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={() => setCursor(null)} onPointerCancel={() => { drag.current = null; setCursor(null); }} onWheel={onWheel}>
+    <section ref={stage} className={`stage ${measure ? 'measuring' : ''}`} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerLeave={() => { if (pointers.current.size === 0) setCursor(null); }} onPointerCancel={cancelPointers} onWheel={onWheel}>
       <div ref={canvas} className="canvas">
         <div ref={mapElement} className="map" style={{ left: `calc(50% + ${pan.x}px)`, top: `calc(50% + ${pan.y}px)`, width: `${zoom * 100}%`, height: `${zoom * 100}%`, backgroundImage: `url(./maps/full/${active}.webp)`, '--pin-factor': clamp(zoom, .72, 2.4), '--measure-factor': clamp(zoom, .82, 1.45), '--measure-stroke': .16 / zoom } as CSSProperties}>
           <div className="tiles">{level !== null && Array.from({ length: count * count }, (_, index) => { const x = index % count; const y = Math.floor(index / count); return <img key={`${level}-${x}-${y}`} src={`./maps/tiles/${active}/${level}/${x}/${y}.webp`} alt="" loading="lazy" style={{ left: `${x / count * 100}%`, top: `${y / count * 100}%`, width: `${100 / count}%`, height: `${100 / count}%` }}/>; })}</div>
