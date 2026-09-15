@@ -9,7 +9,10 @@ import sharp from 'sharp';
 
 const root = path.resolve(import.meta.dirname, '..');
 const originals = path.resolve(root, '..', '..');
-const output = path.join(root, 'public', 'maps');
+// Static assets live at the repository root so the static export can publish
+// them straight from the root namespace (the `public/` directory is not used
+// by this Vite/vinext setup).
+const output = path.join(root, 'maps');
 const maps = {
   erangel: 'Erangel_Main_High_Res.png',
   miramar: 'Miramar_Main_High_Res.png',

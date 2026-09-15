@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
 import { distanceMeters, gridStepMeters, markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
-import { displayCategoryId, isMotorGliderType, specificVehicleLabel } from '../lib/marker-display.mjs';
+import { displayCategoryId, isGasCylinderType, markerLabel } from '../lib/marker-display.mjs';
 import { calculateFlightPlan, extendFlightLine, flightProfiles } from '../lib/flight-plan.mjs';
 
 type MapInfo = { id: string; name: string; sizeKm: number };
@@ -15,33 +15,6 @@ type DisplayCategory = { id: string; label: string; typeKeys: string[]; pointCou
 
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 const mapName: Record<string, string> = { erangel: 'Erangel', miramar: 'Miramar', vikendi: 'Vikendi', taego: 'Taego', deston: 'Deston', rondo: 'Rondo' };
-const markerLabels: Record<string, string> = {
-  _secretRooms: 'Тайные комнаты', blueChipTwoer: 'Вышки синего чипа', bearCaves: 'Медвежьи пещеры', crowbarRooms: 'Комнаты с ломом', goldVault: 'Золотое хранилище', brokenPotSpawner: 'Разрушаемые горшки', cVendingMachine: 'Торговые автоматы', gasPump: 'Заправки', vehiclesGroupA: 'Случайный транспорт', vehiclesGroupB: 'Особый транспорт', vehiclesGroupC: 'Гаражи с транспортом', 'vehiclesGroupC-Deston': 'Машины охраны', vehiclesGroupE: 'Случайная точка спавна лодок', 'vehiclesGroupE-Rondo': 'Электробусы', vehiclesGroupI: 'Фудтраки', vehiclesGroupJ: 'Транспорт у особняков', vehiclesGroupO: 'Дельтаплан', vehiclesGroupL: 'Лодки', 'vehiclesGroupM-Taego': 'Лодки', vehiclesGroupR: 'Лодки',
-};
-const gasKeys = new Set(['gasCylinderLong', 'gasCylinderShort']);
-
-function markerLabel(map: string | undefined, group: MarkerGroup, fallback: string) {
-  if (gasKeys.has(group.typeKey)) return 'Газовые баллоны';
-  if (isMotorGliderType(group.typeKey)) return 'Моторные планеры';
-  if (group.typeKey === 'cVendingMachine' && group.tag) return `${fallback} (${group.tag})`;
-  const specific = map ? specificVehicleLabel(map, group.typeKey) : null;
-  if (specific) return specific;
-  const tag = group.tag ?? '';
-  const guaranteed = tag.startsWith('!100%');
-  if (!guaranteed) return markerLabels[group.typeKey] ?? fallback;
-  if (tag.includes('GoldMirado')) return 'Гарантированный золотой Мирадо в гараже';
-  if (tag.includes('Zima') && tag.includes('Dacia')) return 'Гарантированные Zima или Dacia';
-  if (tag.includes('Uaz')) return 'Гарантированный УАЗ';
-  if (tag.includes('Dacia') && tag.includes('Blanc')) return 'Гарантированные Бланк или Дача';
-  if (tag.includes('Dacia')) return 'Гарантированная Дача';
-  if (tag.includes('Mirado')) return 'Гарантированный Мирадо';
-  if (tag.includes('Pickup')) return 'Гарантированный пикап';
-  if (tag.includes('PonyCoupe')) return 'Гарантированный Pony Coupe';
-  if (tag.includes('Bike') || tag.includes('ATV')) return 'Гарантированные мотоциклы и квадроциклы';
-  if (tag === '!100%' && ['vehiclesGroupL', 'vehiclesGroupM-Taego', 'vehiclesGroupR'].includes(group.typeKey)) return 'Гарантированные лодки';
-  if (tag === '!100%' && group.typeKey === 'vehiclesGroupC') return 'Гарантированный транспорт в гараже';
-  return 'Гарантированный транспорт';
-}
 
 function formatDistance(value: number) { return value >= 1000 ? `${(value / 1000).toFixed(2)} км` : `${Math.round(value)} м`; }
 
@@ -75,7 +48,9 @@ export default function Home() {
   const [flightPoints, setFlightPoints] = useState<Point[]>([]);
   const [cursor, setCursor] = useState<Point | null>(null);
   const [enabled, setEnabled] = useState<Set<string>>(new Set());
-  const [sidebar, setSidebar] = useState(false);
+  // Desktop keeps the panel open on first paint; the matchMedia effect below
+  // stays authoritative (and keeps it in sync on resize).
+  const [sidebar, setSidebar] = useState(() => typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches);
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLDivElement>(null);
   const mapElement = useRef<HTMLDivElement>(null);
@@ -89,7 +64,9 @@ export default function Home() {
   useEffect(() => { zoomValue.current = zoom; }, [zoom]);
 
   useEffect(() => {
-    const desktop = window.matchMedia('(min-width: 1180px)');
+    // On desktop the panel stays open by default so the map tools and marker
+    // toggles are immediately visible; on smaller screens it collapses.
+    const desktop = window.matchMedia('(min-width: 1024px)');
     const syncSidebar = (event: MediaQueryList | MediaQueryListEvent) => setSidebar(event.matches);
     syncSidebar(desktop);
     desktop.addEventListener('change', syncSidebar);
@@ -107,7 +84,7 @@ export default function Home() {
     const display = new Map<string, DisplayCategory>();
     for (const group of groups) {
       const isDestonAirboat = sourceMap?.name === 'Deston' && group.tag === 'AirBoat';
-      const id = gasKeys.has(group.typeKey) ? 'gas-cylinders' : isDestonAirboat ? 'deston-airboats' : displayCategoryId(sourceMap?.name, group.typeKey);
+      const id = isGasCylinderType(group.typeKey) ? 'gas-cylinders' : isDestonAirboat ? 'deston-airboats' : displayCategoryId(sourceMap?.name, group.typeKey);
       const type = types.get(group.typeKey);
       const current = display.get(id);
       if (current) { current.typeKeys.push(group.typeKey); current.pointCount += group.points.length; continue; }
@@ -216,7 +193,12 @@ export default function Home() {
   };
   const cancelPointers = () => { drag.current = null; pinch.current = null; pointers.current.clear(); setCursor(null); };
   const onWheel = (event: WheelEvent<HTMLDivElement>) => { event.preventDefault(); setZoom(value => clamp(value * (event.deltaY < 0 ? 1.2 : .84), 1, 12)); };
-  const chooseMap = (id: string) => { setActive(id); setSidebar(false); };
+  const chooseMap = (id: string) => {
+    setActive(id);
+    // On mobile the panel should collapse after picking a map; on desktop it
+    // stays open so the tools and marker toggles remain visible.
+    if (typeof window === 'undefined' || !window.matchMedia('(min-width: 1024px)').matches) setSidebar(false);
+  };
   const toggle = (key: string) => setEnabled(current => {
     const next = new Set(current);
     if (next.has(key)) next.delete(key);

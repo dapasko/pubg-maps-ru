@@ -54,13 +54,13 @@ button { touch-action:manipulation; }
 .hud { left:max(18px,env(safe-area-inset-left)); max-width:calc(100% - 80px); flex-wrap:wrap; }
 .zoom { right:max(18px,env(safe-area-inset-right)); }
 
-@media (min-width:850px) and (max-width:1179px) {
+@media (min-width:850px) and (max-width:1023px) {
   .panel { transform:translateX(-104%); }
   .panel.open { transform:translateX(0); }
   .stage { margin-left:0; }
   .canvas { width:min(89vw,calc(100dvh - 112px)); height:min(89vw,calc(100dvh - 112px)); }
 }
-@media (min-width:1180px) {
+@media (min-width:1024px) {
   .backdrop { display:none; }
   .stage { transition:margin-left .2s ease; }
   .shell.panel-open .stage { margin-left:360px; }
