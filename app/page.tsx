@@ -48,9 +48,9 @@ export default function Home() {
   const [flightPoints, setFlightPoints] = useState<Point[]>([]);
   const [cursor, setCursor] = useState<Point | null>(null);
   const [enabled, setEnabled] = useState<Set<string>>(new Set());
-  // Desktop keeps the panel open on first paint; the matchMedia effect below
-  // stays authoritative (and keeps it in sync on resize).
-  const [sidebar, setSidebar] = useState(() => typeof window !== 'undefined' && window.matchMedia('(min-width: 1024px)').matches);
+  // Keep the server and first client render identical; the effect below opens
+  // the panel on desktop immediately after hydration and tracks later resizes.
+  const [sidebar, setSidebar] = useState(false);
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLDivElement>(null);
   const mapElement = useRef<HTMLDivElement>(null);
@@ -236,7 +236,7 @@ export default function Home() {
         </div>
       </div>
       <div className="hud"><span>{Math.round(zoom * 100)}%</span>{grid && <span>Сетка: {isFineGrid ? '100 м' : '1 км'}</span>}{measure && <span>{points.length === 1 ? (measureEnd ? formatDistance(selectedDistance) : 'Наведите курсор на вторую точку') : points.length === 2 ? formatDistance(selectedDistance) : 'Выберите первую точку'}</span>}{flightMode && <span>{flightPlan ? `${reachLabel}: ${formatDistance(flightPlan.distanceFromRouteMeters)}` : flightPoints.length < 2 ? 'Задайте линию самолёта' : 'Выберите место посадки'}</span>}</div>
-      <div className="zoom"><button onClick={() => setZoom(value => clamp(value * 1.25, 1, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, 1, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
+      <div className="zoom" onPointerDown={event => event.stopPropagation()}><button onClick={() => setZoom(value => clamp(value * 1.25, 1, 12))}>+</button><button onClick={() => setZoom(value => clamp(value / 1.25, 1, 12))}>−</button><button onClick={() => { setZoom(1); setPan({ x: 0, y: 0 }); }}>⌖</button></div>
     </section>
   </main>;
 }

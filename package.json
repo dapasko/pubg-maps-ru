@@ -9,6 +9,7 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "maps:quality": "node tools/build-quality-maps.mjs",
+    "maps:update": "node tools/update-maps-from-pubg-gs.mjs",
     "test": "node --test tests/*.test.mjs",
     "lint": "oxlint",
     "format": "oxfmt"
