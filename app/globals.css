@@ -212,7 +212,7 @@ button:focus-visible,input:focus-visible { outline:3px solid var(--accent); outl
 .panel footer b { color:var(--muted); font-weight:500; }
 .stage { background:var(--bg); transition:none; }
 .stage::after { display:none; }
-.canvas { max-width:calc(100% - 32px); max-height:calc(100% - 32px); }
+.canvas { width:min(calc(100% - 32px),calc(100dvh - var(--header-height) - env(safe-area-inset-top) - 48px)); height:auto; aspect-ratio:1; max-width:none; max-height:none; }
 .map { border-radius:16px; box-shadow:var(--shadow),0 0 0 1px var(--line); }
 .hud { gap:0; overflow:hidden; border:1px solid var(--edge); border-radius:12px; background:var(--material); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:var(--shadow); }
 .hud span { padding:11px 13px; border:0; border-right:1px solid var(--line); border-radius:0; color:var(--text); background:transparent; font-size:11px; font-variant-numeric:tabular-nums; letter-spacing:0; }
