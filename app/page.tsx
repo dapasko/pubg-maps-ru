@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react';
-import { Compass, PanelLeft, X, Grid2X2, Ruler, Plane, Plus, Minus, LocateFixed, Check } from 'lucide-react';
+import { Compass, PanelLeft, X, Grid2X2, Ruler, Plane, Plus, Minus, LocateFixed, Check, Sun, Moon, Monitor } from 'lucide-react';
 import { distanceMeters, gridStepMeters, markerPoint, tileLevelForZoom } from '../lib/map-geometry.mjs';
 import { displayCategoryId, isGasCylinderType, markerLabel } from '../lib/marker-display.mjs';
 import { calculateFlightPlan, extendFlightLine, flightProfiles } from '../lib/flight-plan.mjs';
@@ -52,6 +52,33 @@ export default function Home() {
   // Keep the server and first client render identical; the effect below opens
   // the panel on desktop immediately after hydration and tracks later resizes.
   const [sidebar, setSidebar] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark' | 'system'>('system');
+  const [resolvedTheme, setResolvedTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('pubg-maps-theme');
+      if (saved === 'light' || saved === 'dark' || saved === 'system') setTheme(saved);
+    } catch { /* Theme selection remains available when storage is disabled. */ }
+  }, []);
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const syncTheme = () => {
+      const next = theme === 'system' ? (media.matches ? 'dark' : 'light') : theme;
+      setResolvedTheme(next);
+      document.documentElement.dataset.theme = next;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', next === 'dark' ? '#1c1c1e' : '#f5f5f7');
+    };
+    syncTheme();
+    media.addEventListener('change', syncTheme);
+    return () => media.removeEventListener('change', syncTheme);
+  }, [theme]);
+
+  const chooseTheme = (next: 'light' | 'dark' | 'system') => {
+    setTheme(next);
+    try { localStorage.setItem('pubg-maps-theme', next); } catch { /* Storage is optional. */ }
+  };
   const stage = useRef<HTMLDivElement>(null);
   const canvas = useRef<HTMLDivElement>(null);
   const mapElement = useRef<HTMLDivElement>(null);
@@ -207,16 +234,17 @@ export default function Home() {
     return next;
   });
 
-  return <main className={`shell ${sidebar ? 'panel-open' : ''}`}>
+  return <main className={`shell ${sidebar ? 'panel-open' : ''}`} data-theme={resolvedTheme}>
     <header className="topbar">
       <button className="brand" onClick={() => setSidebar(value => !value)} aria-label={sidebar ? 'Скрыть карты и метки' : 'Открыть карты и метки'} aria-expanded={sidebar} aria-controls="map-panel"><span className="brand-mark" aria-hidden="true"><Compass size={21} strokeWidth={1.6}/></span><span className="brand-wordmark"><b>PUBG</b><span>MAPS</span></span><i>RU</i></button>
       <button className="panel-toggle" onClick={() => setSidebar(value => !value)} aria-label={sidebar ? 'Скрыть панель' : 'Показать панель'} aria-expanded={sidebar} aria-controls="map-panel">{sidebar ? <X size={17} aria-hidden="true"/> : <PanelLeft size={17} aria-hidden="true"/>}<span className="panel-toggle-label">Панель</span></button>
       <div className="title"><strong>{selected?.name ?? 'Загрузка…'}</strong><span>{selected?.sizeKm ?? 8} × {selected?.sizeKm ?? 8} км</span></div>
       <div className="hint"><kbd>Колесо</kbd> масштаб <i/> <kbd>ЛКМ</kbd> перемещение</div>
+      <div className="theme-picker" role="group" aria-label="Тема оформления">{([{ value: 'light', label: 'Светлая тема', Icon: Sun }, { value: 'dark', label: 'Тёмная тема', Icon: Moon }, { value: 'system', label: 'Как в системе', Icon: Monitor }] as const).map(({ value, label, Icon }) => <button key={value} aria-label={label} title={label} aria-pressed={theme === value} onClick={() => chooseTheme(value)}><Icon size={16} aria-hidden="true"/></button>)}</div>
     </header>
     <button className={`backdrop ${sidebar ? 'open' : ''}`} aria-label="Закрыть меню" onClick={() => setSidebar(false)}/>
     <aside id="map-panel" className={`panel ${sidebar ? 'open' : ''}`} inert={!sidebar}>
-      <div className="panel-intro"><span className="eyebrow">ТАКТИЧЕСКИЙ АТЛАС</span><h1>Знай каждый метр.</h1><p>Выберите карту. Спланируйте высадку.</p></div>
+      <div className="panel-intro"><span className="eyebrow">ВАШ ПЛАН ИГРЫ</span><h1>Место для победы.</h1><p>Каждая карта. Любой маршрут.</p></div>
       <section><div className="section-title">Карты <small>6 локаций</small></div><div className="maps">{maps.map(map => <button className={map.id === active ? 'chosen' : ''} aria-pressed={map.id === active} key={map.id} onClick={() => chooseMap(map.id)}><img src={`./maps/thumb/${map.id}.webp`} alt=""/><span>{map.name}</span><small>{map.sizeKm} × {map.sizeKm} км</small>{map.id === active && <Check className="map-check" size={14} aria-hidden="true"/>}</button>)}</div></section>
       <section><div className="section-title">Инструменты</div><label className="toggle"><input type="checkbox" checked={grid} onChange={event => setGrid(event.target.checked)}/><Grid2X2 size={17} aria-hidden="true"/>Сетка координат</label><label className="toggle"><input type="checkbox" checked={measure} onChange={event => { setMeasure(event.target.checked); setFlightMode(false); setFlightPoints([]); setPoints([]); setCursor(null); }}/><Ruler size={17} aria-hidden="true"/>Измерить расстояние</label>{measure && <p className="measure-help">Первая точка — затем наведите курсор и выберите вторую</p>}{points.length > 0 && <button className="reset" onClick={() => { setPoints([]); setCursor(null); }}>Сбросить измерение</button>}<label className="toggle flight-toggle"><input type="checkbox" checked={flightMode} onChange={event => { setFlightMode(event.target.checked); setMeasure(false); setPoints([]); setFlightPoints([]); setCursor(null); }}/><Plane size={17} aria-hidden="true"/>Линия полёта самолёта</label>{flightMode && <div className="flight-help"><p>{flightPoints.length === 0 ? '1. Поставьте первую точку линии' : flightPoints.length === 1 ? '2. Задайте направление полёта' : flightPoints.length === 2 ? '3. Укажите место посадки' : `До линии: ${formatDistance(flightPlan?.distanceFromRouteMeters ?? 0)}`}</p>{flightLine && <div className="flight-legend"><span><i className="certain"/>Точно долетишь: до {formatDistance(flightProfile.glideMeters)}</span><span><i className="long"/>Дальний перелёт: до {formatDistance(flightProfile.longGlideMeters)}</span><span><i className="outside"/>Скорее не долетишь: дальше</span></div>}{flightPlan && <><b className={`reach ${flightPlan.reach}`}>{reachLabel}</b><small>Прыжок: {formatDistance(flightPlan.jumpDistanceMeters)} · ориентир {formatDistance(flightProfile.optimalJumpMeters)}</small></>}{flightProfile.terrainWarning && <small>{flightProfile.terrainWarning}</small>}<small>Оценка зависит от высоты рельефа и техники планирования.</small><button className="reset" onClick={() => setFlightPoints([])}>Задать заново</button></div>}</section>
       <section className="marker-section"><div className="section-title">Метки <button onClick={() => setEnabled(new Set(categories.map(category => category.id)))}>Все</button><button onClick={() => setEnabled(new Set())}>Скрыть</button></div>{!data && <p className="loading">Загружаю метки…</p>}{categories.map(category => { const type = types.get(category.iconKey); return <label className="marker-toggle" key={category.id}><input type="checkbox" checked={enabled.has(category.id)} onChange={() => toggle(category.id)}/><span className="marker-icon" dangerouslySetInnerHTML={{ __html: type?.svg ?? '' }}/><span>{category.label}</span><small>{category.pointCount}</small></label>; })}</section>
