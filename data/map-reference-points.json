@@ -1,0 +1,2456 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+  "tolerancePixels": 2,
+  "description": "Independent coordinate cross-check against pubg.gs game-file exports; does not certify unrepresented categories or in-game spawn availability. Expected pixels were calculated from external world coordinates and its observed CRS.Simple raster extent, not markerPoint.",
+  "maps": [
+    {
+      "mapId": "erangel",
+      "rasterPixels": 8192,
+      "extentCm": 816000,
+      "rasterHash": "6ab4a113",
+      "points": [
+        {
+          "id": "erangel-blueChipTower-29",
+          "typeKey": "blueChipTower",
+          "pointIndex": 29,
+          "sourceCoordinate": [
+            -35.7639,
+            119.2225
+          ],
+          "referenceWorldCm": [
+            380030,
+            114000
+          ],
+          "referencePixel": [
+            3815.203137254902,
+            1144.4705882352941
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/14/4.webp?6ab4a113",
+            "referenceSha256": "670937eab2b1114ecbfa3d9a6d030a7cf1f97ffbdc2f41e7d97e4bba5e58c06b",
+            "localTile": "maps/tiles/erangel/4/7/2.webp",
+            "localSha256": "9295d3f2adc457d4d7da45dbfb8a1aad66337af9c6f3e00898dc986d27992a04",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.656494140625
+          }
+        },
+        {
+          "id": "erangel-blueChipTower-1",
+          "typeKey": "blueChipTower",
+          "pointIndex": 1,
+          "sourceCoordinate": [
+            -135.9892,
+            226.2195
+          ],
+          "referenceWorldCm": [
+            721090,
+            433475
+          ],
+          "referencePixel": [
+            7239.178039215686,
+            4351.749019607843
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/28/16.webp?6ab4a113",
+            "referenceSha256": "cf87e2fdda7c34ef44051c7eda4200b6d9cd2363b5f14dafe49705e5c587b69f",
+            "localTile": "maps/tiles/erangel/4/14/8.webp",
+            "localSha256": "a1c054f39d4d9dbdb668ffe139e1c7373cc85506707a4ae4550decb4a208a4d1",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.69989013671875
+          }
+        },
+        {
+          "id": "erangel-blueChipTower-20",
+          "typeKey": "blueChipTower",
+          "pointIndex": 20,
+          "sourceCoordinate": [
+            -221.3882,
+            118.7237
+          ],
+          "referenceWorldCm": [
+            378440,
+            705690
+          ],
+          "referencePixel": [
+            3799.2407843137253,
+            7084.574117647059
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/14/27.webp?6ab4a113",
+            "referenceSha256": "c58b02783de49d71118eb9a8279a033f27cb73ff9a3ffe1d64a4750a1e0a3956",
+            "localTile": "maps/tiles/erangel/4/7/13.webp",
+            "localSha256": "e9d52e9bbf4f9bb0e014f30e9ba05c5ad0d477e4e00246e71409655acd922644",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7275848388671875
+          }
+        },
+        {
+          "id": "erangel-blueChipTower-32",
+          "typeKey": "blueChipTower",
+          "pointIndex": 32,
+          "sourceCoordinate": [
+            -121.6068,
+            35.4785
+          ],
+          "referenceWorldCm": [
+            113090,
+            387630
+          ],
+          "referencePixel": [
+            1135.3349019607842,
+            3891.5011764705882
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/4/15.webp?6ab4a113",
+            "referenceSha256": "817d093e02c23daf6a779f50b772f7f0f97ed8588c0040d443936074e0fa6dfd",
+            "localTile": "maps/tiles/erangel/4/2/7.webp",
+            "localSha256": "2b42207a66ed0a074a3acbfbfd995c537fd620eddaa590d547b6e20ed66c9bc8",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7483876546223959
+          }
+        },
+        {
+          "id": "erangel-blueChipTower-13",
+          "typeKey": "blueChipTower",
+          "pointIndex": 13,
+          "sourceCoordinate": [
+            -121.1645,
+            138.0645
+          ],
+          "referenceWorldCm": [
+            440090,
+            386220
+          ],
+          "referencePixel": [
+            4418.158431372549,
+            3877.3458823529413
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/17/15.webp?6ab4a113",
+            "referenceSha256": "9e8dee9edaf3809a4bcd9c111ca737e07b91c0268c6a653c37a48fd0d8e552dd",
+            "localTile": "maps/tiles/erangel/4/8/7.webp",
+            "localSha256": "46cc9b46b961f7822a255e3452299e46a4569093f82029fe8b212e95a5c0d8c6",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6006215413411459
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupA-341",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 341,
+          "sourceCoordinate": [
+            -58.2443,
+            59.332
+          ],
+          "referenceWorldCm": [
+            189125,
+            185658
+          ],
+          "referencePixel": [
+            1898.6666666666667,
+            1863.860705882353
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/7/7.webp?6ab4a113",
+            "referenceSha256": "ea7eaa08f7b62686941460905f6e7411dfc25da51f333aaaec05a3462ac65405",
+            "localTile": "maps/tiles/erangel/4/3/3.webp",
+            "localSha256": "0c06396247bdb3f53f0337132d9cebffa7ff22432741f12b3041756620000053",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6241861979166666
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupA-190",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 190,
+          "sourceCoordinate": [
+            -65.3738,
+            188.6162
+          ],
+          "referenceWorldCm": [
+            601227,
+            208383
+          ],
+          "referencePixel": [
+            6035.847529411764,
+            2092.0018823529413
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/23/8.webp?6ab4a113",
+            "referenceSha256": "b73cb3f6e58efe94257e0c8f3752b7de7941d795778c12b291fbf96a3be9539c",
+            "localTile": "maps/tiles/erangel/4/11/4.webp",
+            "localSha256": "702ce9aa29f75571230c86503649231862a3a936058fa07d20e4f86b1d255494",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6562550862630209
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupN-7",
+          "typeKey": "vehiclesGroupN",
+          "pointIndex": 7,
+          "sourceCoordinate": [
+            -194.4954,
+            189.3558
+          ],
+          "referenceWorldCm": [
+            603584,
+            619968
+          ],
+          "referencePixel": [
+            6059.509960784314,
+            6223.992470588235
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "N",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/23/24.webp?6ab4a113",
+            "referenceSha256": "8b27740321abce7641b0d81c22e8e79a70ab143e420a252811d47a9547aefc64",
+            "localTile": "maps/tiles/erangel/4/11/12.webp",
+            "localSha256": "e22633a9089e4987177cbd783ff3476d9f0ca480c94883c6be96ea018896afe0",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6735788981119791
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupE-27",
+          "typeKey": "vehiclesGroupE",
+          "pointIndex": 27,
+          "sourceCoordinate": [
+            -189.945,
+            58.6772
+          ],
+          "referenceWorldCm": [
+            187038,
+            605463
+          ],
+          "referencePixel": [
+            1877.7148235294117,
+            6078.373647058824
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "E",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/7/23.webp?6ab4a113",
+            "referenceSha256": "714d04529cb40c8270cb065c6c48ff3eb36a2b89d38168a03016e9b61087f7a8",
+            "localTile": "maps/tiles/erangel/4/3/11.webp",
+            "localSha256": "6e50c388c641faafe823585ce04a334048178867db1720ed977c0f3af7fd73a2",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.5584665934244791
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupB-3",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 3,
+          "sourceCoordinate": [
+            -151.3027,
+            90.981
+          ],
+          "referenceWorldCm": [
+            290008,
+            482288
+          ],
+          "referencePixel": [
+            2911.452862745098,
+            4841.793254901961
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/11/18.webp?6ab4a113",
+            "referenceSha256": "a45735238b6d5329b7115de62bf85a09f61266b5cbc5625a9e195985b782ec90",
+            "localTile": "maps/tiles/erangel/4/5/9.webp",
+            "localSha256": "97b76753f91e699533ce3af4238a1ac6c79e382181cd35f988abc19ee7e8d319",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6652272542317709
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupA-151",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 151,
+          "sourceCoordinate": [
+            -151.5467,
+            167.7365
+          ],
+          "referenceWorldCm": [
+            534671,
+            483066
+          ],
+          "referencePixel": [
+            5367.677490196078,
+            4849.603764705882
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/20/18.webp?6ab4a113",
+            "referenceSha256": "1bff8c5f71becd5cfb302af9dad4cf3fd6652a3f9b8b0948ce53130e3915c787",
+            "localTile": "maps/tiles/erangel/4/10/9.webp",
+            "localSha256": "06fac52df4e373a46a7d1affc58aefade57683d49368535b77acc2fd568117ea",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7361602783203125
+          }
+        },
+        {
+          "id": "erangel-vehiclesGroupA-207",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 207,
+          "sourceCoordinate": [
+            -93.0702,
+            127.7644
+          ],
+          "referenceWorldCm": [
+            407258,
+            296668
+          ],
+          "referencePixel": [
+            4088.5509019607844,
+            2978.314039215686
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/baltic.json",
+          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/15/11.webp?6ab4a113",
+            "referenceSha256": "bf197ede717e168cce2f7ef28de2a8843511acb2c22e94c56dcea3ac8e9ac9f8",
+            "localTile": "maps/tiles/erangel/4/7/5.webp",
+            "localSha256": "0b26e10ce9a450021f430dce09a689c49b4b9c577b227e2b1ca0d43cc1efc0e9",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8051808675130209
+          }
+        }
+      ],
+      "unverifiedCategories": [
+        "secretRooms"
+      ],
+      "note": "Five tower and seven vehicle anchors cover center and sides."
+    },
+    {
+      "mapId": "miramar",
+      "rasterPixels": 8192,
+      "extentCm": 816000,
+      "rasterHash": "ecc67e93",
+      "points": [
+        {
+          "id": "miramar-blueChipTower-4",
+          "typeKey": "blueChipTower",
+          "pointIndex": 4,
+          "sourceCoordinate": [
+            -43.7481,
+            122.5229
+          ],
+          "referenceWorldCm": [
+            390550,
+            139450
+          ],
+          "referencePixel": [
+            3920.81568627451,
+            1399.9686274509804
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/15/5.webp?ecc67e93",
+            "referenceSha256": "934b3e7eb8bd51d3755936a1cfdeb3da0302ade339a3241988b8e44dc1472077",
+            "localTile": "maps/tiles/miramar/4/7/2.webp",
+            "localSha256": "7d414ddbacb1c4decd3892738ce27d08391715c916d73a0bada65a2a7d17ca74",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6129353841145834
+          }
+        },
+        {
+          "id": "miramar-blueChipTower-20",
+          "typeKey": "blueChipTower",
+          "pointIndex": 20,
+          "sourceCoordinate": [
+            -149.5968,
+            200.5133
+          ],
+          "referenceWorldCm": [
+            639150,
+            476850
+          ],
+          "referencePixel": [
+            6416.564705882353,
+            4787.2
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/25/18.webp?ecc67e93",
+            "referenceSha256": "8f3c84f4fe313d1b71f8476e8840e9996fd9d428ad38b6c23e45ed62c1704c4c",
+            "localTile": "maps/tiles/miramar/4/12/9.webp",
+            "localSha256": "b8af5ba7c016e64794a8fe4ac416e4703f74bb7db64266129fe6175ced006360",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.9280548095703125
+          }
+        },
+        {
+          "id": "miramar-blueChipTower-28",
+          "typeKey": "blueChipTower",
+          "pointIndex": 28,
+          "sourceCoordinate": [
+            -209.2379,
+            143.3601
+          ],
+          "referenceWorldCm": [
+            456970,
+            666960
+          ],
+          "referencePixel": [
+            4587.620392156863,
+            6695.755294117647
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/17/26.webp?ecc67e93",
+            "referenceSha256": "fd35a78b20cfad688ef44b1372278d8b17515aab7faca70338a96195957a4971",
+            "localTile": "maps/tiles/miramar/4/8/13.webp",
+            "localSha256": "aa5101a9c3e1978d636135d3f40f6a0557f93c1d2c95aa39b58cca2172fe2529",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.9940999348958334
+          }
+        },
+        {
+          "id": "miramar-blueChipTower-14",
+          "typeKey": "blueChipTower",
+          "pointIndex": 14,
+          "sourceCoordinate": [
+            -121.9268,
+            60.1242
+          ],
+          "referenceWorldCm": [
+            191650,
+            388650
+          ],
+          "referencePixel": [
+            1924.0156862745098,
+            3901.741176470588
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/7/15.webp?ecc67e93",
+            "referenceSha256": "2571e19beb352281b3f3d2e834a799e8ef97326cb122e79e44669fb57aa54698",
+            "localTile": "maps/tiles/miramar/4/3/7.webp",
+            "localSha256": "3703dcfdee2ea1606a7b1e606320bac1680483e5cca7b3e821d1ed72c7cf74fe",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8077901204427084
+          }
+        },
+        {
+          "id": "miramar-blueChipTower-34",
+          "typeKey": "blueChipTower",
+          "pointIndex": 34,
+          "sourceCoordinate": [
+            -138.2213,
+            119.7559
+          ],
+          "referenceWorldCm": [
+            381730,
+            440590
+          ],
+          "referencePixel": [
+            3832.269803921569,
+            4423.178039215686
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/14/17.webp?ecc67e93",
+            "referenceSha256": "fc04099e478c5e62c1ebd0dcccb00c456b51b8eb592630e768e3937b8bb6e6fa",
+            "localTile": "maps/tiles/miramar/4/7/8.webp",
+            "localSha256": "be64c8cab722071b26b49d3192e93108cd71f371cbf2407f90a0910eb57ca428",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.792510986328125
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupB-27",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 27,
+          "sourceCoordinate": [
+            -58.2643,
+            73.8237
+          ],
+          "referenceWorldCm": [
+            235318,
+            185721
+          ],
+          "referencePixel": [
+            2362.4081568627453,
+            1864.4931764705882
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/9/7.webp?ecc67e93",
+            "referenceSha256": "ef0040bc39e09dfac9739f418f0b2127977173e45901a1570702c524432793ee",
+            "localTile": "maps/tiles/miramar/4/4/3.webp",
+            "localSha256": "fc9632277d13b7fbd4496b4cc9329d321df4eed1b58be457054417f12b222809",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6938883463541666
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupA-23",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 23,
+          "sourceCoordinate": [
+            -63.4253,
+            192.5609
+          ],
+          "referenceWorldCm": [
+            613801,
+            202172
+          ],
+          "referencePixel": [
+            6162.0806274509805,
+            2029.6483137254902
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/24/7.webp?ecc67e93",
+            "referenceSha256": "c3ae54135e02aed1bc3f725f5e0b229d5af101eaad0f677a75f5233204f37211",
+            "localTile": "maps/tiles/miramar/4/12/3.webp",
+            "localSha256": "b2c89b46ebfa4bd6d8f391a31bc476ed29f5b4d55364ed5a1a1d33a78f7fbcf0",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.618560791015625
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupA-251",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 251,
+          "sourceCoordinate": [
+            -195.3293,
+            192.9249
+          ],
+          "referenceWorldCm": [
+            614961,
+            622625
+          ],
+          "referencePixel": [
+            6173.726117647059,
+            6250.666666666667
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/24/24.webp?ecc67e93",
+            "referenceSha256": "f8fa030888c3714a823da6be871c64e375e1270dfabb5ec762e9987af3f0255f",
+            "localTile": "maps/tiles/miramar/4/12/12.webp",
+            "localSha256": "e0fb0a1cc7e2716d3ee1a8e4fdb235bac8eafcd49eea9dc01e7a2f15036af726",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8251851399739584
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupB-42",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 42,
+          "sourceCoordinate": [
+            -192.6551,
+            65.8895
+          ],
+          "referenceWorldCm": [
+            210027,
+            614101
+          ],
+          "referencePixel": [
+            2108.5063529411764,
+            6165.092392156863
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/8/24.webp?ecc67e93",
+            "referenceSha256": "85ef7731256716f2ca888c688fbee6dcec6621a8ea1c5cadaf383108a482180e",
+            "localTile": "maps/tiles/miramar/4/4/12.webp",
+            "localSha256": "287a38af8f42f6bde5c73ab114c2adf0082e4dafcc429f2fe76709320c4cbee0",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.9921620686848959
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupB-61",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 61,
+          "sourceCoordinate": [
+            -149.8794,
+            88.2736
+          ],
+          "referenceWorldCm": [
+            281378,
+            477751
+          ],
+          "referencePixel": [
+            2824.814431372549,
+            4796.245333333333
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/11/18.webp?ecc67e93",
+            "referenceSha256": "4a07ed824e8ea6eb3d7419ae342aaaa45a0961240dd1ab4ce8dd9c425d9e10b0",
+            "localTile": "maps/tiles/miramar/4/5/9.webp",
+            "localSha256": "d1d7c3ef77a1f1ebc7dc1115ba19b1ffd632b478a8e0a470eb37285c16b52b3b",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7586008707682291
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupA-162",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 162,
+          "sourceCoordinate": [
+            -151.2744,
+            162.7448
+          ],
+          "referenceWorldCm": [
+            518760,
+            482197
+          ],
+          "referencePixel": [
+            5207.943529411765,
+            4840.879686274509
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/20/18.webp?ecc67e93",
+            "referenceSha256": "f3c05290e6a5c6af72ae0ff7b46841142ee67c7fca45f9946309fac4c3c87a63",
+            "localTile": "maps/tiles/miramar/4/10/9.webp",
+            "localSha256": "fc3676d67ddb08ccd4e4d8c3a2b13838d0500f4ca46109deb4047f6dbc814ade",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7475840250651041
+          }
+        },
+        {
+          "id": "miramar-vehiclesGroupA-197",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 197,
+          "sourceCoordinate": [
+            -93.3023,
+            126.1067
+          ],
+          "referenceWorldCm": [
+            401974,
+            297408
+          ],
+          "referencePixel": [
+            4035.5036862745096,
+            2985.7430588235293
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/desert.json",
+          "sourceSha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/desert/5/15/11.webp?ecc67e93",
+            "referenceSha256": "7c3c40f477f7cba9f5bef1f89bfb0d7f926bf4904e8f710f362d8e844cf38f26",
+            "localTile": "maps/tiles/miramar/4/7/5.webp",
+            "localSha256": "90d44966bfd1a4173a5e00d546a4811458ad3adfc1e5d9a41980ac757645cbc5",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.809906005859375
+          }
+        }
+      ],
+      "unverifiedCategories": [
+        "secretRooms"
+      ],
+      "note": "Five tower and seven vehicle anchors cover center and sides."
+    },
+    {
+      "mapId": "vikendi",
+      "rasterPixels": 8192,
+      "extentCm": 816000,
+      "rasterHash": "94d1adc7",
+      "points": [
+        {
+          "id": "vikendi-blueChipTower-31",
+          "typeKey": "blueChipTower",
+          "pointIndex": 31,
+          "sourceCoordinate": [
+            -43.5936,
+            119.3999
+          ],
+          "referenceWorldCm": [
+            380595,
+            138958
+          ],
+          "referencePixel": [
+            3820.875294117647,
+            1395.0293333333334
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/14/5.webp?94d1adc7",
+            "referenceSha256": "c70e0d5ad4a52d4b4be66d6496ee10a6c72b28f3ddb9859da20572d9da27cab3",
+            "localTile": "maps/tiles/vikendi/4/7/2.webp",
+            "localSha256": "d7b76cffd77e6213d8fc5a8ffd8f9be88dcf1d99bbe0e2324585da6c9fbd44cd",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 5.2053070068359375
+          }
+        },
+        {
+          "id": "vikendi-blueChipTower-24",
+          "typeKey": "blueChipTower",
+          "pointIndex": 24,
+          "sourceCoordinate": [
+            -122.2583,
+            215.4257
+          ],
+          "referenceWorldCm": [
+            686684,
+            389707
+          ],
+          "referencePixel": [
+            6893.7687843137255,
+            3912.3526274509804
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/26/15.webp?94d1adc7",
+            "referenceSha256": "34c49a610a53bace42e535821f596d8d728d709f8876e0795dc3d5b871966669",
+            "localTile": "maps/tiles/vikendi/4/13/7.webp",
+            "localSha256": "59e6a4047a0e042abff776102e760b123a5b51dbc95b1e80fd438e8c1bfdb47a",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.736338297526042
+          }
+        },
+        {
+          "id": "vikendi-blueChipTower-19",
+          "typeKey": "blueChipTower",
+          "pointIndex": 19,
+          "sourceCoordinate": [
+            -210.8268,
+            135.4136
+          ],
+          "referenceWorldCm": [
+            431640,
+            672025
+          ],
+          "referencePixel": [
+            4333.327058823529,
+            6746.603921568628
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/16/26.webp?94d1adc7",
+            "referenceSha256": "7db40acec57b907989ad1e1df8f1f454e07fd31608d7a194b1b389acfd82ef8b",
+            "localTile": "maps/tiles/vikendi/4/8/13.webp",
+            "localSha256": "32b44d05d1ea01b2ad887aeb8368e3d4bc4f25ca6dd666b83c5a3a4dbcb3a7fe",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.813725789388021
+          }
+        },
+        {
+          "id": "vikendi-blueChipTower-26",
+          "typeKey": "blueChipTower",
+          "pointIndex": 26,
+          "sourceCoordinate": [
+            -120.8942,
+            43.5549
+          ],
+          "referenceWorldCm": [
+            138834,
+            385359
+          ],
+          "referencePixel": [
+            1393.7844705882353,
+            3868.702117647059
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/5/15.webp?94d1adc7",
+            "referenceSha256": "5f901eb805a4934eb27966199e8aa1561abe3b860e9614a303e911bd7d54f34d",
+            "localTile": "maps/tiles/vikendi/4/2/7.webp",
+            "localSha256": "7051c65fc7151cfb2f6463189b7a0fbaa83ee8f192ee8b2d1800e0ef3dc496d1",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.9148966471354165
+          }
+        },
+        {
+          "id": "vikendi-blueChipTower-14",
+          "typeKey": "blueChipTower",
+          "pointIndex": 14,
+          "sourceCoordinate": [
+            -126.1447,
+            129.4733
+          ],
+          "referenceWorldCm": [
+            412705,
+            402095
+          ],
+          "referencePixel": [
+            4143.234509803921,
+            4036.718431372549
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/16/15.webp?94d1adc7",
+            "referenceSha256": "d1c2cb6cfb779539c06f6d442b99320e5f8f8a85df55210b7cf1654cf6a33d3b",
+            "localTile": "maps/tiles/vikendi/4/8/7.webp",
+            "localSha256": "ff1ac0121e14d8be998a95a1c1e619f528a9a64c412a4a918d8f573c53e7663e",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.2059885660807295
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-186",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 186,
+          "sourceCoordinate": [
+            -61.4324,
+            65.6278
+          ],
+          "referenceWorldCm": [
+            209193,
+            195820
+          ],
+          "referencePixel": [
+            2100.1336470588235,
+            1965.8792156862746
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/8/7.webp?94d1adc7",
+            "referenceSha256": "89a7ed6274f73bfc7b77ae66be519fa38e976b9bf030a58a79629f712ce8f5b2",
+            "localTile": "maps/tiles/vikendi/4/4/3.webp",
+            "localSha256": "24307067c539116bd00cf502fffd59ddc4054ee68852705b11ca252d4f473ca1",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.1634674072265625
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-241",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 241,
+          "sourceCoordinate": [
+            -64.2189,
+            191.2207
+          ],
+          "referenceWorldCm": [
+            609529,
+            204702
+          ],
+          "referencePixel": [
+            6119.193098039215,
+            2055.0475294117646
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/23/8.webp?94d1adc7",
+            "referenceSha256": "72fb8e2e175e5986dc64f9b425cfd2f6b435d5bd40c75578198ce9424f1c2529",
+            "localTile": "maps/tiles/vikendi/4/11/4.webp",
+            "localSha256": "2c500c5ae5e5618227fcf1a439e99654bdc7da9e6e4aefeedf116e92409b6f53",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.3019561767578125
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-156",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 156,
+          "sourceCoordinate": [
+            -197.2758,
+            197.0467
+          ],
+          "referenceWorldCm": [
+            628100,
+            628830
+          ],
+          "referencePixel": [
+            6305.63137254902,
+            6312.96
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/24/24.webp?94d1adc7",
+            "referenceSha256": "53e9fd2b083f8cdf7cbf4863c4491085c8c775f8348024cc05202981888b2952",
+            "localTile": "maps/tiles/vikendi/4/12/12.webp",
+            "localSha256": "739604f68c71f65d6a1e4f9ec0a2ecfadd5c8c2912c5c59bb9442b53b6a855d3",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.6993306477864585
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-87",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 87,
+          "sourceCoordinate": [
+            -192.9207,
+            61.4472
+          ],
+          "referenceWorldCm": [
+            195867,
+            614948
+          ],
+          "referencePixel": [
+            1966.3510588235295,
+            6173.595607843137
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/7/24.webp?94d1adc7",
+            "referenceSha256": "c27f49c083de5a1599dd57c372b30aeeaf8b216fa7273cd70c3b5c485db75459",
+            "localTile": "maps/tiles/vikendi/4/3/12.webp",
+            "localSha256": "2f9acefe4f84816cfa9b48567b2a8b0ef344ef41510f5050534435019e854057",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.7668304443359375
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-200",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 200,
+          "sourceCoordinate": [
+            -150.8394,
+            91.5274
+          ],
+          "referenceWorldCm": [
+            291750,
+            480811
+          ],
+          "referencePixel": [
+            2928.9411764705883,
+            4826.965333333334
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/11/18.webp?94d1adc7",
+            "referenceSha256": "1e73dc379b5a77bcfa45603bf640e9672431dbf088233ad60d49f5ab3ed5188f",
+            "localTile": "maps/tiles/vikendi/4/5/9.webp",
+            "localSha256": "fb6e11620d96a0da5cbf65d632bd24dba2ede006ebce99625236d9a43b0b8f44",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.1832122802734375
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-215",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 215,
+          "sourceCoordinate": [
+            -156.5378,
+            170.1648
+          ],
+          "referenceWorldCm": [
+            542412,
+            498975
+          ],
+          "referencePixel": [
+            5445.391058823529,
+            5009.317647058823
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/21/19.webp?94d1adc7",
+            "referenceSha256": "c87fc06338383059ef92a5d0d337f1350ecb8900c3f331ec58cf3407e33b8f81",
+            "localTile": "maps/tiles/vikendi/4/10/9.webp",
+            "localSha256": "dc860abd967c846fc469d074152138585ac1c182cfa0d5b718955210a67da699",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 5.131978352864583
+          }
+        },
+        {
+          "id": "vikendi-vehiclesGroupA-36",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 36,
+          "sourceCoordinate": [
+            -89.7204,
+            131.8309
+          ],
+          "referenceWorldCm": [
+            420220,
+            285990
+          ],
+          "referencePixel": [
+            4218.679215686275,
+            2871.115294117647
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/dihorotok.json",
+          "sourceSha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok/5/16/11.webp?94d1adc7",
+            "referenceSha256": "3d20a1a1b68ba08b4ffd121f22ae81821f40e22f04495b1b279f491538805be2",
+            "localTile": "maps/tiles/vikendi/4/8/5.webp",
+            "localSha256": "e55b930ae42023f39030eeff47bc5e38f895d573e3bab103aa3e63a4c1901342",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.4408009847005205
+          }
+        }
+      ],
+      "unverifiedCategories": [
+        "secretRooms"
+      ],
+      "note": "Five tower and seven vehicle anchors cover center and sides."
+    },
+    {
+      "mapId": "taego",
+      "rasterPixels": 8192,
+      "extentCm": 816000,
+      "rasterHash": "7a968f9b",
+      "points": [
+        {
+          "id": "taego-vehiclesGroupB-11",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 11,
+          "sourceCoordinate": [
+            -34.7914,
+            126.962
+          ],
+          "referenceWorldCm": [
+            404700,
+            110900
+          ],
+          "referencePixel": [
+            4062.8705882352942,
+            1113.349019607843
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/15/4.webp?7a968f9b",
+            "referenceSha256": "22fa4db51dc7046b254afdb94f647cc5e0c7000e47ff062df34884e66c2df3ed",
+            "localTile": "maps/tiles/taego/4/7/2.webp",
+            "localSha256": "4f82dcb14193024e2134044a79935dd938348b1acebbd34e3de5b3d689dd788e",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.800038655598958
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-179",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 179,
+          "sourceCoordinate": [
+            -127.558,
+            220.2306
+          ],
+          "referenceWorldCm": [
+            702000,
+            406600
+          ],
+          "referencePixel": [
+            7047.529411764706,
+            4081.9450980392157
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/27/15.webp?7a968f9b",
+            "referenceSha256": "27abc7c6193b2c7eac8b2656224c80f022843fe5cbf5bb57c9932363c831d40e",
+            "localTile": "maps/tiles/taego/4/13/7.webp",
+            "localSha256": "ac6767a151cc8b4a9c1f64e3d7c6e353033a646efd93907564c632ff018278ff",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.086527506510417
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-294",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 294,
+          "sourceCoordinate": [
+            -217.5169,
+            125.315
+          ],
+          "referenceWorldCm": [
+            399450,
+            693350
+          ],
+          "referencePixel": [
+            4010.164705882353,
+            6960.690196078432
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/15/27.webp?7a968f9b",
+            "referenceSha256": "807e995317f857351f5a652b152b3a06223403c8ec7db8655f497042093d0aaf",
+            "localTile": "maps/tiles/taego/4/7/13.webp",
+            "localSha256": "b67d1b80a4afb2d60609091a207ea492e5d944a40394d9899b7bb1859b4f2fbc",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.541982014973958
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-123",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 123,
+          "sourceCoordinate": [
+            -128.2482,
+            40.7207
+          ],
+          "referenceWorldCm": [
+            129800,
+            408800
+          ],
+          "referencePixel": [
+            1303.0901960784313,
+            4104.03137254902
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/5/16.webp?7a968f9b",
+            "referenceSha256": "78d2999f1c2971425bba3eb28a0646a3d0dd47a862fb66e745d7bc7dd59fb895",
+            "localTile": "maps/tiles/taego/4/2/8.webp",
+            "localSha256": "6e6f45d05bfc394ee68f527509f75de05ef59cade74a03874f8a617868cf9ca9",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.137298583984375
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupB-1",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 1,
+          "sourceCoordinate": [
+            -127.6522,
+            134.3814
+          ],
+          "referenceWorldCm": [
+            428350,
+            406900
+          ],
+          "referencePixel": [
+            4300.298039215686,
+            4084.956862745098
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/16/15.webp?7a968f9b",
+            "referenceSha256": "7e10e2849458bc52589d60c60b382f9e6d806edc23e6c0d4efafb09952fa292b",
+            "localTile": "maps/tiles/taego/4/8/7.webp",
+            "localSha256": "b521629e7ebb5ac0cf07e3b4732207ce047a3f2ebd049f3ed07d690092d50470",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.321024576822917
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-153",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 153,
+          "sourceCoordinate": [
+            -68.3907,
+            63.7006
+          ],
+          "referenceWorldCm": [
+            203050,
+            218000
+          ],
+          "referencePixel": [
+            2038.4627450980392,
+            2188.549019607843
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/7/8.webp?7a968f9b",
+            "referenceSha256": "6ebaa96edfc32c241fd496a45eb648e80d907a28ee6539bebc4527ab74b89ddf",
+            "localTile": "maps/tiles/taego/4/3/4.webp",
+            "localSha256": "61d6c0e561ea9b1ca166d69a38cff09378f6c32155563097e237a9ca6b6d99aa",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.081532796223958
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-4",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 4,
+          "sourceCoordinate": [
+            -67.3868,
+            182.051
+          ],
+          "referenceWorldCm": [
+            580300,
+            214800
+          ],
+          "referencePixel": [
+            5825.756862745098,
+            2156.423529411765
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/22/8.webp?7a968f9b",
+            "referenceSha256": "504a13e5aee8323128548cc7ec106f7d21b4606cbc55b3b652a65d17818d6026",
+            "localTile": "maps/tiles/taego/4/11/4.webp",
+            "localSha256": "5c8812390fe5adeaf960ed98ea4225218fdf0da52d8e0c3f378707f636692106",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.0152740478515625
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-196",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 196,
+          "sourceCoordinate": [
+            -188.8901,
+            184.9843
+          ],
+          "referenceWorldCm": [
+            589650,
+            602100
+          ],
+          "referencePixel": [
+            5919.623529411765,
+            6044.611764705883
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/23/23.webp?7a968f9b",
+            "referenceSha256": "7ce98385271e30c66ac3e66f2d9efaeda32064632dfbc18c3b64fed13a03dc26",
+            "localTile": "maps/tiles/taego/4/11/11.webp",
+            "localSha256": "36f0337f5492140199bcff9fcdf578ab50b53e426329854a1c4044365fffb706",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 5.06634521484375
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupE-47",
+          "typeKey": "vehiclesGroupE",
+          "pointIndex": 47,
+          "sourceCoordinate": [
+            -190.7963,
+            61.4166
+          ],
+          "referenceWorldCm": [
+            195770,
+            608176
+          ],
+          "referencePixel": [
+            1965.377254901961,
+            6105.610039215686
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "E",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/7/23.webp?7a968f9b",
+            "referenceSha256": "53fca07d8be229e300c2d47b97ac54e76562b928d25d949ae425911802e5a5c5",
+            "localTile": "maps/tiles/taego/4/3/11.webp",
+            "localSha256": "96ad1190ca3ec1b9698b6533717f9d1a5bf4592d3df6327f764c6d8fe95a22c7",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.721649169921875
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-127",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 127,
+          "sourceCoordinate": [
+            -153.4398,
+            81.1434
+          ],
+          "referenceWorldCm": [
+            258650,
+            489100
+          ],
+          "referencePixel": [
+            2596.643137254902,
+            4910.180392156863
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/10/19.webp?7a968f9b",
+            "referenceSha256": "590088df8f9fed3a970741846dbda28b36af49e1d8bcd03d07821f582f3f0cac",
+            "localTile": "maps/tiles/taego/4/5/9.webp",
+            "localSha256": "0f5c6962cf110f6633f0ca373e2dd76977d43bc413f90d5e6b62743705dc1d09",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.127471923828125
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupA-149",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 149,
+          "sourceCoordinate": [
+            -149.9262,
+            174.9766
+          ],
+          "referenceWorldCm": [
+            557750,
+            477900
+          ],
+          "referencePixel": [
+            5599.3725490196075,
+            4797.7411764705885
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/21/18.webp?7a968f9b",
+            "referenceSha256": "134f42b55d6db40658c8752dae5219725db078605bb8a912fad15810f14068ea",
+            "localTile": "maps/tiles/taego/4/10/9.webp",
+            "localSha256": "04dad77a71741716135f6b5762d6d387403c3c33e0f706d39504fd2da7738af1",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.8060455322265625
+          }
+        },
+        {
+          "id": "taego-vehiclesGroupM-Taego-6",
+          "typeKey": "vehiclesGroupM-Taego",
+          "pointIndex": 6,
+          "sourceCoordinate": [
+            -93.2674,
+            123.9784
+          ],
+          "referenceWorldCm": [
+            395190,
+            297296
+          ],
+          "referencePixel": [
+            3967.3976470588236,
+            2984.6186666666667
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "M",
+          "sourceUrl": "https://pubg.gs/layers/tiger.json",
+          "sourceSha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/tiger/5/15/11.webp?7a968f9b",
+            "referenceSha256": "f431f589b843e5df03b7ade16bb87ba018739367984fb0a043d2a4b2f45bc114",
+            "localTile": "maps/tiles/taego/4/7/5.webp",
+            "localSha256": "ee447b5f97ee85c7fa7859827f947fbc8392a011635d7ad50aefa57099e13c2f",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.0287373860677085
+          }
+        }
+      ],
+      "unverifiedCategories": [
+        "secretRooms"
+      ],
+      "note": "Taego has no local tower category; its 12 anchors are vehicle spots."
+    },
+    {
+      "mapId": "deston",
+      "rasterPixels": 8192,
+      "extentCm": 816000,
+      "rasterHash": "8dde92cf",
+      "points": [
+        {
+          "id": "deston-blueChipTower-12",
+          "typeKey": "blueChipTower",
+          "pointIndex": 12,
+          "sourceCoordinate": [
+            -35.8744,
+            141.5524
+          ],
+          "referenceWorldCm": [
+            451208,
+            114352
+          ],
+          "referencePixel": [
+            4529.774431372549,
+            1148.0043921568627
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/17/4.webp?8dde92cf",
+            "referenceSha256": "ed6640220d1c3dcfa8291662c79b07516e04d3aba280ad6f07fb16c359942d75",
+            "localTile": "maps/tiles/deston/4/8/2.webp",
+            "localSha256": "2f55793da6df6f103a7168b3de6c27bae8c5b243d273bb4ccf79f1aa9bfaa46c",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 2.6624755859375
+          }
+        },
+        {
+          "id": "deston-blueChipTower-1",
+          "typeKey": "blueChipTower",
+          "pointIndex": 1,
+          "sourceCoordinate": [
+            -117.1727,
+            233.269
+          ],
+          "referenceWorldCm": [
+            743561,
+            373496
+          ],
+          "referencePixel": [
+            7464.769254901961,
+            3749.6069019607844
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/29/14.webp?8dde92cf",
+            "referenceSha256": "2b929af704544333c38f71d07371d231ee7489043f36c2080c4870f2d9fff7ce",
+            "localTile": "maps/tiles/deston/4/14/7.webp",
+            "localSha256": "e6c84c93dbffbe8af2db65f92568bccef03445af3be27ef20d223fd14273aa9c",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 2.895355224609375
+          }
+        },
+        {
+          "id": "deston-blueChipTower-27",
+          "typeKey": "blueChipTower",
+          "pointIndex": 27,
+          "sourceCoordinate": [
+            -225.0799,
+            120.6496
+          ],
+          "referenceWorldCm": [
+            384579,
+            717458
+          ],
+          "referencePixel": [
+            3860.8715294117646,
+            7202.715607843137
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/15/28.webp?8dde92cf",
+            "referenceSha256": "8c549c991f8bc9555af211b86737eb24b912509417586251585f3c1dbf928e93",
+            "localTile": "maps/tiles/deston/4/7/14.webp",
+            "localSha256": "e96b600238ff32162a8f4058c3cef9898e6c827ce33be379fa6e9cccacf3007e",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.2196248372395835
+          }
+        },
+        {
+          "id": "deston-blueChipTower-20",
+          "typeKey": "blueChipTower",
+          "pointIndex": 20,
+          "sourceCoordinate": [
+            -130.9258,
+            32.7067
+          ],
+          "referenceWorldCm": [
+            104255,
+            417335
+          ],
+          "referencePixel": [
+            1046.6384313725491,
+            4189.716078431373
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/4/16.webp?8dde92cf",
+            "referenceSha256": "495ccbacd2c2764bf9950e391811c71c172e2bb72faa0ddcfa29db7bca85d462",
+            "localTile": "maps/tiles/deston/4/2/8.webp",
+            "localSha256": "9ffb1059210f6554d37362bd965dffbae64a3cbecf1e8c714f447c80ba9c2584",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.264500935872396
+          }
+        },
+        {
+          "id": "deston-blueChipTower-22",
+          "typeKey": "blueChipTower",
+          "pointIndex": 22,
+          "sourceCoordinate": [
+            -132.7953,
+            118.6246
+          ],
+          "referenceWorldCm": [
+            378124,
+            423294
+          ],
+          "referencePixel": [
+            3796.068392156863,
+            4249.539764705883
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/14/16.webp?8dde92cf",
+            "referenceSha256": "52607b003d8a8726ba732355523e06bff55cf2e983959ffbe97c37f48b96fe02",
+            "localTile": "maps/tiles/deston/4/7/8.webp",
+            "localSha256": "8cdf22110958695b1fafd128aabe088a75d94fe2f859a7087228bc3ca07cec54",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.1096598307291665
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupB-30",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 30,
+          "sourceCoordinate": [
+            -60.2811,
+            64.2621
+          ],
+          "referenceWorldCm": [
+            204840,
+            192150
+          ],
+          "referencePixel": [
+            2056.4329411764706,
+            1929.035294117647
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/8/7.webp?8dde92cf",
+            "referenceSha256": "c7ebbb676424036d946b7e06eea2932c6de45ce34fee634db90e120dc267b340",
+            "localTile": "maps/tiles/deston/4/4/3.webp",
+            "localSha256": "2d2a3b5a02c7d0799ce6ac1b28342735d50221370e7e73feccf5a0bf35baadcc",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.484405517578125
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupA-83",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 83,
+          "sourceCoordinate": [
+            -58.656,
+            188.1811
+          ],
+          "referenceWorldCm": [
+            599840,
+            186970
+          ],
+          "referencePixel": [
+            6021.923137254902,
+            1877.032156862745
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/23/7.webp?8dde92cf",
+            "referenceSha256": "f45fa34998458775a27ed5575829da3968099636efd7c25d0f873d4599574b05",
+            "localTile": "maps/tiles/deston/4/11/3.webp",
+            "localSha256": "e77fc3aeaaf2e374cdcd068ed910b77a955b883333f51ce1ea5cd77f30744a0f",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.1793365478515625
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupB-29",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 29,
+          "sourceCoordinate": [
+            -185.7529,
+            194.3268
+          ],
+          "referenceWorldCm": [
+            619430,
+            592100
+          ],
+          "referencePixel": [
+            6218.59137254902,
+            5944.219607843137
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/24/23.webp?8dde92cf",
+            "referenceSha256": "cc1ecd1dee4f2ff0f61b681bb4b0478d9a1a55267b8598f7aa1732fca55a966e",
+            "localTile": "maps/tiles/deston/4/12/11.webp",
+            "localSha256": "69dcaed2d9afd56a02a8072f4b7bfc40372132e89240e1c9753c5a3cda8337b8",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 4.34442138671875
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupC-Deston-2",
+          "typeKey": "vehiclesGroupC-Deston",
+          "pointIndex": 2,
+          "sourceCoordinate": [
+            -199.7604,
+            61.1846
+          ],
+          "referenceWorldCm": [
+            195030,
+            636750
+          ],
+          "referencePixel": [
+            1957.9482352941177,
+            6392.470588235294
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "C",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/7/24.webp?8dde92cf",
+            "referenceSha256": "6a2af1d4085d17533c285d708376f68d0ada68038c9caa5cd1f5cb4af748cf78",
+            "localTile": "maps/tiles/deston/4/3/12.webp",
+            "localSha256": "f42545cf7d15fb772fb72ae4c73862de197ea7b24abc4dc2d8859ba8033a393f",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.15313720703125
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupA-33",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 33,
+          "sourceCoordinate": [
+            -156.9002,
+            92.569
+          ],
+          "referenceWorldCm": [
+            295070,
+            500130
+          ],
+          "referencePixel": [
+            2962.27137254902,
+            5020.912941176471
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/11/19.webp?8dde92cf",
+            "referenceSha256": "488af6912578cc5d893d50b2da8206df52afff1fc95f236281430065918f83b2",
+            "localTile": "maps/tiles/deston/4/5/9.webp",
+            "localSha256": "3d41276b9f3f3cfad8bdb570798b2474beda5f5cb704a1f2e2f138d090622441",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 3.2216695149739585
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupF-27",
+          "typeKey": "vehiclesGroupF",
+          "pointIndex": 27,
+          "sourceCoordinate": [
+            -153.4717,
+            165.2222
+          ],
+          "referenceWorldCm": [
+            526657,
+            489202
+          ],
+          "referencePixel": [
+            5287.223215686275,
+            4911.204392156863
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "F",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/20/19.webp?8dde92cf",
+            "referenceSha256": "27716ae1894871545946f26a5b3c736e03b0aef9d417c090eb9796dab509d163",
+            "localTile": "maps/tiles/deston/4/10/9.webp",
+            "localSha256": "55d9efd206ee357036ea4e43b4c543b902a3a0f5c6a12eebd9b51cb24a47a4d3",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 2.551874796549479
+          }
+        },
+        {
+          "id": "deston-vehiclesGroupK-19",
+          "typeKey": "vehiclesGroupK",
+          "pointIndex": 19,
+          "sourceCoordinate": [
+            -87.1479,
+            133.5218
+          ],
+          "referenceWorldCm": [
+            425610,
+            277790
+          ],
+          "referencePixel": [
+            4272.790588235294,
+            2788.7937254901963
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "K",
+          "sourceUrl": "https://pubg.gs/layers/kiki.json",
+          "sourceSha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/kiki/5/16/10.webp?8dde92cf",
+            "referenceSha256": "a41038f119bf17eed9490964550b256aee1dc1c29b58157b176c89b4fe8b997e",
+            "localTile": "maps/tiles/deston/4/8/5.webp",
+            "localSha256": "91adb45b146eca821b1f827f93e5c0fe51ccb109b23c348a1334693bac5c9046",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 2.953608194986979
+          }
+        }
+      ],
+      "unverifiedCategories": [
+        "secretRooms"
+      ],
+      "note": "Five tower and seven vehicle anchors cover center and sides."
+    },
+    {
+      "mapId": "rondo",
+      "rasterPixels": 8192,
+      "extentCm": 816000,
+      "rasterHash": "674734d9",
+      "points": [
+        {
+          "id": "rondo-blueChipTower-33",
+          "typeKey": "blueChipTower",
+          "pointIndex": 33,
+          "sourceCoordinate": [
+            -26.007,
+            123.3564
+          ],
+          "referenceWorldCm": [
+            393207,
+            82899
+          ],
+          "referencePixel": [
+            3947.489882352941,
+            832.2409411764706
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/15/3.webp?674734d9",
+            "referenceSha256": "5db95f839e1855cbceb851e851ea35f0ecf09fe728afdf3dd98206b21ce502f6",
+            "localTile": "maps/tiles/rondo/4/7/1.webp",
+            "localSha256": "ad1a57a33ca653dd6a1288bf659e0ffe4bf43b8dd913936c6edc7afea53bb107",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8444722493489584
+          }
+        },
+        {
+          "id": "rondo-blueChipTower-25",
+          "typeKey": "blueChipTower",
+          "pointIndex": 25,
+          "sourceCoordinate": [
+            -148.3231,
+            212.074
+          ],
+          "referenceWorldCm": [
+            676000,
+            472790
+          ],
+          "referencePixel": [
+            6786.509803921569,
+            4746.440784313725
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/26/18.webp?674734d9",
+            "referenceSha256": "71abde205de0dd347636eca0e7e75c5c9c171ce99ed61124138612b42bba9c6d",
+            "localTile": "maps/tiles/rondo/4/13/9.webp",
+            "localSha256": "4e6cf9fdc41e5946381154e8fc04e034d2485831ed4f7bea21bd32ebc591bfb0",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8803507486979166
+          }
+        },
+        {
+          "id": "rondo-blueChipTower-7",
+          "typeKey": "blueChipTower",
+          "pointIndex": 7,
+          "sourceCoordinate": [
+            -202.2915,
+            116.8816
+          ],
+          "referenceWorldCm": [
+            372568,
+            644818
+          ],
+          "referencePixel": [
+            3740.2905098039214,
+            6473.466980392157
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/14/25.webp?674734d9",
+            "referenceSha256": "33de20449118509129fefd6c97ffb439ac35d1087c3961f629431790ba90b900",
+            "localTile": "maps/tiles/rondo/4/7/12.webp",
+            "localSha256": "1d2dfd56225049822438e2b40bed6e7f39400fb2920cd18dd1e0a07fd6beca4a",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 1.1934153238932292
+          }
+        },
+        {
+          "id": "rondo-blueChipTower-29",
+          "typeKey": "blueChipTower",
+          "pointIndex": 29,
+          "sourceCoordinate": [
+            -137.309,
+            42.8252
+          ],
+          "referenceWorldCm": [
+            136508,
+            437682
+          ],
+          "referencePixel": [
+            1370.4332549019607,
+            4393.984
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/5/17.webp?674734d9",
+            "referenceSha256": "eb8bcaaa582317f6e9ed11db21f532a86811aa8382ef4f34fec71f84a28ec718",
+            "localTile": "maps/tiles/rondo/4/2/8.webp",
+            "localSha256": "bf1f3a9b20611b858dc7f18f9054cef134875ddd3830cadf3684fcc885cf943a",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 1.1217549641927083
+          }
+        },
+        {
+          "id": "rondo-blueChipTower-15",
+          "typeKey": "blueChipTower",
+          "pointIndex": 15,
+          "sourceCoordinate": [
+            -138.798,
+            132.3787
+          ],
+          "referenceWorldCm": [
+            421966,
+            442428
+          ],
+          "referencePixel": [
+            4236.20768627451,
+            4441.630117647059
+          ],
+          "referenceLayer": "towers",
+          "referenceMode": null,
+          "referenceGroup": null,
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/16/17.webp?674734d9",
+            "referenceSha256": "4581253fbb40214ccf5f38dba84ad2dd9a01351f75b5a61500c4f18d67ba8afa",
+            "localTile": "maps/tiles/rondo/4/8/8.webp",
+            "localSha256": "c018b00b2ba6dc7dde769332dd4efb9e4e8c331ce2c4b12f13f19851b65e0e7d",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6610463460286459
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupA-66",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 66,
+          "sourceCoordinate": [
+            -63.0313,
+            64.0647
+          ],
+          "referenceWorldCm": [
+            204211,
+            200917
+          ],
+          "referencePixel": [
+            2050.118274509804,
+            2017.0490980392158
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/8/7.webp?674734d9",
+            "referenceSha256": "18702e39db5760e21ea727eb1abe152d7e1e06e184dc06a309dd3ea735fa31d2",
+            "localTile": "maps/tiles/rondo/4/4/3.webp",
+            "localSha256": "15ecd4da7da2210f5489655306757dc4d49f2bfa383124e6ed0aa981cd4e8f94",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8069051106770834
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupA-144",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 144,
+          "sourceCoordinate": [
+            -67.1888,
+            195.9346
+          ],
+          "referenceWorldCm": [
+            624555,
+            214169
+          ],
+          "referencePixel": [
+            6270.042352941176,
+            2150.0887843137257
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/24/8.webp?674734d9",
+            "referenceSha256": "0c613f4c7b47ff83618df7308d0781fc4ad61886ce582366d68cc3e09e1a67e8",
+            "localTile": "maps/tiles/rondo/4/12/4.webp",
+            "localSha256": "4618e8af4f42b4754db0a5904d2e1c2a38690866868f035ab987a00e57f09e33",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.6266276041666666
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupA-173",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 173,
+          "sourceCoordinate": [
+            -199.6729,
+            194.6481
+          ],
+          "referenceWorldCm": [
+            620454,
+            636471
+          ],
+          "referencePixel": [
+            6228.871529411765,
+            6389.669647058823
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/24/24.webp?674734d9",
+            "referenceSha256": "d70d66ffc5f9483c16708fd2725746177875645a115f352180ccf10cabcbc4bf",
+            "localTile": "maps/tiles/rondo/4/12/12.webp",
+            "localSha256": "4064bb5800d16bbf9dad6b519eede696f086a3ae000863b9680b08935c58f5b8",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 1.0360260009765625
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupA-58",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 58,
+          "sourceCoordinate": [
+            -201.532,
+            65.3694
+          ],
+          "referenceWorldCm": [
+            208369,
+            642397
+          ],
+          "referencePixel": [
+            2091.8613333333333,
+            6449.1620392156865
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/8/25.webp?674734d9",
+            "referenceSha256": "c2906fd72452179d0d4c78f0fea3c5a7b618e5998ee57ba2cb9ce2a22c9052bd",
+            "localTile": "maps/tiles/rondo/4/4/12.webp",
+            "localSha256": "1d9126152d60efbfb14195a0011dc2d8ada9960b5c0e52b2d252bf987e83580d",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7858530680338541
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupB-25",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 25,
+          "sourceCoordinate": [
+            -154.0185,
+            86.1442
+          ],
+          "referenceWorldCm": [
+            274591,
+            490944
+          ],
+          "referencePixel": [
+            2756.678274509804,
+            4928.692705882353
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/10/19.webp?674734d9",
+            "referenceSha256": "36f3a0dde7bf3685acddfe707fb2135c441f9e082932844c85f49b6a4ed502ab",
+            "localTile": "maps/tiles/rondo/4/5/9.webp",
+            "localSha256": "7eaa1295a74a7f4aaab1688bd07e90cda6a59e149bc0c9433637d3e1590fa214",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.8054402669270834
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupA-183",
+          "typeKey": "vehiclesGroupA",
+          "pointIndex": 183,
+          "sourceCoordinate": [
+            -156.4006,
+            162.9743
+          ],
+          "referenceWorldCm": [
+            519492,
+            498538
+          ],
+          "referencePixel": [
+            5215.292235294118,
+            5004.930509803921
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "Default",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/20/19.webp?674734d9",
+            "referenceSha256": "32bf0e08e40bfaca384bfc02f7763be514be0d7a39fcdce2451fc35677536739",
+            "localTile": "maps/tiles/rondo/4/10/9.webp",
+            "localSha256": "be1443cf0fa913c1e165da12efaa8f19efdced46c7270f28d27ef501ecbd8dfb",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.7838999430338541
+          }
+        },
+        {
+          "id": "rondo-vehiclesGroupB-20",
+          "typeKey": "vehiclesGroupB",
+          "pointIndex": 20,
+          "sourceCoordinate": [
+            -93.013,
+            122.4346
+          ],
+          "referenceWorldCm": [
+            390269,
+            296485
+          ],
+          "referencePixel": [
+            3917.9946666666665,
+            2976.476862745098
+          ],
+          "referenceLayer": "vehicles",
+          "referenceMode": null,
+          "referenceGroup": "B",
+          "sourceUrl": "https://pubg.gs/layers/neon.json",
+          "sourceSha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+          "rasterProbe": {
+            "url": "https://cdn.wardo.gs/pubg/tiles/neon/5/15/11.webp?674734d9",
+            "referenceSha256": "8ffd25ac2abfa83c6111b959ffdfd9004d4e07da02436dce7c0e02f2294c0e44",
+            "localTile": "maps/tiles/rondo/4/7/5.webp",
+            "localSha256": "f3fbb903a2b5531d7a38a7273bbeff8a0ef010d0c81a29cd90fa726294b0091e",
+            "bestShiftPixels": [
+              0,
+              0
+            ],
+            "meanAbsoluteChannelDifference": 0.9117533365885416
+          }
+        }
+      ],
+      "unverifiedCategories": [
+        "secretRooms"
+      ],
+      "note": "Five tower and seven vehicle anchors cover center and sides."
+    }
+  ]
+}

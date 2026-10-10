@@ -1,8 +1,278 @@
 [
-  { "id": "erangel", "name": "Эрангель", "sizeKm": 8 },
-  { "id": "miramar", "name": "Мирамар", "sizeKm": 8 },
-  { "id": "vikendi", "name": "Викенди", "sizeKm": 8 },
-  { "id": "taego", "name": "Тэго", "sizeKm": 8 },
-  { "id": "deston", "name": "Дестон", "sizeKm": 8 },
-  { "id": "rondo", "name": "Рондо", "sizeKm": 8 }
+  {
+    "id": "erangel",
+    "name": "Эрангель",
+    "sizeKm": 8,
+    "provenance": {
+      "mapId": "erangel",
+      "raster": {
+        "localOverviewSha256": "89c3716e1f599caadf20fcc14e3d05bcf93b116f0cbabf65a65ef90e34434b84",
+        "nativePixels": [
+          8192,
+          8192
+        ],
+        "declaredSource": "https://cdn.wardo.gs/pubg/tiles/baltic",
+        "declaredVersion": "6ab4a113",
+        "boundsCm": [
+          0,
+          0,
+          816000,
+          816000
+        ],
+        "units": "centimeters",
+        "observedReferenceHash": "6ab4a113",
+        "geometryCheck": "12 local tile patches; zero shift is best among integer shifts -3..3 on both axes."
+      },
+      "markers": {
+        "source": "https://pubg.plus/en/map",
+        "declaredUpdated": "2026-09-11T09:29:27.000Z",
+        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "coordinateUnits": "1/256 of raster; [negative northing, easting]",
+        "gameBuild": null,
+        "mode": null
+      },
+      "reference": {
+        "url": "https://pubg.gs/layers/baltic.json",
+        "sha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+        "build": {
+          "update": "43.1",
+          "steamBuild": "25744443",
+          "extractedAt": "2026-10-07",
+          "source": "https://pubg.gs/about/"
+        }
+      },
+      "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+      "verificationScope": "coordinate transform and sampled raster geometry; not all categories or game objects"
+    }
+  },
+  {
+    "id": "miramar",
+    "name": "Мирамар",
+    "sizeKm": 8,
+    "provenance": {
+      "mapId": "miramar",
+      "raster": {
+        "localOverviewSha256": "2e3eceb4a2c2d4d43a87e235b4065ed509a7448aa1a0002b82b0438ef1bdcac0",
+        "nativePixels": [
+          8192,
+          8192
+        ],
+        "declaredSource": "https://cdn.wardo.gs/pubg/tiles/desert",
+        "declaredVersion": "ecc67e93",
+        "boundsCm": [
+          0,
+          0,
+          816000,
+          816000
+        ],
+        "units": "centimeters",
+        "observedReferenceHash": "ecc67e93",
+        "geometryCheck": "12 local tile patches; zero shift is best among integer shifts -3..3 on both axes."
+      },
+      "markers": {
+        "source": "https://pubg.plus/en/map",
+        "declaredUpdated": "2026-09-11T09:29:27.000Z",
+        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "coordinateUnits": "1/256 of raster; [negative northing, easting]",
+        "gameBuild": null,
+        "mode": null
+      },
+      "reference": {
+        "url": "https://pubg.gs/layers/desert.json",
+        "sha256": "8144c0ec68ee0850d198002a9de7e843106ff6127a0a10ee55b8e14bca9954bf",
+        "build": {
+          "update": "43.1",
+          "steamBuild": "25744443",
+          "extractedAt": "2026-10-07",
+          "source": "https://pubg.gs/about/"
+        }
+      },
+      "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+      "verificationScope": "coordinate transform and sampled raster geometry; not all categories or game objects"
+    }
+  },
+  {
+    "id": "vikendi",
+    "name": "Викенди",
+    "sizeKm": 8,
+    "provenance": {
+      "mapId": "vikendi",
+      "raster": {
+        "localOverviewSha256": "29a925fbc10ff9014415c548870a1a5089d6f4873048bfbe209f8a3d068f7040",
+        "nativePixels": [
+          8192,
+          8192
+        ],
+        "declaredSource": null,
+        "declaredVersion": null,
+        "boundsCm": [
+          0,
+          0,
+          816000,
+          816000
+        ],
+        "units": "centimeters",
+        "observedReferenceHash": "94d1adc7",
+        "geometryCheck": "12 local tile patches; zero shift is best among integer shifts -3..3 on both axes. Older raster provenance remains unknown."
+      },
+      "markers": {
+        "source": "https://pubg.plus/en/map",
+        "declaredUpdated": "2026-09-11T09:29:27.000Z",
+        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "coordinateUnits": "1/256 of raster; [negative northing, easting]",
+        "gameBuild": null,
+        "mode": null
+      },
+      "reference": {
+        "url": "https://pubg.gs/layers/dihorotok.json",
+        "sha256": "9965ff2dd0b1f3279df5c61b7dc036abf45d712f8f52d64e3b977b81bb58ca66",
+        "build": {
+          "update": "43.1",
+          "steamBuild": "25744443",
+          "extractedAt": "2026-10-07",
+          "source": "https://pubg.gs/about/"
+        }
+      },
+      "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+      "verificationScope": "coordinate transform and sampled raster geometry; not all categories or game objects"
+    }
+  },
+  {
+    "id": "taego",
+    "name": "Тэго",
+    "sizeKm": 8,
+    "provenance": {
+      "mapId": "taego",
+      "raster": {
+        "localOverviewSha256": "6ee7b307b588989f43e2963b173d0dadcea2cd1e148918e52d4ec8ccf0776737",
+        "nativePixels": [
+          8192,
+          8192
+        ],
+        "declaredSource": null,
+        "declaredVersion": null,
+        "boundsCm": [
+          0,
+          0,
+          816000,
+          816000
+        ],
+        "units": "centimeters",
+        "observedReferenceHash": "7a968f9b",
+        "geometryCheck": "12 local tile patches; zero shift is best among integer shifts -3..3 on both axes. Older raster provenance remains unknown."
+      },
+      "markers": {
+        "source": "https://pubg.plus/en/map",
+        "declaredUpdated": "2026-09-11T09:29:27.000Z",
+        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "coordinateUnits": "1/256 of raster; [negative northing, easting]",
+        "gameBuild": null,
+        "mode": null
+      },
+      "reference": {
+        "url": "https://pubg.gs/layers/tiger.json",
+        "sha256": "1135efe9835a34dec0f3cd881f9c24e58c557a9accf2eaeea8255e3569510d4c",
+        "build": {
+          "update": "43.1",
+          "steamBuild": "25744443",
+          "extractedAt": "2026-10-07",
+          "source": "https://pubg.gs/about/"
+        }
+      },
+      "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+      "verificationScope": "coordinate transform and sampled raster geometry; not all categories or game objects"
+    }
+  },
+  {
+    "id": "deston",
+    "name": "Дестон",
+    "sizeKm": 8,
+    "provenance": {
+      "mapId": "deston",
+      "raster": {
+        "localOverviewSha256": "05a36f44f22b2ce3c50253f8ab982cbea8cd36b0c11308b0a1e77860f7786ba6",
+        "nativePixels": [
+          8192,
+          8192
+        ],
+        "declaredSource": null,
+        "declaredVersion": null,
+        "boundsCm": [
+          0,
+          0,
+          816000,
+          816000
+        ],
+        "units": "centimeters",
+        "observedReferenceHash": "8dde92cf",
+        "geometryCheck": "12 local tile patches; zero shift is best among integer shifts -3..3 on both axes. Older raster provenance remains unknown."
+      },
+      "markers": {
+        "source": "https://pubg.plus/en/map",
+        "declaredUpdated": "2026-09-11T09:29:27.000Z",
+        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "coordinateUnits": "1/256 of raster; [negative northing, easting]",
+        "gameBuild": null,
+        "mode": null
+      },
+      "reference": {
+        "url": "https://pubg.gs/layers/kiki.json",
+        "sha256": "857cc23190c80157995c7f8534a786dcf9918ff8998f740a73b7811e744ba3d7",
+        "build": {
+          "update": "43.1",
+          "steamBuild": "25744443",
+          "extractedAt": "2026-10-07",
+          "source": "https://pubg.gs/about/"
+        }
+      },
+      "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+      "verificationScope": "coordinate transform and sampled raster geometry; not all categories or game objects"
+    }
+  },
+  {
+    "id": "rondo",
+    "name": "Рондо",
+    "sizeKm": 8,
+    "provenance": {
+      "mapId": "rondo",
+      "raster": {
+        "localOverviewSha256": "fb2f0f1d1302b9349532f1992809241aba8add6a6072dce6e5cce7e9fe6a2619",
+        "nativePixels": [
+          8192,
+          8192
+        ],
+        "declaredSource": "https://cdn.wardo.gs/pubg/tiles/neon",
+        "declaredVersion": "674734d9",
+        "boundsCm": [
+          0,
+          0,
+          816000,
+          816000
+        ],
+        "units": "centimeters",
+        "observedReferenceHash": "674734d9",
+        "geometryCheck": "12 local tile patches; zero shift is best among integer shifts -3..3 on both axes."
+      },
+      "markers": {
+        "source": "https://pubg.plus/en/map",
+        "declaredUpdated": "2026-09-11T09:29:27.000Z",
+        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "coordinateUnits": "1/256 of raster; [negative northing, easting]",
+        "gameBuild": null,
+        "mode": null
+      },
+      "reference": {
+        "url": "https://pubg.gs/layers/neon.json",
+        "sha256": "c84837934b5999af388a1773166aeabab205539b1e6d19c35d98b39e11dffb02",
+        "build": {
+          "update": "43.1",
+          "steamBuild": "25744443",
+          "extractedAt": "2026-10-07",
+          "source": "https://pubg.gs/about/"
+        }
+      },
+      "checkedAt": "2026-10-10T21:13:23.839639+00:00",
+      "verificationScope": "coordinate transform and sampled raster geometry; not all categories or game objects"
+    }
+  }
 ]

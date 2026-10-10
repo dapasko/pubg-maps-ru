@@ -12,7 +12,9 @@
     "maps:update": "node tools/update-maps-from-pubg-gs.mjs",
     "test": "node --test tests/*.test.mjs",
     "lint": "oxlint",
-    "format": "oxfmt"
+    "format": "oxfmt",
+    "markers:audit": "node tools/audit-marker-alignment.mjs",
+    "test:browser": "node tests/marker-browser.spec.mjs"
   },
   "dependencies": {
     "react": "19.2.6",
@@ -51,7 +53,9 @@
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vite": "8.0.13",
-    "wrangler": "4.92.0"
+    "wrangler": "4.92.0",
+    "playwright": "1.62.1",
+    "sharp": "0.35.4"
   },
   "type": "module"
 }
