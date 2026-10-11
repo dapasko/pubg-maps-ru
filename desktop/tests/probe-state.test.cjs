@@ -1,0 +1,5 @@
+const test=require('node:test');const assert=require('node:assert/strict');
+function subject(){let mod;assert.doesNotThrow(()=>{mod=require('../main/probe-state.cjs');},'probe state must exist');return mod;}
+test('toggle M closes interaction rather than reopening a different mode',()=>{const {nextMode}=subject();assert.equal(nextMode('hidden','toggleOverlay'),'view');assert.equal(nextMode('view','toggleOverlay'),'hidden');assert.equal(nextMode('interact','toggleOverlay'),'hidden');});
+test('interaction only opens from visible overlay; blur returns view',()=>{const {nextMode}=subject();assert.equal(nextMode('hidden','toggleInteraction'),'hidden');assert.equal(nextMode('view','toggleInteraction'),'interact');assert.equal(nextMode('interact','toggleInteraction'),'view');assert.equal(nextMode('interact','blur'),'view');});
+test('invalid event is rejected; Escape hides only interaction',()=>{const {nextMode}=subject();assert.throws(()=>nextMode('view','bogus'),/event/i);assert.equal(nextMode('interact','escape'),'hidden');assert.equal(nextMode('view','escape'),'view');});

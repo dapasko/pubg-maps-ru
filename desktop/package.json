@@ -1,0 +1,29 @@
+{
+  "name": "pubg-marker-overlay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline Windows marker overlay \u2014 first-stage compatibility probe",
+  "main": "main/index.cjs",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "build": "vite build",
+    "native:build": "node tools/build-native.cjs",
+    "dev": "npm run build && electron .",
+    "test:windows": "npm run build && electron . --input-fixture",
+    "package": "npm run build && npm run native:build && electron-forge make --platform=win32 --arch=x64",
+    "verify:package": "node tools/verify-package.cjs",
+    "test:ui": "node tests/ui.spec.cjs"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "8.0.1",
+    "@electron-forge/maker-zip": "8.0.1",
+    "electron": "44.7.0",
+    "node-gyp": "12.2.0",
+    "vite": "8.3.4",
+    "playwright": "1.62.1",
+    "@electron/asar": "4.3.1"
+  }
+}

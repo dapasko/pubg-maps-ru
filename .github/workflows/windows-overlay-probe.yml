@@ -1,0 +1,35 @@
+name: Windows overlay compatibility probe
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/windows-marker-overlay]
+    paths: ['desktop/**', '.github/workflows/windows-overlay-probe.yml']
+permissions:
+  contents: read
+jobs:
+  build-probe:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: desktop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm test
+      - run: npm run package
+      - run: npm run verify:package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-overlay-probe
+          path: desktop/out/make/zip/win32/x64/*.zip
+          if-no-files-found: error
+          retention-days: 14

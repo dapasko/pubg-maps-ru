@@ -1,0 +1,5 @@
+/native/build/
+/out/
+/work/
+/portable-data/
+!package-lock.json
