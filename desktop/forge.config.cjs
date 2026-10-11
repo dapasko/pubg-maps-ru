@@ -1,5 +1,6 @@
 module.exports = {
   packagerConfig: {
+    download: { cacheRoot: require('node:path').resolve(__dirname, 'work/electron-cache') },
     name: 'PUBG Marker Overlay Probe',
     executableName: 'pubg-marker-overlay-probe',
     asar: { unpack: '**/raw_input.node' },
