@@ -38,7 +38,9 @@ test('applies the display rules to the current marker dataset', () => {
     assert.equal(isMotorGliderType(gliders.typeKey), true);
     const esports = map.groups.find(group => group.typeKey === 'vehiclesGroupS');
     assert.equal(esports.points.length, 2);
-    assert.equal(markerLabel(mapName, esports, 'Моторные планеры (киберспорт)'), 'Моторные планеры (киберспорт)');
+    const type = markerData.types.find(type => type.key === esports.typeKey);
+    assert.equal(esports.tag, '!100%');
+    assert.equal(markerLabel(mapName, esports, type.ru), 'Гарантированные мотопланеры');
   }
 });
 
