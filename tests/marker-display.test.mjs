@@ -27,15 +27,18 @@ test('describes map-specific vehicle groups without losing their source tags', (
 test('applies the display rules to the current marker dataset', () => {
   const miramar = markerData.maps.find(map => map.name === 'Miramar');
   const combinedBoats = miramar.groups.filter(group => displayCategoryId(miramar.name, group.typeKey) === 'miramar-random-boats');
-  assert.deepEqual(combinedBoats.map(group => group.typeKey), ['vehiclesGroupE', 'vehiclesGroupF']);
-  assert.equal(combinedBoats.reduce((total, group) => total + group.points.length, 0), 52);
+  assert.deepEqual(combinedBoats, []);
+  assert.equal(miramar.groups.find(group => group.typeKey === 'vehiclesGroupL').points.length, 10);
 
-  for (const [mapName, typeKey] of [['Taego', 'vehiclesGroupO'], ['Rondo', 'vehiclesGroupG']]) {
+  for (const mapName of ['Taego', 'Rondo']) {
     const map = markerData.maps.find(item => item.name === mapName);
-    const gliders = map.groups.find(group => group.typeKey === typeKey);
-    assert.equal(gliders.tag, '!100%');
-    assert.equal(gliders.points.length, 10);
+    const gliders = map.groups.find(group => group.typeKey === 'vehiclesGroupO');
+    assert.equal(gliders.tag, null);
+    assert.equal(gliders.points.length, 20);
     assert.equal(isMotorGliderType(gliders.typeKey), true);
+    const esports = map.groups.find(group => group.typeKey === 'vehiclesGroupS');
+    assert.equal(esports.points.length, 2);
+    assert.equal(markerLabel(mapName, esports, 'Моторные планеры (киберспорт)'), 'Моторные планеры (киберспорт)');
   }
 });
 

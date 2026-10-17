@@ -25,11 +25,23 @@
       },
       "markers": {
         "source": "https://pubg.plus/en/map",
-        "declaredUpdated": "2026-09-11T09:29:27.000Z",
-        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "declaredUpdated": "2026-10-17T00:55:08.614Z",
+        "localSha256": "a19b5f320b3789d6b3886f7e6cb2fafdd67b17e15fd8eb45301ad30f3b78598f",
         "coordinateUnits": "1/256 of raster; [negative northing, easting]",
         "gameBuild": null,
-        "mode": null
+        "mode": null,
+        "baseSourceUpdated": "2026-09-11T09:29:27.000Z",
+        "partialUpdate": {
+          "source": "https://pubg.gs",
+          "build": {
+            "update": "43.2",
+            "steamBuild": "25976382",
+            "extractedAt": "2026-10-16",
+            "source": "https://pubg.gs/about/"
+          },
+          "scope": "motor gliders and retired water groups only",
+          "evidence": "data/game-update-2026-10-17.json"
+        }
       },
       "reference": {
         "url": "https://pubg.gs/layers/baltic.json",
@@ -71,11 +83,23 @@
       },
       "markers": {
         "source": "https://pubg.plus/en/map",
-        "declaredUpdated": "2026-09-11T09:29:27.000Z",
-        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "declaredUpdated": "2026-10-17T00:55:08.614Z",
+        "localSha256": "a19b5f320b3789d6b3886f7e6cb2fafdd67b17e15fd8eb45301ad30f3b78598f",
         "coordinateUnits": "1/256 of raster; [negative northing, easting]",
         "gameBuild": null,
-        "mode": null
+        "mode": null,
+        "baseSourceUpdated": "2026-09-11T09:29:27.000Z",
+        "partialUpdate": {
+          "source": "https://pubg.gs",
+          "build": {
+            "update": "43.2",
+            "steamBuild": "25976382",
+            "extractedAt": "2026-10-16",
+            "source": "https://pubg.gs/about/"
+          },
+          "scope": "motor gliders and retired water groups only",
+          "evidence": "data/game-update-2026-10-17.json"
+        }
       },
       "reference": {
         "url": "https://pubg.gs/layers/desert.json",
@@ -117,11 +141,23 @@
       },
       "markers": {
         "source": "https://pubg.plus/en/map",
-        "declaredUpdated": "2026-09-11T09:29:27.000Z",
-        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "declaredUpdated": "2026-10-17T00:55:08.614Z",
+        "localSha256": "a19b5f320b3789d6b3886f7e6cb2fafdd67b17e15fd8eb45301ad30f3b78598f",
         "coordinateUnits": "1/256 of raster; [negative northing, easting]",
         "gameBuild": null,
-        "mode": null
+        "mode": null,
+        "baseSourceUpdated": "2026-09-11T09:29:27.000Z",
+        "partialUpdate": {
+          "source": "https://pubg.gs",
+          "build": {
+            "update": "43.2",
+            "steamBuild": "25976382",
+            "extractedAt": "2026-10-16",
+            "source": "https://pubg.gs/about/"
+          },
+          "scope": "motor gliders and retired water groups only",
+          "evidence": "data/game-update-2026-10-17.json"
+        }
       },
       "reference": {
         "url": "https://pubg.gs/layers/dihorotok.json",
@@ -163,11 +199,23 @@
       },
       "markers": {
         "source": "https://pubg.plus/en/map",
-        "declaredUpdated": "2026-09-11T09:29:27.000Z",
-        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "declaredUpdated": "2026-10-17T00:55:08.614Z",
+        "localSha256": "a19b5f320b3789d6b3886f7e6cb2fafdd67b17e15fd8eb45301ad30f3b78598f",
         "coordinateUnits": "1/256 of raster; [negative northing, easting]",
         "gameBuild": null,
-        "mode": null
+        "mode": null,
+        "baseSourceUpdated": "2026-09-11T09:29:27.000Z",
+        "partialUpdate": {
+          "source": "https://pubg.gs",
+          "build": {
+            "update": "43.2",
+            "steamBuild": "25976382",
+            "extractedAt": "2026-10-16",
+            "source": "https://pubg.gs/about/"
+          },
+          "scope": "motor gliders and retired water groups only",
+          "evidence": "data/game-update-2026-10-17.json"
+        }
       },
       "reference": {
         "url": "https://pubg.gs/layers/tiger.json",
@@ -209,11 +257,23 @@
       },
       "markers": {
         "source": "https://pubg.plus/en/map",
-        "declaredUpdated": "2026-09-11T09:29:27.000Z",
-        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "declaredUpdated": "2026-10-17T00:55:08.614Z",
+        "localSha256": "a19b5f320b3789d6b3886f7e6cb2fafdd67b17e15fd8eb45301ad30f3b78598f",
         "coordinateUnits": "1/256 of raster; [negative northing, easting]",
         "gameBuild": null,
-        "mode": null
+        "mode": null,
+        "baseSourceUpdated": "2026-09-11T09:29:27.000Z",
+        "partialUpdate": {
+          "source": "https://pubg.gs",
+          "build": {
+            "update": "43.2",
+            "steamBuild": "25976382",
+            "extractedAt": "2026-10-16",
+            "source": "https://pubg.gs/about/"
+          },
+          "scope": "motor gliders and retired water groups only",
+          "evidence": "data/game-update-2026-10-17.json"
+        }
       },
       "reference": {
         "url": "https://pubg.gs/layers/kiki.json",
@@ -255,11 +315,23 @@
       },
       "markers": {
         "source": "https://pubg.plus/en/map",
-        "declaredUpdated": "2026-09-11T09:29:27.000Z",
-        "localSha256": "41b786abae52e734032630e467935d293bf4bc7082701ea59e2a5407f09b1124",
+        "declaredUpdated": "2026-10-17T00:55:08.614Z",
+        "localSha256": "a19b5f320b3789d6b3886f7e6cb2fafdd67b17e15fd8eb45301ad30f3b78598f",
         "coordinateUnits": "1/256 of raster; [negative northing, easting]",
         "gameBuild": null,
-        "mode": null
+        "mode": null,
+        "baseSourceUpdated": "2026-09-11T09:29:27.000Z",
+        "partialUpdate": {
+          "source": "https://pubg.gs",
+          "build": {
+            "update": "43.2",
+            "steamBuild": "25976382",
+            "extractedAt": "2026-10-16",
+            "source": "https://pubg.gs/about/"
+          },
+          "scope": "motor gliders and retired water groups only",
+          "evidence": "data/game-update-2026-10-17.json"
+        }
       },
       "reference": {
         "url": "https://pubg.gs/layers/neon.json",

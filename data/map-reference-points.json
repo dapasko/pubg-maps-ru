@@ -275,36 +275,33 @@
           }
         },
         {
-          "id": "erangel-vehiclesGroupE-27",
-          "typeKey": "vehiclesGroupE",
-          "pointIndex": 27,
+          "id": "erangel-blueChipTower-0",
+          "typeKey": "blueChipTower",
+          "pointIndex": 0,
           "sourceCoordinate": [
-            -189.945,
-            58.6772
+            -47.613,
+            37.3576
           ],
           "referenceWorldCm": [
-            187038,
-            605463
+            119080,
+            151770
           ],
           "referencePixel": [
-            1877.7148235294117,
-            6078.373647058824
+            1195.4698039215687,
+            1523.6517647058824
           ],
-          "referenceLayer": "vehicles",
+          "referenceLayer": "towers",
           "referenceMode": null,
-          "referenceGroup": "E",
+          "referenceGroup": null,
           "sourceUrl": "https://pubg.gs/layers/baltic.json",
-          "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+          "sourceSha256": "71f4d074fa619ce9b0035ffb77ad1e26961977b63dec873fca638cc32e503cc5",
+          "checkedAt": "2026-10-17T00:55:08.614Z",
           "rasterProbe": {
-            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/7/23.webp?6ab4a113",
-            "referenceSha256": "714d04529cb40c8270cb065c6c48ff3eb36a2b89d38168a03016e9b61087f7a8",
-            "localTile": "maps/tiles/erangel/4/3/11.webp",
-            "localSha256": "6e50c388c641faafe823585ce04a334048178867db1720ed977c0f3af7fd73a2",
-            "bestShiftPixels": [
-              0,
-              0
-            ],
-            "meanAbsoluteChannelDifference": 0.5584665934244791
+            "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/4/5.webp?6ab4a113",
+            "referenceSha256": "277335544cfbab1139a4fb109ebf399865da240f4d82551165a2d239c2df533f",
+            "localTile": "maps/tiles/erangel/4/2/2.webp",
+            "localSha256": "a68181e1254a823d814ba2a76357f849408827a75808f3c1c219b0b78b3793a3",
+            "meanAbsoluteChannelDifference": 0.8005930582682291
           }
         },
         {

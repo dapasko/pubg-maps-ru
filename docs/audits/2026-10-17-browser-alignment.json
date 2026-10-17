@@ -1,0 +1,327 @@
+{
+  "results": [
+    {
+      "mapId": "erangel",
+      "zoomPercent": 100,
+      "markerCount": 1140,
+      "maxDriftNativePixels": 0.20042792042599028,
+      "maxReferenceErrorNativePixels": 0.3872515893596232,
+      "tileCount": 0,
+      "maxSvgTipGapCssPixels": 1.4000244140625
+    },
+    {
+      "mapId": "erangel",
+      "zoomPercent": 200,
+      "markerCount": 1140,
+      "maxDriftNativePixels": 0.09952428648485247,
+      "maxReferenceErrorNativePixels": 0.2853717592082111,
+      "tileCount": 64,
+      "maxSvgTipGapCssPixels": 2.800048828125
+    },
+    {
+      "mapId": "erangel",
+      "zoomPercent": 400,
+      "markerCount": 1140,
+      "maxDriftNativePixels": 0.049821154243109685,
+      "maxReferenceErrorNativePixels": 0.23444666783511262,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "erangel",
+      "zoomPercent": 800,
+      "markerCount": 1140,
+      "maxDriftNativePixels": 0.024570163227548965,
+      "maxReferenceErrorNativePixels": 0.2089909889243862,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "erangel",
+      "zoomPercent": 1200,
+      "markerCount": 1140,
+      "maxDriftNativePixels": 0.016362459241042012,
+      "maxReferenceErrorNativePixels": 0.20050721046220762,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "miramar",
+      "zoomPercent": 100,
+      "markerCount": 1284,
+      "maxDriftNativePixels": 0.19835477228970105,
+      "maxReferenceErrorNativePixels": 0.34897929260980776,
+      "tileCount": 0,
+      "maxSvgTipGapCssPixels": 1.4000244140625
+    },
+    {
+      "mapId": "miramar",
+      "zoomPercent": 200,
+      "markerCount": 1284,
+      "maxDriftNativePixels": 0.10109124286089752,
+      "maxReferenceErrorNativePixels": 0.26772512347121447,
+      "tileCount": 64,
+      "maxSvgTipGapCssPixels": 2.800048828125
+    },
+    {
+      "mapId": "miramar",
+      "zoomPercent": 400,
+      "markerCount": 1284,
+      "maxDriftNativePixels": 0.050130349236680624,
+      "maxReferenceErrorNativePixels": 0.21697881869163518,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "miramar",
+      "zoomPercent": 800,
+      "markerCount": 1284,
+      "maxDriftNativePixels": 0.02503298692174599,
+      "maxReferenceErrorNativePixels": 0.20131267867018007,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "miramar",
+      "zoomPercent": 1200,
+      "markerCount": 1284,
+      "maxDriftNativePixels": 0.016466242943032897,
+      "maxReferenceErrorNativePixels": 0.19289416954353308,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "vikendi",
+      "zoomPercent": 100,
+      "markerCount": 1391,
+      "maxDriftNativePixels": 0.20007960107334705,
+      "maxReferenceErrorNativePixels": 0.30813187235183426,
+      "tileCount": 0,
+      "maxSvgTipGapCssPixels": 1.4000244140625
+    },
+    {
+      "mapId": "vikendi",
+      "zoomPercent": 200,
+      "markerCount": 1391,
+      "maxDriftNativePixels": 0.0999629693955359,
+      "maxReferenceErrorNativePixels": 0.25304560017508376,
+      "tileCount": 64,
+      "maxSvgTipGapCssPixels": 2.800048828125
+    },
+    {
+      "mapId": "vikendi",
+      "zoomPercent": 400,
+      "markerCount": 1391,
+      "maxDriftNativePixels": 0.04964767116736983,
+      "maxReferenceErrorNativePixels": 0.22724863737085405,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "vikendi",
+      "zoomPercent": 800,
+      "markerCount": 1391,
+      "maxDriftNativePixels": 0.02477154757022399,
+      "maxReferenceErrorNativePixels": 0.21433876741245608,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "vikendi",
+      "zoomPercent": 1200,
+      "markerCount": 1391,
+      "maxDriftNativePixels": 0.01655286984786555,
+      "maxReferenceErrorNativePixels": 0.20157436972039933,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "taego",
+      "zoomPercent": 100,
+      "markerCount": 593,
+      "maxDriftNativePixels": 0.19869897332360217,
+      "maxReferenceErrorNativePixels": 0.3380798825359992,
+      "tileCount": 0,
+      "maxSvgTipGapCssPixels": 1.4000244140625
+    },
+    {
+      "mapId": "taego",
+      "zoomPercent": 200,
+      "markerCount": 593,
+      "maxDriftNativePixels": 0.09958487770683169,
+      "maxReferenceErrorNativePixels": 0.23664042378809005,
+      "tileCount": 64,
+      "maxSvgTipGapCssPixels": 2.800048828125
+    },
+    {
+      "mapId": "taego",
+      "zoomPercent": 400,
+      "markerCount": 593,
+      "maxDriftNativePixels": 0.049292441676382984,
+      "maxReferenceErrorNativePixels": 0.20787078102423429,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "taego",
+      "zoomPercent": 800,
+      "markerCount": 593,
+      "maxDriftNativePixels": 0.02446546970410271,
+      "maxReferenceErrorNativePixels": 0.19216267944767204,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "taego",
+      "zoomPercent": 1200,
+      "markerCount": 593,
+      "maxDriftNativePixels": 0.01626099567498695,
+      "maxReferenceErrorNativePixels": 0.18338001950782382,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "deston",
+      "zoomPercent": 100,
+      "markerCount": 1389,
+      "maxDriftNativePixels": 0.1981247182384121,
+      "maxReferenceErrorNativePixels": 0.31304992072629406,
+      "tileCount": 0,
+      "maxSvgTipGapCssPixels": 1.4000244140625
+    },
+    {
+      "mapId": "deston",
+      "zoomPercent": 200,
+      "markerCount": 1389,
+      "maxDriftNativePixels": 0.09968137353192708,
+      "maxReferenceErrorNativePixels": 0.23211125339454972,
+      "tileCount": 64,
+      "maxSvgTipGapCssPixels": 2.800048828125
+    },
+    {
+      "mapId": "deston",
+      "zoomPercent": 400,
+      "markerCount": 1389,
+      "maxDriftNativePixels": 0.049592574408397004,
+      "maxReferenceErrorNativePixels": 0.22462124426367447,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "deston",
+      "zoomPercent": 800,
+      "markerCount": 1389,
+      "maxDriftNativePixels": 0.024788266923993107,
+      "maxReferenceErrorNativePixels": 0.20002504897478057,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "deston",
+      "zoomPercent": 1200,
+      "markerCount": 1389,
+      "maxDriftNativePixels": 0.016494874600487482,
+      "maxReferenceErrorNativePixels": 0.1955140075115491,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "rondo",
+      "zoomPercent": 100,
+      "markerCount": 567,
+      "maxDriftNativePixels": 0.1986956940471963,
+      "maxReferenceErrorNativePixels": 0.3224392297433194,
+      "tileCount": 0,
+      "maxSvgTipGapCssPixels": 1.4000244140625
+    },
+    {
+      "mapId": "rondo",
+      "zoomPercent": 200,
+      "markerCount": 567,
+      "maxDriftNativePixels": 0.09720642055647806,
+      "maxReferenceErrorNativePixels": 0.2680300356900225,
+      "tileCount": 64,
+      "maxSvgTipGapCssPixels": 2.800048828125
+    },
+    {
+      "mapId": "rondo",
+      "zoomPercent": 400,
+      "markerCount": 567,
+      "maxDriftNativePixels": 0.049376403522757024,
+      "maxReferenceErrorNativePixels": 0.21707359412248844,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "rondo",
+      "zoomPercent": 800,
+      "markerCount": 567,
+      "maxDriftNativePixels": 0.024364658717497795,
+      "maxReferenceErrorNativePixels": 0.19159661197822017,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    },
+    {
+      "mapId": "rondo",
+      "zoomPercent": 1200,
+      "markerCount": 567,
+      "maxDriftNativePixels": 0.01634996781568815,
+      "maxReferenceErrorNativePixels": 0.2000888164550142,
+      "tileCount": 256,
+      "maxSvgTipGapCssPixels": 3.359375
+    }
+  ],
+  "layouts": [
+    {
+      "viewport": [
+        320,
+        844
+      ],
+      "mapDimensions": [
+        288,
+        288
+      ]
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "mapDimensions": [
+        358,
+        358
+      ]
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "mapDimensions": [
+        736,
+        736
+      ]
+    },
+    {
+      "viewport": [
+        1024,
+        1000
+      ],
+      "mapDimensions": [
+        640,
+        640
+      ]
+    },
+    {
+      "viewport": [
+        1440,
+        1000
+      ],
+      "mapDimensions": [
+        888,
+        888
+      ]
+    }
+  ],
+  "errors": []
+}

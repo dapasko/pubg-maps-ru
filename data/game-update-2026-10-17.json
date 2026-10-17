@@ -1,0 +1,6817 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-17T00:55:08.614Z",
+  "source": "https://pubg.gs/changelog/",
+  "build": {
+    "update": "43.2",
+    "steamBuild": "25976382",
+    "extractedAt": "2026-10-16",
+    "source": "https://pubg.gs/about/"
+  },
+  "scope": "Partial update of supported maps: replace motor-glider groups with base O/S positions, remove water groups whose current spawn tables contain no vehicles. Other marker categories and unknown modes are retained without revalidation.",
+  "maps": [
+    {
+      "mapId": "erangel",
+      "url": "https://pubg.gs/layers/baltic.json",
+      "sha256": "71f4d074fa619ce9b0035ffb77ad1e26961977b63dec873fca638cc32e503cc5",
+      "extentCm": 816000,
+      "raster": {
+        "hash": "6ab4a113",
+        "maxZoom": 5,
+        "px": 8192,
+        "size": 256,
+        "url": "https://cdn.wardo.gs/pubg/tiles/baltic"
+      },
+      "rasterVersionChanged": false,
+      "removedLocalTypes": [
+        "vehiclesGroupG",
+        "vehiclesGroupE"
+      ],
+      "vehicleRules": {
+        "processor": "VehicleSpawnProcessor_Erangel",
+        "table": "VehicleSpawnDataTable_Erangel",
+        "groups": {
+          "A": [
+            {
+              "categories": [
+                "Road"
+              ],
+              "count": [
+                143,
+                143
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Uaz",
+                "Coupe RB",
+                "Buggy",
+                "Motorbike",
+                "Dacia",
+                "Dirt Bike"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "categories": [
+                "Start"
+              ],
+              "count": [
+                8,
+                10
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Buggy"
+              ]
+            }
+          ],
+          "C": [
+            {
+              "categories": [
+                "Garage"
+              ],
+              "count": [
+                8,
+                8
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Motorbike",
+                "Dacia"
+              ]
+            }
+          ],
+          "E": [
+            {
+              "categories": [
+                "Water"
+              ],
+              "count": [
+                5,
+                5
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": []
+            }
+          ],
+          "O": [
+            {
+              "categories": [
+                "Motorglider"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ],
+          "N": [
+            {
+              "categories": [
+                "Esports1"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Dacia"
+              ]
+            }
+          ],
+          "M": [
+            {
+              "categories": [
+                "Esports2"
+              ],
+              "count": [
+                21,
+                21
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Uaz"
+              ]
+            }
+          ],
+          "L": [
+            {
+              "categories": [
+                "EsportsWater"
+              ],
+              "count": [
+                23,
+                23
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "S": [
+            {
+              "categories": [
+                "EsportsMotorglider"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                20,
+                30
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ]
+        }
+      },
+      "vehicleSpawns": [
+        {
+          "category": "EsportsWater",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 100
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Boat_PG117",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Buggy_A_01",
+          "weight": 180
+        },
+        {
+          "category": "Start",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Buggy_A_01",
+          "weight": 80
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Erangel_IBR",
+          "vehicle": "Buggy_A_01",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Buggy_A_01",
+          "weight": 180
+        },
+        {
+          "category": "Start",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Buggy_A_01",
+          "weight": 80
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Buggy_A_02",
+          "weight": 180
+        },
+        {
+          "category": "Start",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Buggy_A_02",
+          "weight": 80
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Buggy_A_02",
+          "weight": 180
+        },
+        {
+          "category": "Start",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Buggy_A_02",
+          "weight": 80
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 180
+        },
+        {
+          "category": "Start",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 80
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Buggy_A_03",
+          "weight": 180
+        },
+        {
+          "category": "Start",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Buggy_A_03",
+          "weight": 80
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 560
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Erangel_IBR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_CoupeRB",
+          "weight": 560
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 99
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 99
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 99
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Erangel_IBR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 300
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 99
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 99
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 99
+        },
+        {
+          "category": "Esports1",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 100
+        },
+        {
+          "category": "Esports1",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 99
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 99
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Dirtbike",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Dirtbike",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 60
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 484
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Erangel_IBR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 60
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 484
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Motorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Erangel_IBR",
+          "vehicle": "BP_Motorglider",
+          "weight": 10
+        },
+        {
+          "category": "Motorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Uaz_B_01",
+          "weight": 390
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Erangel_IBR",
+          "vehicle": "Uaz_B_01",
+          "weight": 300
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Uaz_B_01",
+          "weight": 390
+        },
+        {
+          "category": "Esports2",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-b-01-esports",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Uaz_B_01_esports",
+          "weight": 100
+        },
+        {
+          "category": "Esports2",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-b-01-esports",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Uaz_B_01_esports",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-c-01",
+          "table": "VehicleSpawnDataTable_Erangel_CR",
+          "vehicle": "Uaz_C_01",
+          "weight": 390
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-c-01",
+          "table": "VehicleSpawnDataTable_Erangel",
+          "vehicle": "Uaz_C_01",
+          "weight": 390
+        }
+      ],
+      "gliderPoints": [
+        {
+          "x": 100088,
+          "y": 178950,
+          "z": 2719,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 236817,
+          "y": 139903,
+          "z": 3078,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 390287,
+          "y": 153103,
+          "z": 0,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 308817,
+          "y": 270963,
+          "z": 1188,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 104627,
+          "y": 357833,
+          "z": 722,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 101637,
+          "y": 539423,
+          "z": 1893,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 189917,
+          "y": 571383,
+          "z": 24,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 347887,
+          "y": 498363,
+          "z": 212,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 319937,
+          "y": 383183,
+          "z": 3893,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 347537,
+          "y": 672183,
+          "z": 3935,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 410247,
+          "y": 677533,
+          "z": 155,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        },
+        {
+          "x": 411207,
+          "y": 570023,
+          "z": 18,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 501017,
+          "y": 677593,
+          "z": 955,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 612377,
+          "y": 644963,
+          "z": 2479,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 689457,
+          "y": 485793,
+          "z": 622,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 563547,
+          "y": 424473,
+          "z": 2482,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 476247,
+          "y": 320613,
+          "z": 1087,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 419307,
+          "y": 219523,
+          "z": 2512,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        },
+        {
+          "x": 529477,
+          "y": 46043,
+          "z": 213,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 658967,
+          "y": 136863,
+          "z": 525,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 595317,
+          "y": 260563,
+          "z": 370,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 677827,
+          "y": 371333,
+          "z": 1583,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        }
+      ],
+      "beforeCount": 1307,
+      "afterCount": 1140
+    },
+    {
+      "mapId": "miramar",
+      "url": "https://pubg.gs/layers/desert.json",
+      "sha256": "16a40cddfac268bde191fc38864ba5bc16b982988eed37e3b4a24fb05d413258",
+      "extentCm": 816000,
+      "raster": {
+        "hash": "ecc67e93",
+        "maxZoom": 5,
+        "px": 8192,
+        "size": 256,
+        "url": "https://cdn.wardo.gs/pubg/tiles/desert"
+      },
+      "rasterVersionChanged": false,
+      "removedLocalTypes": [
+        "vehiclesGroupG",
+        "vehiclesGroupE",
+        "vehiclesGroupF"
+      ],
+      "vehicleRules": {
+        "processor": "VehicleSpawnProcessor_Miramar",
+        "table": "VehicleSpawnDataTable_Miramar",
+        "groups": {
+          "A": [
+            {
+              "categories": [
+                "Road"
+              ],
+              "count": [
+                186,
+                186
+              ],
+              "fuel": [
+                50,
+                100
+              ],
+              "vehicles": [
+                "Pickup",
+                "Mirado",
+                "MiniBus",
+                "Coupe RB",
+                "Motorbike",
+                "Buggy",
+                "ATV"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "categories": [
+                "Offroad"
+              ],
+              "count": [
+                39,
+                39
+              ],
+              "fuel": [
+                50,
+                100
+              ],
+              "vehicles": [
+                "Buggy",
+                "Pickup",
+                "Motorbike",
+                "ATV",
+                "Dirt Bike"
+              ]
+            }
+          ],
+          "E": [
+            {
+              "categories": [
+                "Water"
+              ],
+              "count": [
+                0,
+                0
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": []
+            }
+          ],
+          "F": [
+            {
+              "categories": [
+                "Water_Ferry"
+              ],
+              "count": [
+                0,
+                0
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": []
+            }
+          ],
+          "C": [
+            {
+              "categories": [
+                "Hacienda_GoldMirado"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Mirado"
+              ]
+            }
+          ],
+          "O": [
+            {
+              "categories": [
+                "Motorglider"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ],
+          "N": [
+            {
+              "categories": [
+                "Esports1"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Mirado"
+              ]
+            }
+          ],
+          "M": [
+            {
+              "categories": [
+                "Esports2"
+              ],
+              "count": [
+                21,
+                21
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Pickup"
+              ]
+            }
+          ],
+          "L": [
+            {
+              "categories": [
+                "EsportsWater"
+              ],
+              "count": [
+                11,
+                11
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "S": [
+            {
+              "categories": [
+                "EsportsMotorglider"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                20,
+                30
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ]
+        }
+      },
+      "vehicleSpawns": [
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_ATV",
+          "weight": 6
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_ATV",
+          "weight": 3
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_ATV",
+          "weight": 6
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_ATV",
+          "weight": 3
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 1
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Boat_PG117",
+          "weight": 1
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Miramar_IBR",
+          "vehicle": "Buggy_A_01",
+          "weight": 50
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-04",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Buggy_A_04",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-04",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Buggy_A_04",
+          "weight": 2
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-04",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Buggy_A_04",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-04",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Buggy_A_04",
+          "weight": 2
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-05",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Buggy_A_05",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-05",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Buggy_A_05",
+          "weight": 2
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-05",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Buggy_A_05",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-05",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Buggy_A_05",
+          "weight": 2
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-06",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Buggy_A_06",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-06",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "Buggy_A_06",
+          "weight": 1
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-06",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Buggy_A_06",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-06",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "Buggy_A_06",
+          "weight": 1
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 14
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Miramar_IBR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_CoupeRB",
+          "weight": 14
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Dirtbike",
+          "weight": 2
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Dirtbike",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "MiniBus",
+          "slug": "van-a-01",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Van_A_01",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "MiniBus",
+          "slug": "van-a-01",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Van_A_01",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "MiniBus",
+          "slug": "van-a-02",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Van_A_02",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "MiniBus",
+          "slug": "van-a-02",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Van_A_02",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "MiniBus",
+          "slug": "van-a-03",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Van_A_03",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "MiniBus",
+          "slug": "van-a-03",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Van_A_03",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Mirado",
+          "slug": "mirado-a-01",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Mirado_A_01",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Mirado",
+          "slug": "mirado-a-01",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Mirado_A_01",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Mirado",
+          "slug": "mirado-a-02",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Mirado_A_02",
+          "weight": 4
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Mirado",
+          "slug": "mirado-a-02",
+          "table": "VehicleSpawnDataTable_Miramar_IBR",
+          "vehicle": "BP_Mirado_A_02",
+          "weight": 300
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Mirado",
+          "slug": "mirado-a-02",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Mirado_A_02",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Mirado",
+          "slug": "mirado-a-03",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Mirado_A_03",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Mirado",
+          "slug": "mirado-a-03",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Mirado_A_03",
+          "weight": 4
+        },
+        {
+          "category": "Esports1",
+          "mode": "CR",
+          "name": "Mirado",
+          "slug": "mirado-a-03-esports",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Mirado_A_03_Esports",
+          "weight": 1
+        },
+        {
+          "category": "Esports1",
+          "mode": "Normal",
+          "name": "Mirado",
+          "slug": "mirado-a-03-esports",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Mirado_A_03_Esports",
+          "weight": 1
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Mirado",
+          "slug": "mirado-a-04",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Mirado_A_04",
+          "weight": 4
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Mirado",
+          "slug": "mirado-a-04",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Mirado_A_04",
+          "weight": 4
+        },
+        {
+          "category": "Hacienda_GoldMirado",
+          "mode": "CR",
+          "name": "Mirado",
+          "slug": "mirado-open-05",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Mirado_Open_05",
+          "weight": 1
+        },
+        {
+          "category": "Hacienda_GoldMirado",
+          "mode": "Normal",
+          "name": "Mirado",
+          "slug": "mirado-open-05",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Mirado_Open_05",
+          "weight": 1
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Miramar_IBR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-desert",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Motorbike_04_Desert",
+          "weight": 9
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-desert",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Motorbike_04_Desert",
+          "weight": 10
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-desert",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Motorbike_04_Desert",
+          "weight": 9
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-desert",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Motorbike_04_Desert",
+          "weight": 10
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar-desert",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Motorbike_04_SideCar_Desert",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar-desert",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Motorbike_04_SideCar_Desert",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar-desert",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Motorbike_04_SideCar_Desert",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar-desert",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Motorbike_04_SideCar_Desert",
+          "weight": 0
+        },
+        {
+          "category": "Motorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Motorglider",
+          "weight": 1
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Miramar_IBR",
+          "vehicle": "BP_Motorglider",
+          "weight": 10
+        },
+        {
+          "category": "Motorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Motorglider",
+          "weight": 1
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 5
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Miramar_IBR",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 300
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 5
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 2
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 5
+        },
+        {
+          "category": "Esports2",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-esports",
+          "table": "VehicleSpawnDataTable_Miramar_CR",
+          "vehicle": "BP_PickupTruck_A_esports",
+          "weight": 1
+        },
+        {
+          "category": "Esports2",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-esports",
+          "table": "VehicleSpawnDataTable_Miramar",
+          "vehicle": "BP_PickupTruck_A_esports",
+          "weight": 1
+        }
+      ],
+      "gliderPoints": [
+        {
+          "x": 84981,
+          "y": 685591,
+          "z": 8023,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 173952,
+          "y": 784466,
+          "z": 2082,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 337416,
+          "y": 724190,
+          "z": -402,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 200969,
+          "y": 708242,
+          "z": 2150,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        },
+        {
+          "x": 143712,
+          "y": 549258,
+          "z": 5306,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 119531,
+          "y": 408185,
+          "z": 7549,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 119531,
+          "y": 408185,
+          "z": 7509,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 129005,
+          "y": 255043,
+          "z": 10972,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 192077,
+          "y": 155866,
+          "z": 5103,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 374211,
+          "y": 130354,
+          "z": 6754,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 592092,
+          "y": 37431,
+          "z": 6113,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 701641,
+          "y": 151670,
+          "z": 11829,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 534786,
+          "y": 188401,
+          "z": 4963,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 483768,
+          "y": 328204,
+          "z": 4215,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 312690,
+          "y": 316891,
+          "z": 10291,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 290125,
+          "y": 459231,
+          "z": 6451,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 433008,
+          "y": 470108,
+          "z": 13622,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 317886,
+          "y": 619324,
+          "z": 7988,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 545061,
+          "y": 693484,
+          "z": 1636,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 529327,
+          "y": 598929,
+          "z": 16435,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 624909,
+          "y": 505734,
+          "z": 6146,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 615066,
+          "y": 360153,
+          "z": 9829,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 472232,
+          "y": 245149,
+          "z": 3007,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        }
+      ],
+      "beforeCount": 1351,
+      "afterCount": 1284
+    },
+    {
+      "mapId": "vikendi",
+      "url": "https://pubg.gs/layers/dihorotok.json",
+      "sha256": "0741aa28e13e043e70bc6d3c44f07bc9b85f28f639dffa04ac0b281ccdd56075",
+      "extentCm": 816000,
+      "raster": {
+        "hash": "94d1adc7",
+        "maxZoom": 5,
+        "px": 8192,
+        "size": 256,
+        "url": "https://cdn.wardo.gs/pubg/tiles/dihorotok"
+      },
+      "rasterVersionChanged": false,
+      "removedLocalTypes": [
+        "vehiclesGroupG"
+      ],
+      "vehicleRules": {
+        "processor": "VehicleSpawnProcessor_DihorOtok_CR",
+        "table": "VehicleSpawnDataTable_DihorOtok_CR",
+        "groups": {
+          "A": [
+            {
+              "categories": [
+                "Road"
+              ],
+              "count": [
+                98,
+                98
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Zima",
+                "Coupe RB",
+                "Motorbike",
+                "Dacia"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "categories": [
+                "Offroad"
+              ],
+              "count": [
+                35,
+                35
+              ],
+              "fuel": [
+                50,
+                80
+              ],
+              "vehicles": [
+                "Snowmobile"
+              ]
+            }
+          ],
+          "C": [
+            {
+              "categories": [
+                "Garage"
+              ],
+              "count": [
+                24,
+                24
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Dacia",
+                "Zima"
+              ]
+            }
+          ],
+          "D": [
+            {
+              "categories": [
+                "RoadPlus"
+              ],
+              "count": [
+                36,
+                36
+              ],
+              "fuel": [
+                40,
+                80
+              ],
+              "vehicles": [
+                "Zima",
+                "Dacia"
+              ]
+            }
+          ],
+          "E": [
+            {
+              "categories": [
+                "WaterSea"
+              ],
+              "count": [
+                8,
+                12
+              ],
+              "fuel": [
+                40,
+                60
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "O": [
+            {
+              "categories": [
+                "Motorglider"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ],
+          "M": [
+            {
+              "categories": [
+                "EsportsA"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Dacia",
+                "Zima"
+              ]
+            }
+          ],
+          "L": [
+            {
+              "categories": [
+                "EsportsBoat"
+              ],
+              "count": [
+                10,
+                10
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "S": [
+            {
+              "categories": [
+                "EsportsMotorglider"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                20,
+                30
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ]
+        }
+      },
+      "vehicleSpawns": [
+        {
+          "category": "EsportsBoat",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "pg117-a-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "PG117_A_01",
+          "weight": 100
+        },
+        {
+          "category": "WaterSea",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "pg117-a-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "PG117_A_01",
+          "weight": 100
+        },
+        {
+          "category": "EsportsBoat",
+          "mode": "Rebalanced",
+          "name": "Boat PG117",
+          "slug": "pg117-a-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "PG117_A_01",
+          "weight": 100
+        },
+        {
+          "category": "WaterSea",
+          "mode": "Rebalanced",
+          "name": "Boat PG117",
+          "slug": "pg117-a-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "PG117_A_01",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 25
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_CoupeRB",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_CoupeRB",
+          "weight": 25
+        },
+        {
+          "category": "IBR",
+          "mode": "Rebalanced_IBR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced_IBR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 10
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 10
+        },
+        {
+          "category": "IBR",
+          "mode": "Rebalanced_IBR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced_IBR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 200
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 10
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 10
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 10
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 10
+        },
+        {
+          "category": "EsportsA",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 5
+        },
+        {
+          "category": "EsportsA",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 5
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 5
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 10
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 25
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 25
+        },
+        {
+          "category": "IBR",
+          "mode": "Rebalanced_IBR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced_IBR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Motorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "Motorglider",
+          "mode": "Rebalanced",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "Rebalanced",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Snowmobile_01",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Snowmobile_01",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "Rebalanced",
+          "name": "Snowmobile",
+          "slug": "snowmobile-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Snowmobile_01",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Snowmobile",
+          "slug": "snowmobile-01",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Snowmobile_01",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-02",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Snowmobile_02",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-02",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Snowmobile_02",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "Rebalanced",
+          "name": "Snowmobile",
+          "slug": "snowmobile-02",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Snowmobile_02",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Snowmobile",
+          "slug": "snowmobile-02",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Snowmobile_02",
+          "weight": 0
+        },
+        {
+          "category": "IBR",
+          "mode": "Rebalanced_IBR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-02",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced_IBR",
+          "vehicle": "BP_Snowmobile_02",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-03",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Snowmobile_03",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Snowmobile",
+          "slug": "snowmobile-03",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Snowmobile_03",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "Rebalanced",
+          "name": "Snowmobile",
+          "slug": "snowmobile-03",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Snowmobile_03",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Snowmobile",
+          "slug": "snowmobile-03",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Snowmobile_03",
+          "weight": 0
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_04",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_04",
+          "weight": 7
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_04",
+          "weight": 15
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_04",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_04",
+          "weight": 7
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-04",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_04",
+          "weight": 15
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-05",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_05",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-05",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_05",
+          "weight": 7
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-05",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_05",
+          "weight": 15
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-05",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_05",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-05",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_05",
+          "weight": 7
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-05",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_05",
+          "weight": 15
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-06",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_06",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-06",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_06",
+          "weight": 8
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-06",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_06",
+          "weight": 15
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-06",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_06",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-06",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_06",
+          "weight": 8
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-06",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_06",
+          "weight": 15
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-07",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_07",
+          "weight": 8
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-07",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_07",
+          "weight": 15
+        },
+        {
+          "category": "Road",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-07",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_07",
+          "weight": 8
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-07",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_07",
+          "weight": 15
+        },
+        {
+          "category": "IBR",
+          "mode": "Rebalanced_IBR",
+          "name": "Zima",
+          "slug": "niva-07",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced_IBR",
+          "vehicle": "BP_Niva_07",
+          "weight": 300
+        },
+        {
+          "category": "EsportsA",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Zima",
+          "slug": "niva-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_CR",
+          "vehicle": "BP_Niva_Esports",
+          "weight": 5
+        },
+        {
+          "category": "EsportsA",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "Rebalanced",
+          "name": "Zima",
+          "slug": "niva-esports",
+          "table": "VehicleSpawnDataTable_DihorOtok_Rebalanced",
+          "vehicle": "BP_Niva_Esports",
+          "weight": 5
+        }
+      ],
+      "gliderPoints": [
+        {
+          "x": 160984,
+          "y": 145616,
+          "z": 3349,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 173730,
+          "y": 293045,
+          "z": 4238,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 96986,
+          "y": 373232,
+          "z": 4817,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 194805,
+          "y": 477269,
+          "z": 5500,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 130220,
+          "y": 581193,
+          "z": 3529,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 231404,
+          "y": 708414,
+          "z": 4702,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 386264,
+          "y": 680162,
+          "z": 4473,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 421827,
+          "y": 603943,
+          "z": 4870,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 430007,
+          "y": 441521,
+          "z": 5144,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 339989,
+          "y": 314086,
+          "z": 4093,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 384269,
+          "y": 199097,
+          "z": 3946,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 403884,
+          "y": 98815,
+          "z": 4410,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 502208,
+          "y": 172526,
+          "z": 3881,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 649286,
+          "y": 183248,
+          "z": 4090,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 544104,
+          "y": 329891,
+          "z": 4506,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 657919,
+          "y": 311243,
+          "z": 4068,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 724771,
+          "y": 433009,
+          "z": 2750,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 590985,
+          "y": 464815,
+          "z": 2764,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 653909,
+          "y": 600396,
+          "z": 4790,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 505408,
+          "y": 706795,
+          "z": 3116,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 342622,
+          "y": 517672,
+          "z": 4552,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        },
+        {
+          "x": 257989,
+          "y": 184762,
+          "z": 3248,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        }
+      ],
+      "beforeCount": 1379,
+      "afterCount": 1391
+    },
+    {
+      "mapId": "taego",
+      "url": "https://pubg.gs/layers/tiger.json",
+      "sha256": "6944f828570327fda55025973ab33fb89ca04b611af54b5687fee2b9a0708d85",
+      "extentCm": 816000,
+      "raster": {
+        "hash": "7a968f9b",
+        "maxZoom": 5,
+        "px": 8192,
+        "size": 256,
+        "url": "https://cdn.wardo.gs/pubg/tiles/tiger"
+      },
+      "rasterVersionChanged": false,
+      "removedLocalTypes": [
+        "vehiclesGroupO"
+      ],
+      "vehicleRules": {
+        "processor": "VehicleSpawnProcessor_Tiger",
+        "table": "VehicleSpawnDataTable_Tiger",
+        "groups": {
+          "A": [
+            {
+              "categories": [
+                "Road"
+              ],
+              "count": [
+                132,
+                152
+              ],
+              "fuel": [
+                40,
+                80
+              ],
+              "vehicles": [
+                "Uaz",
+                "Coupe RB",
+                "Porter",
+                "Dacia",
+                "Pony Coupe",
+                "Motorbike",
+                "Buggy"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "categories": [
+                "Offroad"
+              ],
+              "count": [
+                17,
+                20
+              ],
+              "fuel": [
+                40,
+                80
+              ],
+              "vehicles": [
+                "Motorbike",
+                "Buggy"
+              ]
+            }
+          ],
+          "C": [
+            {
+              "categories": [
+                "Garage"
+              ],
+              "count": [
+                24,
+                24
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Dacia",
+                "Uaz"
+              ]
+            }
+          ],
+          "E": [
+            {
+              "categories": [
+                "Water"
+              ],
+              "count": [
+                15,
+                18
+              ],
+              "fuel": [
+                40,
+                80
+              ],
+              "vehicles": [
+                "Boat PG117",
+                "Aquarail"
+              ]
+            }
+          ],
+          "O": [
+            {
+              "categories": [
+                "Motorglider"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ],
+          "D": [
+            {
+              "categories": [
+                "Farm"
+              ],
+              "count": [
+                25,
+                25
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Pony Coupe"
+              ]
+            }
+          ],
+          "M": [
+            {
+              "categories": [
+                "EsportsWater"
+              ],
+              "count": [
+                10,
+                10
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "S": [
+            {
+              "categories": [
+                "EsportsMotorglider"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                20,
+                30
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ]
+        }
+      },
+      "vehicleSpawns": [
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail-a-01",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "AquaRail_A_01",
+          "weight": 3
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail-a-01",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "AquaRail_A_01",
+          "weight": 3
+        },
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail-a-02",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "AquaRail_A_02",
+          "weight": 3
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail-a-02",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "AquaRail_A_02",
+          "weight": 3
+        },
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail-a-03",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "AquaRail_A_03",
+          "weight": 3
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail-a-03",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "AquaRail_A_03",
+          "weight": 3
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 1
+        },
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 200
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Boat_PG117",
+          "weight": 1
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Boat_PG117",
+          "weight": 200
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Buggy_A_01",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Buggy_A_01",
+          "weight": 13
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Tiger_IBR",
+          "vehicle": "Buggy_A_01",
+          "weight": 50
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Buggy_A_01",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Buggy_A_01",
+          "weight": 13
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Buggy_A_02",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Buggy_A_02",
+          "weight": 13
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Buggy_A_02",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Buggy_A_02",
+          "weight": 13
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 13
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Buggy_A_03",
+          "weight": 33
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Buggy_A_03",
+          "weight": 13
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 160
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Tiger_IBR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_CoupeRB",
+          "weight": 160
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 200
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 71
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Tiger_IBR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 200
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 71
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Motorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Tiger_IBR",
+          "vehicle": "BP_Motorglider",
+          "weight": 10
+        },
+        {
+          "category": "Motorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "Farm",
+          "mode": "CR",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 1
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 100
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger_IBR",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 400
+        },
+        {
+          "category": "Farm",
+          "mode": "Normal",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 1
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pony Coupe",
+          "slug": "ponycoupe",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_PonyCoupe",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Porter",
+          "slug": "porter",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "BP_Porter",
+          "weight": 160
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Porter",
+          "slug": "porter",
+          "table": "VehicleSpawnDataTable_Tiger_IBR",
+          "vehicle": "BP_Porter",
+          "weight": 200
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Porter",
+          "slug": "porter",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "BP_Porter",
+          "weight": 160
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Uaz_B_01",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Uaz_B_01",
+          "weight": 160
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Uaz_B_01",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-b-01",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Uaz_B_01",
+          "weight": 160
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-b-01-esports",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Uaz_B_01_esports",
+          "weight": 100
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-b-01-esports",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Uaz_B_01_esports",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Uaz",
+          "slug": "uaz-c-01",
+          "table": "VehicleSpawnDataTable_Tiger_CR",
+          "vehicle": "Uaz_C_01",
+          "weight": 160
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Uaz",
+          "slug": "uaz-c-01",
+          "table": "VehicleSpawnDataTable_Tiger",
+          "vehicle": "Uaz_C_01",
+          "weight": 160
+        }
+      ],
+      "gliderPoints": [
+        {
+          "x": 221230,
+          "y": 100280,
+          "z": 1244,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 145230,
+          "y": 246180,
+          "z": 1209,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 298430,
+          "y": 256480,
+          "z": 2032,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 211230,
+          "y": 382180,
+          "z": 740,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 129630,
+          "y": 444480,
+          "z": 591,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 408630,
+          "y": 99180,
+          "z": 1476,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 619630,
+          "y": 170730,
+          "z": 502,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 568530,
+          "y": 282330,
+          "z": 1807,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 739757,
+          "y": 315769,
+          "z": 2936,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 551030,
+          "y": 403830,
+          "z": 3926,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 392130,
+          "y": 365430,
+          "z": 1338,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 407630,
+          "y": 480230,
+          "z": 2629,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 562730,
+          "y": 507730,
+          "z": 1045,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 647730,
+          "y": 623930,
+          "z": 466,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 536430,
+          "y": 701130,
+          "z": 2399,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 469930,
+          "y": 639230,
+          "z": 143,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 369630,
+          "y": 707330,
+          "z": 552,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 256130,
+          "y": 697630,
+          "z": 2238,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 206830,
+          "y": 561730,
+          "z": 2609,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 257430,
+          "y": 491430,
+          "z": 813,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "O"
+        },
+        {
+          "x": 401330,
+          "y": 248780,
+          "z": 1981,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        },
+        {
+          "x": 357730,
+          "y": 619080,
+          "z": 1354,
+          "level": "level_design_2",
+          "tag": "VehicleSpot",
+          "group": "S"
+        }
+      ],
+      "beforeCount": 581,
+      "afterCount": 593
+    },
+    {
+      "mapId": "deston",
+      "url": "https://pubg.gs/layers/kiki.json",
+      "sha256": "b0bb948d379829d23479764ffb5e410f209ab0dc4b519bf5c7a8ceaf438bb1d4",
+      "extentCm": 816000,
+      "raster": {
+        "hash": "8dde92cf",
+        "maxZoom": 5,
+        "px": 8192,
+        "size": 256,
+        "url": "https://cdn.wardo.gs/pubg/tiles/kiki"
+      },
+      "rasterVersionChanged": false,
+      "removedLocalTypes": [
+        "vehiclesGroupO"
+      ],
+      "vehicleRules": {
+        "processor": "VehicleSpawnProcessor_Kiki",
+        "table": "VehicleSpawnDataTable_Kiki",
+        "groups": {
+          "A": [
+            {
+              "categories": [
+                "Road"
+              ],
+              "count": [
+                78,
+                78
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Coupe RB",
+                "Pillar Car",
+                "Dacia",
+                "Pickup",
+                "Motorbike",
+                "Food Truck"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "categories": [
+                "Offroad"
+              ],
+              "count": [
+                67,
+                67
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Pickup",
+                "Buggy",
+                "Motorbike",
+                "ATV"
+              ]
+            }
+          ],
+          "C": [
+            {
+              "categories": [
+                "Police_Stations"
+              ],
+              "count": [
+                8,
+                8
+              ],
+              "fuel": [
+                80,
+                90
+              ],
+              "vehicles": [
+                "Pillar Car"
+              ]
+            }
+          ],
+          "E": [
+            {
+              "categories": [
+                "Ocean"
+              ],
+              "count": [
+                6,
+                6
+              ],
+              "fuel": [
+                60,
+                80
+              ],
+              "vehicles": [
+                "Aquarail"
+              ]
+            }
+          ],
+          "F": [
+            {
+              "categories": [
+                "River"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Airboat"
+              ]
+            }
+          ],
+          "G": [
+            {
+              "categories": [
+                "W_Garage"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                80,
+                100
+              ],
+              "vehicles": [
+                "Airboat"
+              ]
+            }
+          ],
+          "I": [
+            {
+              "categories": [
+                "FoodTruck"
+              ],
+              "count": [
+                9,
+                9
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Food Truck"
+              ]
+            }
+          ],
+          "J": [
+            {
+              "categories": [
+                "Rich_Houses"
+              ],
+              "count": [
+                10,
+                10
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Coupe RB",
+                "Motorbike",
+                "ATV"
+              ]
+            }
+          ],
+          "K": [
+            {
+              "categories": [
+                "Poor_Houses"
+              ],
+              "count": [
+                10,
+                10
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Pickup",
+                "Dacia",
+                "Dirt Bike"
+              ]
+            }
+          ],
+          "L": [
+            {
+              "categories": [
+                "Air"
+              ],
+              "count": [
+                0,
+                0
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": []
+            }
+          ],
+          "M": [
+            {
+              "categories": [
+                "Sports"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Dirt Bike",
+                "ATV"
+              ]
+            }
+          ],
+          "N": [
+            {
+              "categories": [
+                "D_Garage"
+              ],
+              "count": [
+                12,
+                12
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Motorbike",
+                "Pillar Car",
+                "Dacia",
+                "Coupe RB"
+              ]
+            }
+          ],
+          "H": [
+            {
+              "categories": [
+                "Dam"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Airboat"
+              ]
+            }
+          ],
+          "O": [
+            {
+              "categories": [
+                "Motorglider"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ],
+          "P": [
+            {
+              "categories": [
+                "Esports_A"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Dacia"
+              ]
+            }
+          ],
+          "Q": [
+            {
+              "categories": [
+                "Esports_B"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Pickup"
+              ]
+            }
+          ],
+          "R": [
+            {
+              "categories": [
+                "EsportsWater"
+              ],
+              "count": [
+                10,
+                10
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "S": [
+            {
+              "categories": [
+                "EsportsMotorglider"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                20,
+                30
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ]
+        }
+      },
+      "vehicleSpawns": [
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_ATV",
+          "weight": 50
+        },
+        {
+          "category": "Rich_Houses",
+          "mode": "CR",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_ATV",
+          "weight": 50
+        },
+        {
+          "category": "Sports",
+          "mode": "CR",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_ATV",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_ATV",
+          "weight": 50
+        },
+        {
+          "category": "Rich_Houses",
+          "mode": "Normal",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_ATV",
+          "weight": 50
+        },
+        {
+          "category": "Sports",
+          "mode": "Normal",
+          "name": "ATV",
+          "slug": "atv",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_ATV",
+          "weight": 100
+        },
+        {
+          "category": "Dam",
+          "mode": "CR",
+          "name": "Airboat",
+          "slug": "airboat-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "AirBoat_V2",
+          "weight": 100
+        },
+        {
+          "category": "River",
+          "mode": "CR",
+          "name": "Airboat",
+          "slug": "airboat-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "AirBoat_V2",
+          "weight": 100
+        },
+        {
+          "category": "W_Garage",
+          "mode": "CR",
+          "name": "Airboat",
+          "slug": "airboat-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "AirBoat_V2",
+          "weight": 100
+        },
+        {
+          "category": "Dam",
+          "mode": "Normal",
+          "name": "Airboat",
+          "slug": "airboat-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "AirBoat_V2",
+          "weight": 100
+        },
+        {
+          "category": "River",
+          "mode": "Normal",
+          "name": "Airboat",
+          "slug": "airboat-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "AirBoat_V2",
+          "weight": 100
+        },
+        {
+          "category": "W_Garage",
+          "mode": "Normal",
+          "name": "Airboat",
+          "slug": "airboat-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "AirBoat_V2",
+          "weight": 100
+        },
+        {
+          "category": "Ocean",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "AquaRail",
+          "weight": 100
+        },
+        {
+          "category": "Ocean",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "AquaRail",
+          "weight": 100
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 100
+        },
+        {
+          "category": "EsportsWater",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Boat_PG117",
+          "weight": 100
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "Buggy_A_01",
+          "weight": 50
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 250
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Buggy_A_03",
+          "weight": 250
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 150
+        },
+        {
+          "category": "Rich_Houses",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 300
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 250
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 100
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_CoupeRB",
+          "weight": 150
+        },
+        {
+          "category": "Rich_Houses",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_CoupeRB",
+          "weight": 300
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_CoupeRB",
+          "weight": 250
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 50
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 50
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 50
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 200
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 50
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 50
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 50
+        },
+        {
+          "category": "Esports_A",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 100
+        },
+        {
+          "category": "Esports_A",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 100
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 50
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 25
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-04-v2",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "Dacia_A_04_v2",
+          "weight": 50
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Dirtbike",
+          "weight": 50
+        },
+        {
+          "category": "Sports",
+          "mode": "CR",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Dirtbike",
+          "weight": 200
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Dirtbike",
+          "weight": 50
+        },
+        {
+          "category": "Sports",
+          "mode": "Normal",
+          "name": "Dirt Bike",
+          "slug": "dirtbike",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Dirtbike",
+          "weight": 200
+        },
+        {
+          "category": "FoodTruck",
+          "mode": "CR",
+          "name": "Food Truck",
+          "slug": "food-truck",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Food_Truck",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Food Truck",
+          "slug": "food-truck",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Food_Truck",
+          "weight": 50
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Food Truck",
+          "slug": "food-truck",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "BP_Food_Truck",
+          "weight": 100
+        },
+        {
+          "category": "FoodTruck",
+          "mode": "Normal",
+          "name": "Food Truck",
+          "slug": "food-truck",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Food_Truck",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Food Truck",
+          "slug": "food-truck",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Food_Truck",
+          "weight": 50
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 350
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 150
+        },
+        {
+          "category": "Rich_Houses",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 250
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 100
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 100
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 350
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 150
+        },
+        {
+          "category": "Rich_Houses",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 250
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 100
+        },
+        {
+          "category": "Motorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "BP_Motorglider",
+          "weight": 10
+        },
+        {
+          "category": "Motorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-01",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_01",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-02",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_02",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-03",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_03",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-04",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_04",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 30
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 110
+        },
+        {
+          "category": "Poor_Houses",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 30
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-05",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_05",
+          "weight": 30
+        },
+        {
+          "category": "Esports_B",
+          "mode": "CR",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-esports",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_PickupTruck_A_esports",
+          "weight": 100
+        },
+        {
+          "category": "Esports_B",
+          "mode": "Normal",
+          "name": "Pickup",
+          "slug": "pickuptruck-a-esports",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_PickupTruck_A_esports",
+          "weight": 100
+        },
+        {
+          "category": "D_Garage",
+          "mode": "CR",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 300
+        },
+        {
+          "category": "Police_Stations",
+          "mode": "CR",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki_CR",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 250
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki_IBR",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 300
+        },
+        {
+          "category": "D_Garage",
+          "mode": "Normal",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 300
+        },
+        {
+          "category": "Police_Stations",
+          "mode": "Normal",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Pillar Car",
+          "slug": "pillar-car",
+          "table": "VehicleSpawnDataTable_Kiki",
+          "vehicle": "BP_Pillar_Car",
+          "weight": 250
+        }
+      ],
+      "gliderPoints": [
+        {
+          "x": 60810,
+          "y": 172762,
+          "z": 11885,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 466996,
+          "y": 243869,
+          "z": 8318,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 485447,
+          "y": 122661,
+          "z": 548,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 631677,
+          "y": 189248,
+          "z": 2563,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 484631,
+          "y": 359992,
+          "z": 1109,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 409939,
+          "y": 448644,
+          "z": 7296,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 400457,
+          "y": 672251,
+          "z": 2563,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 582075,
+          "y": 603712,
+          "z": 1992,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 694306,
+          "y": 614279,
+          "z": 657,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 752415,
+          "y": 402010,
+          "z": 429,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 742492,
+          "y": 268659,
+          "z": 380,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 86443,
+          "y": 262432,
+          "z": 14775,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 528341,
+          "y": 506129,
+          "z": 661,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 52492,
+          "y": 355473,
+          "z": 16002,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 41045,
+          "y": 537377,
+          "z": 14911,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 188716,
+          "y": 602560,
+          "z": 2575,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 246835,
+          "y": 508343,
+          "z": 5385,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 254543,
+          "y": 363467,
+          "z": 5250,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 303890,
+          "y": 55546,
+          "z": 827,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 368857,
+          "y": 274091,
+          "z": 6064,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_O_Glider",
+          "group": "O"
+        },
+        {
+          "x": 306888,
+          "y": 232144,
+          "z": 5912,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_S_Glider",
+          "group": "S"
+        },
+        {
+          "x": 477921,
+          "y": 609855,
+          "z": 5200,
+          "level": "Level_Design_Vehicles",
+          "tag": "VehicleSpot_S_Glider",
+          "group": "S"
+        }
+      ],
+      "beforeCount": 1377,
+      "afterCount": 1389
+    },
+    {
+      "mapId": "rondo",
+      "url": "https://pubg.gs/layers/neon.json",
+      "sha256": "13820e059f2cd5b456e37fff32e654fa0911dab3a85ce6a51dc3cd122171377c",
+      "extentCm": 816000,
+      "raster": {
+        "hash": "674734d9",
+        "maxZoom": 5,
+        "px": 8192,
+        "size": 256,
+        "url": "https://cdn.wardo.gs/pubg/tiles/neon"
+      },
+      "rasterVersionChanged": false,
+      "removedLocalTypes": [
+        "vehiclesGroupG"
+      ],
+      "vehicleRules": {
+        "processor": "VehicleSpawnProcessor_Neon",
+        "table": "VehicleSpawnDataTable_Neon",
+        "groups": {
+          "A": [
+            {
+              "categories": [
+                "Road"
+              ],
+              "count": [
+                87,
+                87
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Coupe RB",
+                "Blanc",
+                "Motorbike",
+                "Buggy",
+                "Dacia"
+              ]
+            }
+          ],
+          "B": [
+            {
+              "categories": [
+                "Offroad"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                40,
+                80
+              ],
+              "vehicles": [
+                "Buggy",
+                "Motorbike"
+              ]
+            }
+          ],
+          "C": [
+            {
+              "categories": [
+                "Garage"
+              ],
+              "count": [
+                28,
+                28
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Blanc",
+                "Dacia"
+              ]
+            }
+          ],
+          "E": [
+            {
+              "categories": [
+                "Water"
+              ],
+              "count": [
+                0,
+                0
+              ],
+              "fuel": [
+                40,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117",
+                "Aquarail"
+              ]
+            },
+            {
+              "categories": [
+                "Picobus"
+              ],
+              "count": [
+                23,
+                23
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Pico Bus"
+              ]
+            }
+          ],
+          "L": [
+            {
+              "categories": [
+                "EsportsBoat"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Boat PG117"
+              ]
+            }
+          ],
+          "D": [
+            {
+              "categories": [
+                "RoadPlus"
+              ],
+              "count": [
+                33,
+                33
+              ],
+              "fuel": [
+                40,
+                80
+              ],
+              "vehicles": [
+                "Blanc",
+                "Dacia"
+              ]
+            }
+          ],
+          "M": [
+            {
+              "categories": [
+                "Esports"
+              ],
+              "count": [
+                20,
+                20
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": [
+                "Blanc",
+                "Dacia"
+              ]
+            }
+          ],
+          "Z": [
+            {
+              "categories": [
+                "Special"
+              ],
+              "count": [
+                0,
+                0
+              ],
+              "fuel": [
+                100,
+                100
+              ],
+              "vehicles": []
+            }
+          ],
+          "O": [
+            {
+              "categories": [
+                "Motorglider"
+              ],
+              "count": [
+                4,
+                4
+              ],
+              "fuel": [
+                0,
+                0
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ],
+          "S": [
+            {
+              "categories": [
+                "EsportsMotorglider"
+              ],
+              "count": [
+                2,
+                2
+              ],
+              "fuel": [
+                20,
+                30
+              ],
+              "vehicles": [
+                "Motorglider"
+              ]
+            }
+          ]
+        }
+      },
+      "vehicleSpawns": [
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail-a-01",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "AquaRail_A_01",
+          "weight": 10
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail-a-01",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "AquaRail_A_01",
+          "weight": 10
+        },
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail-a-02",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "AquaRail_A_02",
+          "weight": 10
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail-a-02",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "AquaRail_A_02",
+          "weight": 10
+        },
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Aquarail",
+          "slug": "aquarail-a-03",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "AquaRail_A_03",
+          "weight": 10
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Aquarail",
+          "slug": "aquarail-a-03",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "AquaRail_A_03",
+          "weight": 10
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Blanc",
+          "slug": "blanc",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Blanc",
+          "weight": 25
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Blanc",
+          "slug": "blanc",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Blanc",
+          "weight": 50
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Blanc",
+          "slug": "blanc",
+          "table": "VehicleSpawnDataTable_Neon_IBR",
+          "vehicle": "BP_Blanc",
+          "weight": 300
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Blanc",
+          "slug": "blanc",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Blanc",
+          "weight": 25
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Normal",
+          "name": "Blanc",
+          "slug": "blanc",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Blanc",
+          "weight": 50
+        },
+        {
+          "category": "Esports",
+          "mode": "CR",
+          "name": "Blanc",
+          "slug": "blanc-esports",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Blanc_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Blanc",
+          "slug": "blanc-esports",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Blanc_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Esports",
+          "mode": "Normal",
+          "name": "Blanc",
+          "slug": "blanc-esports",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Blanc_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Blanc",
+          "slug": "blanc-esports",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Blanc_Esports",
+          "weight": 50
+        },
+        {
+          "category": "EsportsBoat",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 100
+        },
+        {
+          "category": "Water",
+          "mode": "CR",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Boat_PG117",
+          "weight": 70
+        },
+        {
+          "category": "EsportsBoat",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Boat_PG117",
+          "weight": 100
+        },
+        {
+          "category": "Water",
+          "mode": "Normal",
+          "name": "Boat PG117",
+          "slug": "boat-pg117",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Boat_PG117",
+          "weight": 70
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Buggy_A_01",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Buggy_A_01",
+          "weight": 4
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Buggy_A_01",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-01",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Buggy_A_01",
+          "weight": 4
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Buggy_A_02",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Buggy_A_02",
+          "weight": 3
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Buggy_A_02",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-02",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Buggy_A_02",
+          "weight": 3
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 16
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Buggy_A_03",
+          "weight": 3
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Buggy_A_03",
+          "weight": 16
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Buggy",
+          "slug": "buggy-a-03",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Buggy_A_03",
+          "weight": 3
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 31
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Neon_IBR",
+          "vehicle": "BP_CoupeRB",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Coupe RB",
+          "slug": "couperb",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_CoupeRB",
+          "weight": 31
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 3
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 17
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Neon_IBR",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 100
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 3
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-01-v2",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_01_v2",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 3
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 3
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-02-v2",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_02_v2",
+          "weight": 17
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 2
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 16
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 2
+        },
+        {
+          "category": "RoadPlus",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_03_v2",
+          "weight": 16
+        },
+        {
+          "category": "Esports",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "CR",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Esports",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Garage",
+          "mode": "Normal",
+          "name": "Dacia",
+          "slug": "dacia-a-03-v2-esports",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "Dacia_A_03_v2_Esports",
+          "weight": 50
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 13
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Neon_IBR",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 50
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 50
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Motorbike_04",
+          "weight": 13
+        },
+        {
+          "category": "Offroad",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "CR",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Offroad",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Road",
+          "mode": "Normal",
+          "name": "Motorbike",
+          "slug": "motorbike-04-sidecar",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Motorbike_04_SideCar",
+          "weight": 0
+        },
+        {
+          "category": "Motorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "Motorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Motorglider",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "CR",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "EsportsMotorglider",
+          "mode": "Normal",
+          "name": "Motorglider",
+          "slug": "motorglider-green",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_Motorglider_Green",
+          "weight": 100
+        },
+        {
+          "category": "PicoBus",
+          "mode": "CR",
+          "name": "Pico Bus",
+          "slug": "picobus",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_PicoBus",
+          "weight": 1
+        },
+        {
+          "category": "Road1",
+          "mode": "CR",
+          "name": "Pico Bus",
+          "slug": "picobus",
+          "table": "VehicleSpawnDataTable_Neon_CR",
+          "vehicle": "BP_PicoBus",
+          "weight": 0
+        },
+        {
+          "category": "IBR",
+          "mode": "IBR",
+          "name": "Pico Bus",
+          "slug": "picobus",
+          "table": "VehicleSpawnDataTable_Neon_IBR",
+          "vehicle": "BP_PicoBus",
+          "weight": 200
+        },
+        {
+          "category": "PicoBus",
+          "mode": "Normal",
+          "name": "Pico Bus",
+          "slug": "picobus",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_PicoBus",
+          "weight": 1
+        },
+        {
+          "category": "Road1",
+          "mode": "Normal",
+          "name": "Pico Bus",
+          "slug": "picobus",
+          "table": "VehicleSpawnDataTable_Neon",
+          "vehicle": "BP_PicoBus",
+          "weight": 0
+        }
+      ],
+      "gliderPoints": [
+        {
+          "x": 103801,
+          "y": 84178,
+          "z": 1687,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 189631,
+          "y": 193608,
+          "z": 3483,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 84281,
+          "y": 262548,
+          "z": 1427,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 85971,
+          "y": 441838,
+          "z": 933,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 212751,
+          "y": 469148,
+          "z": 250,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 102261,
+          "y": 637218,
+          "z": 2085,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 209421,
+          "y": 713988,
+          "z": 25,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 366591,
+          "y": 705748,
+          "z": 5073,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 563981,
+          "y": 754058,
+          "z": 10709,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 454366,
+          "y": 658886,
+          "z": 7968,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "S"
+        },
+        {
+          "x": 491671,
+          "y": 558568,
+          "z": 1185,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 358991,
+          "y": 496088,
+          "z": 6973,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 371281,
+          "y": 329898,
+          "z": 281,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 478971,
+          "y": 269378,
+          "z": 6765,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 414231,
+          "y": 231908,
+          "z": 2510,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "S"
+        },
+        {
+          "x": 472841,
+          "y": 37648,
+          "z": 518,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 724797,
+          "y": 34268,
+          "z": 760,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 713136,
+          "y": 229682,
+          "z": 528,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 777243,
+          "y": 393848,
+          "z": 2457,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 661856,
+          "y": 556380,
+          "z": 854,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 360337,
+          "y": 220631,
+          "z": 717,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        },
+        {
+          "x": 424118,
+          "y": 124679,
+          "z": 887,
+          "level": "level_design_2",
+          "tag": "ThingSpot",
+          "group": "O"
+        }
+      ],
+      "beforeCount": 555,
+      "afterCount": 567
+    }
+  ],
+  "replacedAnchor": {
+    "retired": {
+      "id": "erangel-vehiclesGroupE-27",
+      "typeKey": "vehiclesGroupE",
+      "pointIndex": 27,
+      "sourceCoordinate": [
+        -189.945,
+        58.6772
+      ],
+      "referenceWorldCm": [
+        187038,
+        605463
+      ],
+      "referencePixel": [
+        1877.7148235294117,
+        6078.373647058824
+      ],
+      "referenceLayer": "vehicles",
+      "referenceMode": null,
+      "referenceGroup": "E",
+      "sourceUrl": "https://pubg.gs/layers/baltic.json",
+      "sourceSha256": "427db1f1186308009df2434dee29fc4f9c487bd17cae9db543717dbe89864ba2",
+      "rasterProbe": {
+        "url": "https://cdn.wardo.gs/pubg/tiles/baltic/5/7/23.webp?6ab4a113",
+        "referenceSha256": "714d04529cb40c8270cb065c6c48ff3eb36a2b89d38168a03016e9b61087f7a8",
+        "localTile": "maps/tiles/erangel/4/3/11.webp",
+        "localSha256": "6e50c388c641faafe823585ce04a334048178867db1720ed977c0f3af7fd73a2",
+        "bestShiftPixels": [
+          0,
+          0
+        ],
+        "meanAbsoluteChannelDifference": 0.5584665934244791
+      }
+    },
+    "replacement": "erangel-blueChipTower-0",
+    "reason": "The retired Water group no longer has an active vehicle spawn table."
+  }
+}

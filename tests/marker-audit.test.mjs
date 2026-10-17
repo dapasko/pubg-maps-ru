@@ -41,13 +41,14 @@ test('CLI creates a missing report directory and accounts for every local point 
   const { tmpdir } = await import('node:os');
   const { join } = await import('node:path');
   const { execFileSync } = await import('node:child_process');
+  const { fileURLToPath } = await import('node:url');
   const directory = await mkdtemp(join(tmpdir(), 'pubg-marker-audit-'));
   try {
     const output = join(directory, 'nested', 'report.json');
-    execFileSync(process.execPath, [new URL('../tools/audit-marker-alignment.mjs', import.meta.url).pathname, '--output', output]);
+    execFileSync(process.execPath, [fileURLToPath(new URL('../tools/audit-marker-alignment.mjs', import.meta.url)), '--output', output]);
     const report = JSON.parse(await readFile(output));
     assert.equal(report.maps.length, 6);
-    assert.equal(report.maps.reduce((sum, map) => sum + map.localCount, 0), 6550);
+    assert.equal(report.maps.reduce((sum, map) => sum + map.localCount, 0), 6364);
     for (const map of report.maps) {
       const unverified = map.groups.filter(group => group.status === 'unverified-category').reduce((sum, group) => sum + group.localCount, 0);
       const unmatched = map.groups.reduce((sum, group) => sum + (group.localUnmatched?.length ?? 0), 0);

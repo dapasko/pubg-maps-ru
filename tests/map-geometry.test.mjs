@@ -22,7 +22,7 @@ test('keeps every supported map marker inside the source playable grid', async (
 
   assert.equal(markerNorthingCorrection, 0);
   assert.equal(markerEastingCorrection, 0);
-  assert.equal(points.length, 6550);
+  assert.equal(points.length, 6364);
   for (const map of maps) for (const group of map.groups) for (const point of group.points) {
     const normalized = markerPoint(point, map.name.toLowerCase());
     assert.ok(normalized.x >= 0 && normalized.x <= 1);
